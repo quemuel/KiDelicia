@@ -19,5 +19,7 @@ namespace KiDelicia.Models
 
         [Required, StringLength(11)]
         public string Telefone { get; set; }
+
+        public virtual ICollection<ConsumoComanda> ConsumoComandas { get; set; }
     }
 }

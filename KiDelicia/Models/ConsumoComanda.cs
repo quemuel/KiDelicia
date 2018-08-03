@@ -9,14 +9,15 @@ namespace KiDelicia.Models
 {
     public class ConsumoComanda
     {
-        public int IdComandaDia { get; set; }
+        [Key]
+        public int IdConsumoComanda { get; set; }
 
-        [DisplayName("Cliente")]
-        public int ClienteId { get; set; }
+        //[DisplayName("Cliente")]
+        //public int? ClienteId { get; set; }
         public Cliente Cliente { get; set; }
 
-        [DisplayName("Empresa")]
-        public int EmpresaId { get; set; }
+        //[DisplayName("Empresa")]
+        //public int? EmpresaId { get; set; }
         public Empresa Empresa { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:n2}",
@@ -25,7 +26,7 @@ namespace KiDelicia.Models
         public decimal ValorConsumo { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime dataHoraLançamento { get; set; }
+        public DateTime dataHoraLancamento { get; set; }
 
     }
 }

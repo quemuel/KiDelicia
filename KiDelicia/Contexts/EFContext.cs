@@ -20,7 +20,9 @@ namespace KiDelicia.Contexts
 
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
-        
+        public DbSet<ConsumoComanda> ConsumoComandas { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
