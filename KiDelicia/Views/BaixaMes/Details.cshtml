@@ -1,0 +1,58 @@
+﻿@model KiDelicia.Models.BaixaMes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BaixaMes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.NomeCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.NomeCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.NomeFantasia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.NomeFantasia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorMes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorMes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataMesReferencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataMesReferencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BaixaMesId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
