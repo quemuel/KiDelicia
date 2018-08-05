@@ -1,48 +1,69 @@
 ﻿@model KiDelicia.Models.Cliente
 
 @{
-    ViewBag.Title = "Excluir";
+    ViewBag.Title = "Excluir Cliente";
 }
 
-<h2>Excluir Cliente</h2>
-
-<h3>Você tem certeza que quer excluir este cliente?</h3>
-<div>
-    <h4>Cliente</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NomeCliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NomeCliente)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EnderecoCliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EnderecoCliente)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TelefoneCliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TelefoneCliente)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Excluir" class="btn btn-default" /> |
-            @Html.ActionLink("Voltar", "Index")
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-trash"></i>Excluir Cliente</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <span class="label">Você está aqui:</span>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="@Url.Action("index", "Home")">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">Excluir Cliente</li>
+            </ol>
         </div>
-    }
-</div>
+    </div>
+    <div class="body-content animated fadeIn">
+        <h3>Você tem certeza que quer excluir este cliente?</h3>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.NomeCliente):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.NomeCliente)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.EnderecoCliente):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.EnderecoCliente)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.TelefoneCliente):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.TelefoneCliente)
+                        </td>
+                    </tr>
+                </table>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <br/>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12 btn-group">
+                                @Html.ActionLink("Voltar", "Index", "", new { @class = "btn btn-default" })
+                                <input type="submit" value="Excluir" class="btn btn-danger" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_footerAdmin")
+</section>

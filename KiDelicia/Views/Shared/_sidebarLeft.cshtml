@@ -1,0 +1,96 @@
+﻿
+<aside id="sidebar-left" class="sidebar-circles">
+    <!-- <div class="sidebar-content">
+        <div class="media">
+            <a class="pull-left has-notif avatar" href="@Url.Action("admin/page/profile")">
+                <img src="@Url.Content("/Content")/global/img/avatar/50/1.png" alt="admin">
+                <i class="online"></i>
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">Hello, <span>Lee</span></h4>
+                <small>Web Designer</small>
+            </div>
+        </div>
+    </div> -->
+    <br/>
+    <ul class="sidebar-menu">
+        <li class="">
+            <a href="@Url.Action("index", "Home")">
+                <span class="icon"><i class="fa fa-home"></i></span>
+                <span class="text">Home</span>
+                <span class="selected"></span>
+            </a>
+        </li>
+        <li class="">
+            <a href="@Url.Action("index", "Cliente")">
+                <span class="icon"><i class="fa fa-user"></i></span>
+                <span class="text">Cliente</span>
+            </a>
+        </li>
+        <li class="">
+            <a href="@Url.Action("index", "Produto")">
+                <span class="icon"><i class="fa fa-coffee"></i></span>
+                <span class="text">Produto</span>
+            </a>
+        </li>
+        <li class="sidebar-category">
+            <span>APPS</span>
+            <span class="pull-right"><i class="fa fa-trophy"></i></span>
+        </li>
+        <!--/ End category apps -->
+        <!-- Start navigation - blog -->
+        <li class="submenu">
+            <a href="javascript:void(0);">
+                <span class="icon"><i class="fa fa-globe"></i></span>
+                <span class="text">Blog</span>
+                <span class="arrow"></span>
+            </a>
+            <ul>
+                <li class="">
+                    <a href="@Url.Action("/admin/blog/grid")">Grid</a>
+                </li>
+                <li class="">
+                    <a href="@Url.Action("/admin/blog/list")">List</a>
+                </li>
+                <li class="">
+                    <a href="@Url.Action("/admin/blog/single")">Single</a>
+                </li>
+            </ul>
+        </li>        
+        <!--/ End widget - weather -->
+        <!-- Start widget - misc -->
+        <li class="">
+            <a href="@Url.Action("admin/widget/misc")">
+                <span class="icon"><i class="fa fa-puzzle-piece"></i></span>
+                <span class="text">Misc</span>
+                <span class="label label-danger pull-right rounded">9</span>
+            </a>
+        </li>
+        <!--/ End widget - misc -->
+        <!-- Start category documentation -->
+        <li class="sidebar-category">
+            <span><span class="hidden-sidebar-minimize">BLANKON</span> CORE</span>
+            <span class="pull-right"><i class="fa fa-coffee"></i></span>
+        </li>
+        <!--/ End category documentation -->
+        <!-- Start documentation - api documentation -->
+        <li>
+            <a href="../../../../documentation/admin/yii2/live-preview-documentation.html" target="_blank">
+                <span class="icon"><i class="fa fa-book"></i></span>
+                <span class="text">API Documentation</span>
+            </a>
+        </li>
+        <!--/ End documentation - api documentation -->
+
+    </ul><!-- /.sidebar-menu -->
+    <!--/ End left navigation - menu -->
+    <!-- Start left navigation - footer -->
+    <div class="sidebar-footer hidden-xs hidden-sm hidden-md">
+        <a id="setting" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Setting"><i class="fa fa-cog"></i></a>
+        <a id="fullscreen" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Fullscreen"><i class="fa fa-desktop"></i></a>
+        <a id="lock-screen" data-url="index?r=admin%2Fpage%2Flockscreen" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Lock Screen"><i class="fa fa-lock"></i></a>
+        <a id="logout" data-url="index?r=admin%2Fpage%2Fsignin" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Logout"><i class="fa fa-power-off"></i></a>
+    </div><!-- /.sidebar-footer -->
+    <!--/ End left navigation - footer -->
+
+</aside><!-- /#sidebar-left -->

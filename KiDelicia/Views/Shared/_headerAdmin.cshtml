@@ -1,0 +1,83 @@
+﻿<header id="header">
+
+    <div class="header-left">
+        <div class="navbar-minimize-mobile left">
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="navbar-header">
+            <a class="navbar-brand" href="('admin/dashboard/index')">
+                <img class="logo" src="@Url.Content("/Content")/global/img/logo/yii/logo-white.png" alt="brand logo" />
+            </a>
+        </div>
+        <div class="navbar-minimize-mobile right">
+            <i class="fa fa-cog"></i>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="header-right">
+        <div class="navbar navbar-toolbar">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="navbar-minimize">
+                    <a href="javascript:void(0);" title="Minimize sidebar">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </li>
+                <li class="navbar-search">
+                    <a href="#" class="trigger-search"><i class="fa fa-search"></i></a>
+                    <form class="navbar-form">
+                        <div class="form-group has-feedback">
+                            <input type="text" class="form-control typeahead rounded" placeholder="Search for people, places and things">
+                            <button type="submit" class="btn btn-theme fa fa-search form-control-feedback rounded"></button>
+                        </div>
+                    </form>
+                </li>
+                <!--/ End form search -->
+
+            </ul><!-- /.nav navbar-nav navbar-left -->
+            <!--/ End left navigation -->
+            <!-- Start right navigation -->
+            <ul class="nav navbar-nav navbar-right">
+                <!-- /.nav navbar-nav navbar-right -->
+                <!-- Start messages -->
+                
+                <!--/ End notifications -->
+                <!-- Start profile -->
+                <li class="dropdown navbar-profile">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="meta">
+                            <span class="avatar"><img src="@Url.Content("/Content")/global/img/avatar/35/1.png" class="img-circle" alt="admin"></span>
+                            <span class="text hidden-xs hidden-sm text-muted">Tol Lee</span>
+                            <span class="caret"></span>
+                        </span>
+                    </a>
+                    <!-- Start dropdown menu -->
+                    <ul class="dropdown-menu ">
+                        <li class="dropdown-header">Account</li>
+                        <li><a href="<?= Yii::$app->getUrlManager()->createUrl('admin/page/profile') ?>"><i class="fa fa-user"></i>View profile</a></li>
+                        <li><a href="mail-inbox.html"><i class="fa fa-envelope-square"></i>Inbox <span class="label label-info pull-right">30</span></a></li>
+                        <li><a href="#"><i class="fa fa-share-square"></i>Invite a friend</a></li>
+                        <li class="dropdown-header">Product</li>
+                        <li><a href="#"><i class="fa fa-upload"></i>Upload</a></li>
+                        <li><a href="#"><i class="fa fa-dollar"></i>Earning</a></li>
+                        <li><a href="#"><i class="fa fa-download"></i>Withdrawals</a></li>
+                        <li class="divider"></li>
+                        <li><a href="<?= Yii::$app->getUrlManager()->createUrl('admin/page/signin') ?>"><i class="fa fa-sign-out"></i>Logout</a></li>
+                    </ul>
+                    <!--/ End dropdown menu -->
+                </li><!-- /.dropdown navbar-profile -->
+                <!--/ End profile -->
+                <!-- Start settings -->
+                <li class="navbar-setting pull-right">
+                    <a href="javascript:void(0);"><i class="fa fa-cog fa-spin"></i></a>
+                </li><!-- /.navbar-setting pull-right -->
+                <!--/ End settings -->
+
+            </ul>
+            <!--/ End right navigation -->
+
+        </div><!-- /.navbar-toolbar -->
+        <!--/ End navbar toolbar -->
+    </div><!-- /.header-right -->
+    <!--/ End header left -->
+
+</header> <!-- /#header -->
