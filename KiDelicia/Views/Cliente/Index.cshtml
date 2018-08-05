@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<KiDelicia.Models.Cliente>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Clientes";
 }
 
-<h2>Index</h2>
+<h2>Clientes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Novo cliente", "Create")
 </p>
 <table class="table">
     <tr>
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.TelefoneCliente)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ClienteId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ClienteId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ClienteId })
+            @Html.ActionLink("Editar", "Edit", new { id=item.ClienteId }) |
+            @Html.ActionLink("Visualizar", "Details", new { id=item.ClienteId }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.ClienteId })
         </td>
     </tr>
 }
