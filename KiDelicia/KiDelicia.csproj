@@ -207,8 +207,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Contexts\EFContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaixaMesController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ConsumoComandaController.cs" />
+    <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
@@ -217,6 +219,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BaixaMes.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ConsumoComanda.cs" />
     <Compile Include="Models\Empresa.cs" />
@@ -286,6 +289,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\BaixaMes\Create.cshtml" />
+    <Content Include="Views\BaixaMes\Delete.cshtml" />
+    <Content Include="Views\BaixaMes\Details.cshtml" />
+    <Content Include="Views\BaixaMes\Edit.cshtml" />
+    <Content Include="Views\BaixaMes\Index.cshtml" />
     <Content Include="Views\Cliente\Create.cshtml" />
     <Content Include="Views\Cliente\Delete.cshtml" />
     <Content Include="Views\Cliente\Details.cshtml" />
@@ -301,6 +309,11 @@
     <Content Include="Views\ConsumoComanda\Details.cshtml" />
     <Content Include="Views\ConsumoComanda\Edit.cshtml" />
     <Content Include="Views\ConsumoComanda\Index.cshtml" />
+    <Content Include="Views\Empresa\Create.cshtml" />
+    <Content Include="Views\Empresa\Delete.cshtml" />
+    <Content Include="Views\Empresa\Details.cshtml" />
+    <Content Include="Views\Empresa\Edit.cshtml" />
+    <Content Include="Views\Empresa\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

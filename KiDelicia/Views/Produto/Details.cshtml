@@ -11,32 +11,32 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Codigo)
+            @Html.DisplayNameFor(model => model.CodigoProduto)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Codigo)
+            @Html.DisplayFor(model => model.CodigoProduto)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Nome)
+            @Html.DisplayNameFor(model => model.NomeProduto)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Nome)
+            @Html.DisplayFor(model => model.NomeProduto)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Valor)
+            @Html.DisplayNameFor(model => model.ValorProduto)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Valor)
+            @Html.DisplayFor(model => model.ValorProduto)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdProduto }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProdutoId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

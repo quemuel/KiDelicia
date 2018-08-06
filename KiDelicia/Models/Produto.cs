@@ -9,17 +9,17 @@ namespace KiDelicia.Models
     public class Produto
     {
         [Key]
-        public int IdProduto { get; set; }
+        public int ProdutoId { get; set; }
 
         [Required]
-        public int Codigo { get; set; }
+        public int CodigoProduto { get; set; }
 
         [Required, StringLength(300)]
-        public string Nome { get; set; }
+        public string NomeProduto { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:n2}",
             ApplyFormatInEditMode = true,
             NullDisplayText = "Sem preço")]
-        public decimal Valor { get; set; }
+        public decimal ValorProduto { get; set; }
     }
 }

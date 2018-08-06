@@ -1,0 +1,50 @@
+﻿@model KiDelicia.Models.Empresa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeFantasia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnderecoEmpresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnderecoEmpresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefoneEmpresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefoneEmpresa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmpresaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

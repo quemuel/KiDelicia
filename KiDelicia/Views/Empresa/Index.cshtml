@@ -1,0 +1,51 @@
+﻿@model IEnumerable<KiDelicia.Models.Empresa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoEmpresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefoneEmpresa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeFantasia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cnpj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoEmpresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefoneEmpresa)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmpresaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmpresaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmpresaId })
+        </td>
+    </tr>
+}
+
+</table>
