@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
@@ -11,12 +12,15 @@ namespace KiDelicia.Models
         [Key]
         public int ProdutoId { get; set; }
 
+        [DisplayName("Código")]
         [Required]
-        public int CodigoProduto { get; set; }
+        public string CodigoProduto { get; set; }
 
+        [DisplayName("Nome")]
         [Required, StringLength(300)]
         public string NomeProduto { get; set; }
 
+        [DisplayName("Preço")]
         [DisplayFormat(DataFormatString = "{0:n2}",
             ApplyFormatInEditMode = true,
             NullDisplayText = "Sem preço")]

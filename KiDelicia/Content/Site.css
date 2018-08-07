@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar.navbar-inverse.navbar-fixed-top {
+    background-color: #09103a;
+}
+
+.navbar-brand {
+    padding: 2px 15px;
+}
