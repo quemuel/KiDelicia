@@ -328,3 +328,11 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+KiDelicia/Web.config
+Web.config
+KiDelicia.csproj
+Settings.settings
+Designer.cs
+
+
