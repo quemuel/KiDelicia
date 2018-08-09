@@ -19,11 +19,11 @@ namespace KiDelicia.Models
         [Required, StringLength(14)]
         public string Cnpj { get; set; }
 
-        [DisplayName("Endereço da Empresa")]
+        [DisplayName("Endereço")]
         [Required, StringLength(500)]
         public string EnderecoEmpresa { get; set; }
 
-        [DisplayName("Telefone da Empresa")]
+        [DisplayName("Telefone")]
         [Required, StringLength(11)]
         public string TelefoneEmpresa { get; set; }
 
