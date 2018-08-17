@@ -28,13 +28,19 @@
                 <table class="table">
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.NomeCliente)
+                            @Html.DisplayNameFor(model => model.Nome)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.EnderecoCliente)
+                            @Html.DisplayNameFor(model => model.Empresa)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.TelefoneCliente)
+                            @Html.DisplayNameFor(model => model.Setor)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Telefone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Descricao)
                         </th>
                         <th></th>
                     </tr>
@@ -43,13 +49,19 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.NomeCliente)
+                                @Html.DisplayFor(modelItem => item.Nome)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.EnderecoCliente)
+                                @Html.DisplayFor(modelItem => item.Empresa)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.TelefoneCliente)
+                                @Html.DisplayFor(modelItem => item.Setor)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Telefone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descricao)
                             </td>
                             <td>
                                 @Html.ActionLink("Editar", "Edit", new { id = item.ClienteId }) |

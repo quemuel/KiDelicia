@@ -14,16 +14,24 @@ namespace KiDelicia.Models
 
         [DisplayName("Nome")]
         [Required, StringLength(300)]
-        public string NomeCliente { get; set; }
+        public string Nome { get; set; }
 
-        [DisplayName("Endereço")]
-        [Required, StringLength(500)]
-        public string EnderecoCliente { get; set; }
+        [DisplayName("Empresa")]
+        [StringLength(100)]
+        public string Empresa { get; set; }
+
+        [DisplayName("Setor")]
+        [StringLength(100)]
+        public string Setor { get; set; }
 
         [DisplayName("Telefone")]
         [Required, StringLength(15)]
         [DataType(DataType.PhoneNumber, ErrorMessage = "Forneça o número do telefone no formato (00) 0000-0000")]
-        public string TelefoneCliente { get; set; }
+        public string Telefone { get; set; }
+        
+        [DisplayName("Descrição")]
+        [MaxLength(5000)]
+        public string Descricao { get; set; }
 
         public virtual ICollection<ConsumoComanda> ConsumoComandas { get; set; }
         public virtual ICollection<BaixaMes> BaixaMeses { get; set; }
