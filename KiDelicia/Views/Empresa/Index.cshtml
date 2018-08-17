@@ -6,7 +6,7 @@
 
 <section id="page-content">
     <div class="header-content">
-        <h2><i class="fa fa-coffee"></i>Listar Empresas</h2>
+        <h2><i class="fa fa-building-o"></i>Listar Empresas</h2>
         <div class="breadcrumb-wrapper hidden-xs">
             <span class="label">Você está aqui:</span>
             <ol class="breadcrumb">
@@ -19,49 +19,55 @@
             </ol>
         </div>
     </div>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    @Html.ActionLink("Nova Empresa", "Create", "Empresa")
+                </p>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NomeEmpresa)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Representante)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Telefone)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Descricao)
+                        </th>
+                        <th></th>
+                    </tr>
 
-    <p>
-       
-        @Html.ActionLink("Nova Empresa", "Create", "Empresa")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeFantasia)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cnpj)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EnderecoEmpresa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TelefoneEmpresa)
-            </th>
-            <th></th>
-        </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NomeEmpresa)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Representante)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Telefone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Descricao)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.EmpresaId }) |
+                                @Html.ActionLink("Visualizar", "Details", new { id = item.EmpresaId }) |
+                                @Html.ActionLink("Excluir", "Delete", new { id = item.EmpresaId })
+                            </td>
+                        </tr>
+                    }
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NomeFantasia)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cnpj)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EnderecoEmpresa)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TelefoneEmpresa)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.EmpresaId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.EmpresaId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.EmpresaId })
-                </td>
-            </tr>
-        }
-
-    </table>
+                </table>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_footerAdmin")
+</section>

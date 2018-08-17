@@ -1,50 +1,68 @@
 ﻿@model KiDelicia.Models.Empresa
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Visualizar Empresa";
 }
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-building-o"></i>@ViewBag.Title</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <span class="label">Você está aqui:</span>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="@Url.Action("index", "Home")">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">@ViewBag.Title</li>
+            </ol>
+        </div>
+    </div>
 
-<h2>Details</h2>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.NomeEmpresa):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.NomeEmpresa)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.Representante):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.Representante)
+                        </td>
+                     </tr>
+                     <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.Telefone):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.Telefone)
+                        </td>
+                    </tr>
+                     <tr>
+                         <th class="text-right">
+                             @Html.DisplayNameFor(model => model.Descricao):
+                         </th>
+                         <td class="text-left">
+                             @Html.DisplayFor(model => model.Descricao)
+                         </td>
+                     </tr>
+                </table>
+                <p>
+                    @Html.ActionLink("Voltar", "Index") | @Html.ActionLink("Editar", "Edit", new { id = Model.EmpresaId })
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_footerAdmin")
+</section>
 
-<div>
-    <h4>Empresa</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NomeFantasia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NomeFantasia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cnpj)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cnpj)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EnderecoEmpresa)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EnderecoEmpresa)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TelefoneEmpresa)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TelefoneEmpresa)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.EmpresaId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

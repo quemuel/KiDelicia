@@ -16,14 +16,14 @@ var BlankonFormAdvanced = function () {
         // BOOTSTRAP SWITCH
         // =========================================================================
         bootstrapSwitch: function () {
-            $('#fonte').bootstrapSwitch();
-            $('#fonte').on('switchChange.bootstrapSwitch', function (event, state) {
+            $('#FlagCliente').bootstrapSwitch();
+            $('#FlagCliente').on('switchChange.bootstrapSwitch', function (event, state) {
                 if (state) {
+                    $("#div_cliente").show();
+                    $("#div_empresa").hide();
+                } else {
                     $("#div_cliente").hide();
                     $("#div_empresa").show();
-                } else {
-                    $("#div_empresa").hide();
-                    $("#div_cliente").show();
                 }
             });
             if($('.switch').length){

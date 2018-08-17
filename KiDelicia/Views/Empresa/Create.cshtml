@@ -1,64 +1,76 @@
 ﻿@model KiDelicia.Models.Empresa
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Cadastra Empresa";
 }
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Empresa</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.NomeFantasia, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NomeFantasia, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NomeFantasia, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Cnpj, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Cnpj, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Cnpj, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EnderecoEmpresa, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EnderecoEmpresa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EnderecoEmpresa, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.TelefoneEmpresa, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.TelefoneEmpresa, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TelefoneEmpresa, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-building-o"></i>@ViewBag.Title <span>Digite os dados da empresa</span></h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <span class="label">Você está aqui:</span>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="@Url.Action("index", "Home")">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">@ViewBag.Title</li>
+            </ol>
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.NomeEmpresa, string.Format("{0}:", Html.DisplayNameFor(model => model.NomeEmpresa)), htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(model => model.NomeEmpresa, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NomeEmpresa, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.Representante, string.Format("{0}:", Html.DisplayNameFor(model => model.Representante)), htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(model => model.Representante, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Representante, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.Telefone, string.Format("{0}:", Html.DisplayNameFor(model => model.Telefone)), htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control maskTelefone" } })
+                                    @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.Descricao, HttpUtility.HtmlDecode(string.Format("{0}:", Html.DisplayNameFor(model => model.Descricao))), htmlAttributes: new { @class = "control-label" })
+                                    @Html.TextAreaFor(model => model.Descricao, new { @class = "form-control", @rows = "5" })
+                                    @Html.ValidationMessageFor(model => model.Descricao, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12 btn-group">
+                                    @Html.ActionLink("Voltar", "Index", "", new { @class = "btn btn-default" })
+                                    <input type="submit" value="Cadastrar" class="btn btn-success" />
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                }
+             </div>
+        </div>
+    </div>
+    @Html.Partial("_footerAdmin")
+</section>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

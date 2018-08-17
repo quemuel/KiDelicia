@@ -29,7 +29,7 @@ namespace KiDelicia.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ConsumoComanda consumoComanda = db.ConsumoComandas.Find(id);
+            ConsumoComanda consumoComanda = db.ConsumoComandas.Include(c => c.Cliente).Include(c => c.Empresa).First(c => c.ConsumoComandaId == id);
             if (consumoComanda == null)
             {
                 return HttpNotFound();
@@ -41,7 +41,7 @@ namespace KiDelicia.Controllers
         public ActionResult Create()
         {
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente");
-            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeFantasia");
+            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa");
             return View();
         }
 
@@ -50,17 +50,24 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ConsumoComandaId,ValorConsumo,DataConsumo,ClienteId,EmpresaId")] ConsumoComanda consumoComanda)
+        public ActionResult Create([Bind(Include = "ConsumoComandaId,FlagCliente,ValorConsumo,DataConsumo,ClienteId,EmpresaId")] ConsumoComanda consumoComanda)
         {
             if (ModelState.IsValid)
             {
+                if (consumoComanda.FlagCliente)
+                {
+                    consumoComanda.EmpresaId = null;
+                } else
+                {
+                    consumoComanda.ClienteId = null;
+                }
                 db.ConsumoComandas.Add(consumoComanda);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", consumoComanda.ClienteId);
-            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeFantasia", consumoComanda.EmpresaId);
+            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", consumoComanda.EmpresaId);
             return View(consumoComanda);
         }
 
@@ -77,7 +84,7 @@ namespace KiDelicia.Controllers
                 return HttpNotFound();
             }
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", consumoComanda.ClienteId);
-            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeFantasia", consumoComanda.EmpresaId);
+            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", consumoComanda.EmpresaId);
             return View(consumoComanda);
         }
 
@@ -86,16 +93,25 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ConsumoComandaId,ValorConsumo,DataConsumo,ClienteId,EmpresaId")] ConsumoComanda consumoComanda)
+        public ActionResult Edit([Bind(Include = "ConsumoComandaId,FlagCliente,ValorConsumo,DataConsumo,ClienteId,EmpresaId")] ConsumoComanda consumoComanda)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(consumoComanda).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            //try
+            //{
+
+                if (ModelState.IsValid)
+                {
+                    db.Entry(consumoComanda).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            //}
+            //catch (Exception ec)
+            //{
+            //    Console.WriteLine(ec.Message);
+            //}
+
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", consumoComanda.ClienteId);
-            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeFantasia", consumoComanda.EmpresaId);
+            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", consumoComanda.EmpresaId);
             return View(consumoComanda);
         }
 
@@ -106,7 +122,7 @@ namespace KiDelicia.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ConsumoComanda consumoComanda = db.ConsumoComandas.Find(id);
+            ConsumoComanda consumoComanda = db.ConsumoComandas.Include(c => c.Cliente).Include(c => c.Empresa).First(c => c.ConsumoComandaId == id);
             if (consumoComanda == null)
             {
                 return HttpNotFound();

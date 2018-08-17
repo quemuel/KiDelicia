@@ -33,24 +33,39 @@
                     </tr>
                     <tr>
                         <th class="text-right">
-                            @Html.DisplayNameFor(model => model.EnderecoCliente):
+                            @Html.DisplayNameFor(model => model.Empresa):
                         </th>
                         <td class="text-left">
-                            @Html.DisplayFor(model => model.EnderecoCliente)
+                            @Html.DisplayFor(model => model.Empresa)
                         </td>
                     </tr>
                     <tr>
                         <th class="text-right">
-                            @Html.DisplayNameFor(model => model.TelefoneCliente):
+                            @Html.DisplayNameFor(model => model.Setor):
                         </th>
                         <td class="text-left">
-                            @Html.DisplayFor(model => model.TelefoneCliente)
+                            @Html.DisplayFor(model => model.Setor)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.Telefone):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.Telefone)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.Descricao):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.Descricao)
                         </td>
                     </tr>
                 </table>                    
                 <p>
-                    @Html.ActionLink("Editar", "Edit", new { id = Model.ClienteId }) |
-                    @Html.ActionLink("Voltar", "Index")
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.ClienteId }) | @Html.ActionLink("Voltar", "Index")
                 </p>
             </div>
         </div>
