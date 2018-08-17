@@ -45,7 +45,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     @Html.LabelFor(model => model.TelefoneCliente, string.Format("{0}:", Html.DisplayNameFor(model => model.TelefoneCliente)), htmlAttributes: new { @class = "control-label" })
-                                    @Html.EditorFor(model => model.TelefoneCliente, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.EditorFor(model => model.TelefoneCliente, new { htmlAttributes = new { @class = "form-control maskTelefone" } })
                                     @Html.ValidationMessageFor(model => model.TelefoneCliente, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -65,4 +65,4 @@
         </div>
     </div>
     @Html.Partial("_footerAdmin")
-</section>
+</section>  

@@ -1,0 +1,12 @@
+<div class="row">
+    <div data-ng-repeat="theme in themes" class="col-md-6 col-xs-12">
+        <a data-ng-href="{{theme.url}}" class="list-frontend-theme">
+            <span data-ng-class="{'coming-soon':theme.status == 'coming-soon'}" class="image-bg">
+                <span data-ng-class="{'available':theme.status == 'available'}" class="{{theme.class}} image-scroll">
+                    <span data-ng-show="theme.status == 'available'" class="image-ribbon"></span>
+                </span>
+            </span>
+            <h3 class="image-title">{{theme.name}}</h3>
+        </a>
+    </div>
+</div>

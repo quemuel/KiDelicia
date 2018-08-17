@@ -20,10 +20,10 @@ namespace KiDelicia.Models
         [Required, StringLength(300)]
         public string NomeProduto { get; set; }
 
+        //string.Format(CultureInfo.GetCultureInfo("pt-BR"), "{0:C}", valor)
+
         [DisplayName("Preço")]
-        [DisplayFormat(DataFormatString = "{0:n2}",
-            ApplyFormatInEditMode = true,
-            NullDisplayText = "Sem preço")]
+        [DataType(DataType.Currency)]
         public decimal ValorProduto { get; set; }
     }
 }

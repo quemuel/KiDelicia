@@ -21,7 +21,8 @@ namespace KiDelicia.Models
         public string EnderecoCliente { get; set; }
 
         [DisplayName("Telefone")]
-        [Required, StringLength(11)]
+        [Required, StringLength(15)]
+        [DataType(DataType.PhoneNumber, ErrorMessage = "Forneça o número do telefone no formato (00) 0000-0000")]
         public string TelefoneCliente { get; set; }
 
         public virtual ICollection<ConsumoComanda> ConsumoComandas { get; set; }
