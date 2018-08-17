@@ -1,0 +1,3305 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<!-- START HEAD -->
+<head>
+    <!-- START META SECTION -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Blankon is a theme fullpack admin template powered by Twitter bootstrap 3 front-end framework. Included are multiple example pages, elements styles, and javascript widgets to get your project started.">
+    <meta name="keywords" content="">
+    <meta name="author" content="Djava UI">
+    <title>DOCUMENTATION | YII2</title>
+    <!--/ END META SECTION -->
+
+    <!-- START @FAVICONS -->
+    <link href="../../../assets/global/img/ico/yii/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+    <link href="../../../assets/global/img/ico/yii/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link href="../../../assets/global/img/ico/yii/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link href="../../../assets/global/img/ico/yii/apple-touch-icon-57x57-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="../../../assets/global/img/ico/yii/apple-touch-icon.png" rel="shortcut icon">
+    <!--/ END FAVICONS -->
+
+    <!-- START STYLESHEETS -->
+    <!-- START FONT STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet">
+    <!--/ END FONT STYLES -->
+
+    <!-- START GLOBAL MANDATORY STYLES -->
+    <link href="../../../assets/global/plugins/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../assets/documentation/css/style-doc.css" rel="stylesheet">
+    <link href="../../../assets/documentation/css/style-doc-yii.css" rel="stylesheet">
+    <!--/ END GLOBAL MANDATORY STYLES -->
+
+    <!-- START PAGE LEVEL STYLES -->
+    <link href="../../../assets/global/plugins/bower_components/ndoboost/css/ndoboost.min.css" rel="stylesheet">
+    <link href="../../../assets/global/plugins/bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../../assets/global/plugins/bower_components/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <link href="../../../assets/global/plugins/bower_components/jquery-snippet/jquery.snippet-customize.min.css" rel="stylesheet">
+    <link href="../../../assets/global/plugins/bower_components/chosen_v1.2.0/chosen.min.css" rel="stylesheet">
+    <link href="../../../assets/global/plugins/bower_components/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/global/plugins/bower_components/datatables/css/datatables.responsive.css" rel="stylesheet">
+    <!--/ END PAGE LEVEL STYLES -->
+    <!-- END STYLESHEETS -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../../../assets/global/plugins/bower_components/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="../../../assets/global/plugins/bower_components/respond-minmax/src/respond.js"></script>
+    <![endif]-->
+</head>
+<!--/ END HEAD -->
+
+<!-- START BODY -->
+<body class="tooltips full-doc">
+
+<!-- START NAVBAR -->
+<nav class="navbar square navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="full-documentation.html">Blankon Documentation</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="top-nav">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="https://wrapbootstrap.com/user/djavaui" target="_blank">by : @djavaui</a></li>
+            </ul>
+            <a href="../../../production/frontend/start-page/html/index.html" class="btn btn-success navbar-btn pull-right"><i class="fa fa-sign-out"></i> Back to Blankon</a>
+        </div>
+    </div>
+</nav>
+<!--/ END NAVBAR -->
+
+<!-- START CONTAINER -->
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-2">
+
+    <!-- START SIDEBAR -->
+    <div class="ndoboost-sidebar">
+        <div class="text-center">
+            <img src="../../../assets/global/img/logo/yii/logo-vertical.png" alt="logo" class="logo"/>
+        </div>
+        <ul class="nav ndoboost-sidenav">
+            <li><a href="#welcome">Welcome</a></li>
+            <li>
+                <a href="#getting-started">Getting started</a>
+                <ul class="nav">
+                    <li><a href="#getting-started">Overview</a></li>
+                    <li><a href="#template-features">Main Features</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#files-structure">Structures</a>
+                <ul class="nav">
+                    <li><a href="#files-structure">Files structure</a></li>
+                    <li><a href="#html-structure">Base HTML structure</a></li>
+                    <li><a href="#page-structure">Page structure</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#installation-guide">Installation guide</a>
+            </li>
+            <li>
+                <a href="#less-support">LESS support</a>
+            </li>
+            <li>
+                <a href="#ui-components">UI Components</a>
+            </li>
+            <li>
+                <a href="#plugins">Plugins</a>
+            </li>
+            <li><a href="#change-log">Change log</a></li>
+            <li><a href="#quick-search">Quick search</a></li>
+            <li><a href="#thank-you">Thank you</a></li>
+        </ul>
+    </div><!-- /.ndoboost-sidebar .hidden-print -->
+    <!--/ END SIDEBAR -->
+
+</div>
+
+<div class="col-md-10">
+
+<!-- START WELCOME -->
+<div class="section sm" id="welcome">
+    <h1 class="page-header text-center">&ldquo;BLANKON - Fullpack Admin Theme  v1.0.7&rdquo;</h1>
+    <div class="showcase-screen">
+        <div class="row">
+            <div class="col-sm-4">
+                <ul class="list-unstyled">
+                    <li>
+                        Pack : Yii2
+                    </li>
+                    <li>
+                        Author: <a href="http://djavaui.com/" target="_blank">Djava UI</a>
+                    </li>
+                    <li>
+                        Contact: <a href="mailto:maildjavaui@gmail.com" target="_blank">maildjavaui@gmail.com</a>
+                    </li>
+                    <li>
+                        Follow: <a href="https://twitter.com/djavaui" target="_blank">https://twitter.com/djavaui</a>
+                    </li>
+                    <li>
+                        Like: <a href="https://www.facebook.com/djavaui" target="_blank">https://www.facebook.com/djavaui</a>
+                    </li>
+                    <li>
+                        Hire: Available
+                    </li>
+                    <li>
+                        Released On: 07/11/2014
+                    </li>
+                    <li>
+                        Updated On: 09/05/2015
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <blockquote class="no-margin">Thank you for purchasing our theme. If you have any questions that are beyond the scope of this help file, please feel free to email our support <a href="mailto:maildjavaui@gmail.com" target="_blank">maildjavaui@gmail.com</a>. Thanks so much!
+                </blockquote>
+            </div>
+            <div class="col-sm-2">
+                <img src="../../../assets/documentation/img/mascot/mascot-yii-doc.jpg" alt="mascot" class="pull-right"/>
+            </div>
+        </div>
+    </div>
+    <img src="../../../assets/documentation/img/yii/img-doc-yii.jpg" alt="getting started" class="img-responsive">
+</div>
+<!--/ END WELCOME -->
+
+<!-- START GETTING STARTED -->
+<div class="section sm" id="getting-started">
+    <h1 class="page-header">Getting started</h1>
+    <div class="showcase-screen">
+        <div class="text-center">
+            <img src="../../../assets/documentation/img/yii/yii-logo.png" alt="yii logo" class="img-responsive"/>
+        </div>
+        <p>
+            Yii is a high-performance PHP framework best for developing Web 2.0 applications. Yii comes with rich features: MVC, DAO/ActiveRecord, I18N/L10N, caching, authentication and role-based access control, scaffolding, testing, etc. It can reduce your development time significantly.
+        </p>
+        <p>
+            The best of all: it makes development fun!
+        </p>
+        <dl class="dl-horizontal no-margin">
+            <dt>Website : </dt>
+            <dd><a href="https://www.yiiframework.com" target="_blank"> www.yiiframework.com</a></dd>
+            <dt>Tutorial : </dt>
+            <dd><a href="http://www.yiiframework.com/tutorials" target="_blank"> http://www.yiiframework.com/tutorials</a></dd>
+            <dt>API Docs : </dt>
+            <dd><a href="http://www.yiiframework.com/doc-2.0/index.html" target="_blank"> http://www.yiiframework.com/doc-2.0/index.html</a></dd>
+            <dt>Wiki : </dt>
+            <dd><a href="http://www.yiiframework.com/wiki" target="_blank"> http://www.yiiframework.com/wiki</a></dd>
+
+        </dl>
+    </div>
+</div>
+<!--/ END GETTING STARTED -->
+
+<!-- START FEATURES -->
+<div class="section sm" id="template-features">
+    <h1 class="page-header">Main features</h1>
+    <div class="showcase-screen">
+        <p>
+            There are many features and pages available within Blankon Fullpack Admin Theme Yii2 version.
+            Check the features below, and I will add more features in future updates.
+        </p>
+        <ul>
+            <li>Latest Yii2 Framework <b>2.0 (stable)</b></li>
+            <li>Model-View-Controller (MVC) design pattern</li>
+            <li>Database Access Objects (DAO), Query Builder, Active Record, DB Migration</li>
+            <li>Form input and validation</li>
+            <li>AJAX-enabled widgets</li>
+            <li>Authentication and authorization</li>
+            <li>Skinning and theming</li>
+            <li>Web services</li>
+            <li>Internationalization (I18N) and localization (L10N)</li>
+            <li>Layered caching scheme</li>
+            <li>Error handling and logging</li>
+            <li>Security</li>
+            <li>Unit and functionality testing</li>
+            <li>Automatic code generation</li>
+            <li>Friendly with third-party code</li>
+            <li>Extension library</li>
+        </ul>
+    </div>
+</div>
+<!--/ END FEATURES -->
+
+<!-- START FILE STRUCTURE -->
+<div class="section sm" id="files-structure">
+    <h1 class="page-header">File structure</h1>
+    <div class="showcase-screen">
+        <p>Check the files structure below, you should get them all within template bundle Yii2 version. You can see file on : <code>production/admin/yii2</code></p>
+        <img src="../../../assets/documentation/img/yii/file-structures.jpg" alt="file structure"/>
+    </div>
+    <h4>Folder & file description</h4>
+    <dl class="dl-horizontal file-structure">
+        <dt>Assets</dt>
+        <dd>Used to store all Yii2 asset manager file.</dd>
+        <dt>Config</dt>
+        <dd>Used to store all configuration file.</dd>
+        <dt>Controller</dt>
+        <dd>Used to store all controller file.</dd>
+        <dt>Models</dt>
+        <dd>Used to store application models form.</dd>
+        <dt>Module</dt>
+        <dd>Used to store application modules.</dd>
+        <dt>Tests</dt>
+        <dd>Used to unit testing system.</dd>
+        <dt>Vendor</dt>
+        <dd>Used to related with third party tool for support yii system.</dd>
+        <dt>Web</dt>
+        <dd>Index page yii system.</dd>
+    </dl>
+    <h4>File structure diagram</h4>
+<pre class="html-code-no-menu">
+<i class="fa fa-folder-open"></i> yii2/
+│
+├── <i class="fa fa-folder-open"></i> Assets/
+│   ├── <i class="fa fa-folder-open"></i> admin/
+│   ├── <i class="fa fa-folder-open"></i> frontend/
+│   │
+├── <i class="fa fa-folder-open"></i> Config/
+│   ├── <i class="fa fa-file"></i> console.php
+│   ├── <i class="fa fa-file"></i> db.php
+│   ├── <i class="fa fa-file"></i> params.php
+│   ├── <i class="fa fa-file"></i> web.php
+│   │
+├── <i class="fa fa-folder-open"></i> Controller/
+│   ├── <i class="fa fa-file"></i> SiteController.php
+│   ├── <i class="fa fa-folder-open"></i> Module/
+│   ├── <i class="fa fa-folder-open"></i> admin/
+│   ├── <i class="fa fa-folder-open"></i> Views/
+│   ├── <i class="fa fa-folder-open"></i> layouts/
+│   │
+└── <i class="fa fa-folder-open"></i> site/
+
+
+    Note : <i class="fa fa-folder-open"></i> = folder  <i class="fa fa-file"></i> = file
+</pre>
+</div>
+<!--/ END FILE STRUCTURE -->
+
+<!-- START HTML STRUCTURE -->
+<div class="section sm" id="html-structure">
+    <h1 class="page-header">Base HTML structure</h1>
+    <div class="showcase-screen">
+        <p>
+            This theme is a fluid layout with two columns and or three columns. All of the information within the page content area is nested within a div with id of "page-content". The sidebar left's (column #2) content is within a div with an id of "sidebar-left". The sidebar right's (column #3) content is within a div with an id of "sidebar-right". The general template structure is the same throughout the template. Here is the general structure.
+        </p>
+    </div>
+
+    <h4>HTML structure</h4>
+<pre class="html-code scroll">
+&lt;?php $this-&gt;beginPage() ?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;!--[if IE 8]&gt; &lt;html lang=&quot;en&quot; class=&quot;ie8&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 9]&gt; &lt;html lang=&quot;en&quot; class=&quot;ie9&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if !IE]&gt;&lt;!--&gt; &lt;html lang=&quot;en&quot;&gt; &lt;!--&lt;![endif]--&gt;
+
+    &lt;!-- START @HEAD --&gt;
+    &lt;head&gt;
+        &lt;!-- START @META SECTION --&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+        &lt;!--/ END META SECTION --&gt;
+      &lt;title&gt;&lt;?= $this-&gt;title ?&gt;&lt;/title&gt;
+        &lt;?php $this-&gt;head();  ?&gt;
+
+    &lt;/head&gt;
+    &lt;!--/ END HEAD --&gt;
+
+    &lt;body class=&quot;page-session page-sound page-header-fixed page-sidebar-fixed&quot;&gt;
+    &lt;?php $this-&gt;beginBody() ?&gt;
+
+        &lt;!-- START @LOADING ANIMATION --&gt;
+        &lt;div id=&quot;loading&quot;&gt;
+            &lt;div class=&quot;loading-inner&quot;&gt;
+                &lt;img src=&quot;&lt;?= \Yii::$app-&gt;request-&gt;BaseUrl ?&gt;/global/img/loader/flat/3.gif&quot; alt=&quot;...&quot;/&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- /#loading --&gt;
+        &lt;!--/ END LOADING ANIMATION --&gt;
+
+        &lt;!-- START @WRAPPER --&gt;
+        &lt;section id=&quot;wrapper&quot;&gt;
+
+            &lt;!-- START @HEADER --&gt;
+            &lt;?php echo $this-&gt;render(&quot;_header-admin&quot;) ?&gt;
+            &lt;!--/ END HEADER --&gt;
+
+            &lt;!-- START @SIDEBAR LEFT--&gt;
+            &lt;?php echo $this-&gt;render(&quot;_sidebar-left&quot;) ;?&gt;
+            &lt;!--/ END SIDEBAR LEFT --&gt;
+
+            &lt;!-- START @PAGE CONTENT --&gt;
+            &lt;?php echo $content ; ?&gt;
+            &lt;!--/ END PAGE CONTENT --&gt;
+
+            &lt;!-- START @SIDEBAR RIGHT --&gt;
+            &lt;?php echo $this-&gt;render(&quot;_sidebar-right&quot;) ;?&gt;
+            &lt;!--/ END SIDEBAR RIGHT --&gt;
+
+        &lt;/section&gt;&lt;!-- /#wrapper --&gt;
+        &lt;!--/ END WRAPPER --&gt;
+
+        &lt;!-- START @BACK TOP --&gt;
+        &lt;div id=&quot;back-top&quot; class=&quot;animated pulse circle&quot;&gt;
+            &lt;i class=&quot;fa fa-angle-up&quot;&gt;&lt;/i&gt;
+        &lt;/div&gt;&lt;!-- /#back-top --&gt;
+        &lt;!--/ END BACK TOP --&gt;
+
+
+    &lt;?php $this-&gt;endBody() ?&gt;
+    &lt;/body&gt;
+    &lt;!--/ END BODY --&gt;
+
+&lt;/html&gt;
+&lt;?php $this-&gt;endPage() ?&gt;
+</pre>
+</div>
+<!--/ END HTML STRUCTURE -->
+
+<!-- START PAGE STRUCTURE -->
+<div class="section sm" id="page-structure">
+    <h1 class="page-header">Page structure</h1>
+    <div class="showcase-screen">
+        <p>
+            All template files have fixed structure consisting of <code>header</code>, <code>top menu</code>, <code>sidebar menu</code>, <code>quick sidebar</code>, <code>content</code> and <code>footer</code> as shown below:
+            <br/><br/>
+            <img src="../../../assets/documentation/img/structures/page-structure-yii.jpg" alt="..."/>
+        </p>
+        <p>
+            Page structure design on Blankon among others :
+        </p>
+        <ul>
+            <li>Beginning of page</li>
+            <li>Page head</li>
+            <li>Header</li>
+            <li>Sidebar</li>
+            <li>Page content</li>
+            <li>Quick sidebar</li>
+            <li>Footer</li>
+            <li>End of page (Javascripts)</li>
+        </ul>
+        <p>
+            Please see on <a href="#html-structure">base HTML structure</a>, if you are going to put each section page
+        </p>
+    </div>
+
+    <h4 class="no-margin">Beginning of page</h4>
+    <p>
+        Below code is used at the beginning of all HTML pages to detect Internet Explorer browser version and set a spesific class applied to Internet Explorer versions.
+    </p>
+<pre class="html-code scroll">
+&lt;!-- START @HEAD --&gt;
+    &lt;head&gt;
+        &lt;!-- START @META SECTION --&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;Blankon is a theme fullpack admin template powered by Twitter bootstrap 3 front-end framework. Included are multiple example pages, elements styles, and javascript widgets to get your project started.&quot;&gt;
+        &lt;meta name=&quot;keywords&quot; content=&quot;&quot;&gt;
+        &lt;meta name=&quot;author&quot; content=&quot;Djava UI&quot;&gt;
+        &lt;title&gt;&lt;?= $this-&gt;title ?&gt;&lt;/title&gt;
+        &lt;!--/ END META SECTION --&gt;
+
+        &lt;!-- START @FAVICONS --&gt;
+        &lt;link href=&quot;&lt;?= \Yii::$app-&gt;request-&gt;BaseUrl ?&gt;/global/img/ico/apple-touch-icon-144x144-precomposed.png&quot; rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;144x144&quot;&gt;
+        &lt;link href=&quot;&lt;?= \Yii::$app-&gt;request-&gt;BaseUrl ?&gt;/global/img/ico/apple-touch-icon-114x114-precomposed.png&quot; rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;114x114&quot;&gt;
+        &lt;link href=&quot;&lt;?= \Yii::$app-&gt;request-&gt;BaseUrl ?&gt;/global/img/ico/apple-touch-icon-72x72-precomposed.png&quot; rel=&quot;apple-touch-icon-precomposed&quot; sizes=&quot;72x72&quot;&gt;
+        &lt;link href=&quot;&lt;?= \Yii::$app-&gt;request-&gt;BaseUrl ?&gt;/global/img/ico/apple-touch-icon-57x57-precomposed.png&quot; rel=&quot;apple-touch-icon-precomposed&quot;&gt;
+        &lt;link href=&quot;&lt;?= \Yii::$app-&gt;request-&gt;BaseUrl ?&gt;/global/img/ico/apple-touch-icon.png&quot; rel=&quot;shortcut icon&quot;&gt;
+        &lt;!-- END FAVICONS --&gt;
+
+        &lt;!-- START @FONT STYLES --&gt;
+        &lt;link href=&quot;http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&quot; rel=&quot;stylesheet&quot;&gt;
+        &lt;!--/ END FONT STYLES --&gt;
+
+        &lt;?php $this-&gt;head();  ?&gt;
+
+    &lt;/head&gt;
+    &lt;!--/ END HEAD --&gt;
+</pre>
+
+    <h4 class="no-margin">Header</h4>
+    <p>Header contains of logo and top menu bar and it used in all pages. HTML code of header container shown below: </p>
+<pre class="html-code">
+&lt;!-- START @HEADER --&gt;
+	&lt;?php echo $this-&gt;render(&quot;_header-admin&quot;) ?&gt;
+&lt;!--/ END HEADER --&gt;
+</pre>
+
+    <h4 class="no-margin">Sidebar</h4>
+    <p>Sidebar contains main navigation menu. HTML code of sidebar container as shown below: </p>
+<pre class="html-code">
+            &lt;!-- START @SIDEBAR LEFT
+            |=========================================================================================================================|
+            |  TABLE OF CONTENTS (Apply to sidebar left class)                                                                        |
+            |=========================================================================================================================|
+            |  01. sidebar-box              |  Variant style sidebar left with box icon                                              |
+            |  02. sidebar-rounded          |  Variant style sidebar left with rounded icon                                          |
+            |  03. sidebar-circle            |  Variant style sidebar left with circle icon                                          |
+            |=========================================================================================================================|
+
+            --&gt;
+            &lt;?php echo $this-&gt;render(&quot;_sidebar-left&quot;) ;?&gt;
+            &lt;!--/ END SIDEBAR LEFT --&gt;
+</pre>
+
+    <h4 class="no-margin">Page content</h4>
+    <p>
+        Page content consists of page title, breadcrumbs and page's main body. HTML code of Content container as shown below:
+    </p>
+<pre class="html-code">
+&lt;!-- START @PAGE CONTENT --&gt;
+&lt;?php echo $content ; ?&gt;
+&lt;!--/ END PAGE CONTENT --&gt;
+</pre>
+
+    <h4 class="no-margin">Quick sidebar</h4>
+    <p>
+        Quick Sidebar contains of user chat, notifications and general settings layout. HTML code of sidebar container as shown below:
+    </p>
+<pre class="html-code">
+&lt;!-- START @SIDEBAR RIGHT --&gt;
+&lt;?php echo $this-&gt;render(&quot;_sidebar-right&quot;) ;?&gt;
+&lt;!--/ END SIDEBAR RIGHT --&gt;
+</pre>
+
+    <h4 class="no-margin">Footer</h4>
+    <p>Footer content consists of copyright. HTML code of content container as shown below: </p>
+<pre class="html-code">
+&lt;!-- Start footer content --&gt;
+&lt;footer class=&quot;footer-content&quot;&gt;
+    2014 &copy; Blankon Admin. Created by &lt;a href=&quot;http://djavaui.com/&quot; target=&quot;_blank&quot;&gt;Djava UI&lt;/a&gt;, Yogyakarta ID
+&lt;/footer&gt;&lt;!-- /.footer-content --&gt;
+&lt;!--/ End footer content --&gt;
+</pre>
+
+    <h4 class="no-margin">End of page (Javascripts)</h4>
+    <p>Javascript files are loaded in the end of page (except for ie9 compatibility js) with function $this->head(). This will reduce page load time.</p>
+
+
+</div>
+<!--/ END PAGE STRUCTURE -->
+
+<!-- START INSTALLATION GUIDE -->
+<div class="section sm" id="installation-guide">
+    <h1 class="page-header">Yii2 installation guide</h1>
+    <div class="showcase-screen">
+        <p>
+            This manual explains how to installation Blankon Yii2 on your project using Yii2 Framework.
+        </p>
+    </div>
+    <dl class="dl-horizontal bower">
+        <dt><span class="label label-success">Step 1</span></dt>
+        <dd>
+            <h4>Download Yii2</h4>
+            <p>Official site : <a href="http://www.yiiframework.com/download/" target="_blank">http://www.yiiframework.com/download</a></p>
+        </dd>
+        <dt><span class="label label-success">Step 2</span></dt>
+        <dd>
+            <h4>Install yii2-basic application via composer</h4>
+            <p>Detail installation with composer : <a href="http://www.yiiframework.com/doc-2.0/guide-start-installation.html" target="_blank">http://www.yiiframework.com/doc-2.0/guide-start-installation.html</a></p>
+        </dd>
+        <dt><span class="label label-success">Step 3</span></dt>
+        <dd>
+            <h4>Copy merge assets, config, controllers, and module folder from Blankon-yii2 to your Yii2 folder.</h4>
+            <img src="../../../assets/documentation/img/yii/yii2-folder.jpg" alt="..."/>
+        </dd>
+        <dt><span class="label label-success">Step 4</span></dt>
+        <dd>
+            <h4>Copy merge Blankon assets folder to your Yii2 project</h4>
+            <img src="../../../assets/documentation/img/blankon-assets.jpg" alt="..."/>
+        </dd>
+        <dt><span class="label label-success">Step 5</span></dt>
+        <dd>
+            <h4>Go to config folder, open web.php and change this line</h4>
+<pre class="js-code">
+'aliases'=>[
+        '@asset'=>  'path assets Blankon'
+    ]
+</pre>
+        </dd>
+        <dt><span class="label label-success">Step 6</span></dt>
+        <dd>
+            <h4>Open browser and go to web folder, you will be redirect to admin module.</h4>
+            <p>Example URL browser : <a href="http://localhost/blankon-fullpack-admin-theme/1.0.6/production/admin/yii2/web/index.php?r=admin%2Fdashboard%2Findex" target="_blank">http://localhost/blankon-fullpack-admin-theme/1.0.6/production/admin/yii2/web/index.php?r=admin%2Fdashboard%2Findex</a></p>
+            <p>Congratulations! you can now starting Blankon yii2 app :D</p>
+        </dd>
+    </dl>
+
+
+</div>
+<!--/ END INSTALLATION GUIDE -->
+
+<!-- START LESS SUPPORT -->
+<div class="section sm" id="less-support">
+    <h1 class="page-header">LESS support</h1>
+    <div class="showcase-screen">
+        <p>
+            Blankon using LESS in the development, If you do not understand LESS, you can visit the official website LESS
+            <a href="http://lesscss.org/" target="_blank">www.lesscss.org</a>
+        </p>
+
+        <p>
+            This file also contains style variable, so making it easier for you to redesign the color, size etc as you'd expect.
+        </p>
+        <p class="no-margin">
+            We recommend you to use koala-app from <a href="http://koala-app.com/" target="_blank">www.koala-app.com</a> to compile realtime the LESS files.
+        </p>
+    </div>
+
+    <p>Refer the below master LESS files to be compiled to spesific paths:</p>
+
+    <h4>Yii style</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered table-theme table-striped">
+            <thead>
+            <tr>
+                <th>Compiling Master LESS File Path</th>
+                <th>Compiled CSS Output File Path</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code>assets/admin/less/yii-custom.less</code></td>
+                <td><code>assets/admin/css/yii-custom.css</code></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<!--/ END LESS SUPPORT -->
+
+<!-- START UI PANELS -->
+<div class="section sm" id="ui-components">
+    <h1 class="page-header">UI Components</h1>
+    <div class="showcase-screen">
+        <p>
+            This template's CSS just like a framework, I mean I have created some CSS classes that can re-usable to create more than one elements.
+            For example, in Bootstrap CSS we know some classes like<code>panel</code>, <code>table</code>, <code>bg-success</code> etc. Of course I use them
+            to develop some elements within this template. You can find this class in
+            <code>components.css</code> file. For example to use <code>panel</code> version on blankon, just see below :
+        </p>
+    </div>
+
+    <select id="components-list" class="form-control input-lg chosen-select">
+        <option value="#">Choose UI Components</option>
+        <option value="admin%2Fcomponent%2Fgridsystem">Grid system</option>
+        <option value="admin%2Fcomponent%2Fbuttons">Button</option>
+        <option value="admin%2Fcomponent%2Fpanels">Panel</option>
+        <option value="admin%2Fcomponent%2Falerts">Alerts</option>
+        <option value="admin%2Fcomponent%2Ffontawesome">Font Awesome icon</option>
+        <option value="admin%2Fcomponent%2Fglyphicons">Glyphicons icon</option>
+        <option value="admin%2Fcomponent%2Fmapicons">Maps icon</option>
+        <option value="admin%2Fcomponent%2Fweathericons">Weather icon</option>
+        <option value="admin%2Fcomponent%2Fmodals">Modal</option>
+        <option value="admin%2Fcomponent%2Fsliders">Slider</option>
+        <option value="admin%2Fcomponent%2Ftabs">Tab</option>
+        <option value="admin%2Fcomponent%2Ftabs">Accordion</option>
+        <option value="admin%2Fcomponent%2Fother">Ribbon</option>
+        <option value="admin%2Fcomponent%2Fother">Thumbnail</option>
+        <option value="admin%2Fcomponent%2Fother">Breadcrumb</option>
+        <option value="admin%2Fcomponent%2Fother">Star rating</option>
+        <option value="admin%2Fcomponent%2Fother">Loader</option>
+        <option value="admin%2Fcomponent%2Fother">Pagination</option>
+        <option value="admin%2Fcomponent%2Fother">Label</option>
+        <option value="admin%2Fcomponent%2Fother">Typography</option>
+        <option value="admin%2Fcomponent%2Fother">Badge</option>
+        <option value="admin%2Fcomponent%2Fother">Progress bar</option>
+        <option value="admin%2Fcomponent%2Fother">Well</option>
+    </select>
+
+    <div class="text-vertically-center">
+        <h1 class="no-margin">
+            <i class="fa fa-qrcode"></i>
+            QUICK SEARCH UI COMPONENTS
+        </h1>
+    </div>
+
+</div>
+<!--/ END UI PANELS -->
+
+<!-- START PLUGINS -->
+<div class="section sm" id="plugins">
+    <h1 class="page-header">Plugins</h1>
+    <div class="showcase-screen">
+        <p>
+            There are some required files to included before you could use JS plugins, e.g <code>google map</code>, <code>morris</code>, <code>datatables</code> etc.
+            I will show you necessary <code>HTML</code>, <code>CSS</code> and or <code>Javascript</code> files which
+            should included before you work with all plugins on Blankon. Here I show only the main plugin from AngularJS.
+            If you want to see the others plugin can be found <a href="../../admin/html/full-documentation.html#plugins" target="_blank">here</a>
+        </p>
+    </div>
+
+    <select id="plugins-list" class="form-control input-lg chosen-select">
+        <option value="choose-plugin">Choose Plugin</option>
+        <option value="animate">Animate</option>
+        <option value="bootbox">Bootbox</option>
+        <option value="fuelux">Fuelux</option>
+        <option value="gritter">Gritter notification</option>
+        <option value="holder">Holder.js</option>
+        <option value="ion-rangeslider">Ion rangeSlider</option>
+        <option value="ion-sounds">Ion sounds</option>
+        <option value="jasny-bootstrap">Jasny bootstrap</option>
+        <option value="jquery-cookie">JQuery cookie</option>
+        <option value="jquery-easing">JQuery easing</option>
+        <option value="jquery-mockjax">JQuery mockjax</option>
+        <option value="jquery-mousewheel">JQuery mousewheel</option>
+        <option value="jquery-nicescroll">JQuery nicescroll</option>
+        <option value="jquery-snippet">JQuery snippet</option>
+        <option value="jquery-smooth-scroll">JQuery smooth scroll</option>
+        <option value="jquery-waypoints">JQuery waypoints</option>
+        <option value="masonry">Masonry</option>
+        <option value="ndoboost">Ndoboost</option>
+        <option value="prettify">Prettify</option>
+        <option value="viewport-resizer">Viewport resizer</option>
+        <optgroup label="BOOTSTRAP (8)">
+            <option value="twitter-bootstrap">Twitter bootstrap</option>
+            <option value="bootstrap-calendar">Bootstrap calendar</option>
+            <option value="bootstrap-datepicker">Bootstrap datepicker</option>
+            <option value="bootstrap-maxlength">Bootstrap maxlength</option>
+            <option value="bootstrap-switch">Bootstrap switch</option>
+            <option value="bootstrap-session-timeout">Bootstrap session timeout</option>
+            <option value="bootstrap-taginput">Bootstrap taginput</option>
+            <option value="bootstrap-wizard">Bootstrap wizard</option>
+            <option value="bootstrap-wysihtml5">Bootstrap wysihtml5</option>
+        </optgroup>
+        <optgroup label="CORE (5)">
+            <option value="jquery">JQuery</option>
+            <option value="jstimezonedetect">Jstimezonedetect</option>
+            <option value="less">LESS</option>
+            <option value="raphael">Raphael</option>
+            <option value="underscore">Underscore</option>
+        </optgroup>
+        <optgroup label="CHART (5)">
+            <option value="c3js">C3JS</option>
+            <option value="chartjs">ChartJS</option>
+            <option value="flot">Flot</option>
+            <option value="morris">Morris</option>
+            <option value="jquery-sparklines">JQuery sparklines</option>
+        </optgroup>
+        <optgroup label="FORM (6)">
+            <option value="autosize">Autosize</option>
+            <option value="dropzone">Dropzone</option>
+            <option value="typeahead">Typeahead</option>
+            <option value="chosen">Chosen</option>
+            <option value="jquery-inputmask">JQuery inputmask</option>
+            <option value="jquery-validation">JQuery validation</option>
+        </optgroup>
+        <optgroup label="MAP (2)">
+            <option value="jqvmap">JQVMap</option>
+            <option value="gmap3">Gmap3</option>
+        </optgroup>
+        <optgroup label="ICON (4)">
+            <option value="font-awesome">Font awesome</option>
+            <option value="map-icons">Map icons</option>
+            <option value="weather-icons">Weather icons</option>
+            <option value="skycons">Skycons</option>
+        </optgroup>
+        <optgroup label="TABLE (1)">
+            <option value="datatables">Datatables</option>
+        </optgroup>
+        <optgroup label="TEXT EDITOR (1)">
+            <option value="summernote">Summernote</option>
+        </optgroup>
+    </select>
+
+    <div id="choose-plugin" class="plugins-wrap text-vertically-center">
+        <h1 class="no-margin">
+            <i class="fa fa-plug"></i>
+            PLEASE CHOOSE POWERFULL PLUGINS
+        </h1>
+    </div>
+
+    <div id="animate" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Just-add-water CSS animation, animate.css is a bunch of cool, fun, and cross-browser animations for you to use in your projects.
+                Great for emphasis, home pages, sliders, and general just-add-water-awesomeness.
+            </p>
+            <p>
+                Official website : <a href="http://daneden.github.io/animate.css/" target="_blank">http://daneden.github.io/animate.css</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;h1 class=&quot;animated fadeIn&quot;&gt;Blankon Fullpack Admin Theme just $18&lt;/h1&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code no-margin">
+&lt;link href=&quot;../../../assets/global/plugins/animate/animate.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="bootbox" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Bootbox.js is a small JavaScript library which allows you to create programmatic dialog boxes using Bootstrap modals, without having to worry about creating, managing or removing any of the required DOM elements or JS event handlers.
+            </p>
+            <p>
+                Official website : <a href="http://bootboxjs.com/" target="_blank">http://bootboxjs.com</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code">
+&lt;script src=&quot;../../../assets/global/plugins/bootbox/bootbox.js&quot;&gt;&lt;/script&gt;
+</pre>
+            <h4>SCRIPT (JS)</h4>
+<pre class="js-code no-margin">
+&lt;!-- ALERT --&gt;
+bootbox.alert(&quot;Hello world!&quot;, function() {
+    Example.show(&quot;Hello world callback&quot;);
+});
+
+&lt;!-- CONFIRM --&gt;
+bootbox.confirm(&quot;Are you sure?&quot;, function(result) {
+    Example.show(&quot;Confirm result: &quot;+result);
+});
+
+&lt;!-- PROMPT --&gt;
+bootbox.prompt(&quot;What is your name?&quot;, function(result) {
+    if (result === null) {
+        Example.show(&quot;Prompt dismissed&quot;);
+    } else {
+        Example.show(&quot;Hi &lt;b&gt;&quot;+result+&quot;&lt;/b&gt;&quot;);
+    }
+});
+
+&lt;!-- CUSTOM DIALOG --&gt;
+bootbox.dialog(
+    {
+        message: &quot;I am a custom dialog&quot;,
+        title: &quot;Custom title&quot;,
+        buttons: {
+        success: {
+        label: &quot;Success!&quot;,
+        className: &quot;btn-success&quot;,
+        callback: function() {
+        Example.show(&quot;great success&quot;);
+    }
+},
+danger:
+    {
+        label: &quot;Danger!&quot;,
+        className: &quot;btn-danger&quot;,
+        callback: function() {
+        Example.show(&quot;uh oh, look out!&quot;);
+    }
+},
+main:
+    {
+        label: &quot;Click ME!&quot;,
+        className: &quot;btn-primary&quot;,
+        callback: function() {
+        Example.show(&quot;Primary button&quot;);
+    }
+}
+}
+});
+</pre>
+
+        </div>
+    </div>
+
+    <div id="twitter-bootstrap" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+            </p>
+            <p>
+                Official website : <a href="http://getbootstrap.com/" target="_blank">http://getbootstrap.com</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code no-margin">
+&lt;link href=&quot;../../../assets/global/plugins/bootstrap/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code">
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="bootstrap-calendar" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Full view calendar with year, month, week and day views based on templates with Twitter Bootstrap.
+            </p>
+            <p>
+                Official website : <a href="http://bootstrap-calendar.azurewebsites.net/" target="_blank">http://bootstrap-calendar.azurewebsites.net</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/page-calendar.html" target="_blank">page-calendar.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code scroll">
+&lt;div class=&quot;calendar-toolbar&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-4 col-sm-4 col-xs-4&quot;&gt;
+            &lt;!-- Start offcanvas btn menu calendar: This menu will take position at the top of calendar (mobile only). --&gt;
+            &lt;div class=&quot;btn-group hidden-lg hidden-md&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-theme btn-sm dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                    &lt;i class=&quot;fa fa-bars fa-2x&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
+                    &lt;li&gt;
+                        &lt;a href=&quot;#&quot; data-calendar-nav=&quot;prev&quot;&gt;Prev&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href=&quot;#&quot; data-calendar-nav=&quot;today&quot;&gt;Today&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href=&quot;#&quot; data-calendar-nav=&quot;next&quot;&gt;Next&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;hidden-sm hidden-xs&quot;&gt;
+                &lt;button class=&quot;btn btn-theme btn-sm rounded&quot; data-calendar-nav=&quot;prev&quot;&gt;&lt;i class=&quot;fa fa-angle-left&quot;&gt;&lt;/i&gt; Prev&lt;/button&gt;
+                &lt;button class=&quot;btn btn-theme btn-sm rounded&quot; data-calendar-nav=&quot;today&quot;&gt;Today&lt;/button&gt;
+                &lt;button class=&quot;btn btn-theme btn-sm rounded&quot; data-calendar-nav=&quot;next&quot;&gt;Next &lt;i class=&quot;fa fa-angle-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-4 col-sm-4 col-xs-4&quot;&gt;
+            &lt;div class=&quot;page-header no-border no-margin no-padding&quot;&gt;&lt;h4 class=&quot;no-border no-margin no-padding text-center text-capitalize&quot;&gt;&nbsp;&lt;/h4&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-4 col-sm-4 col-xs-4&quot;&gt;
+            &lt;!-- Start offcanvas btn menu calendar: This menu will take position at the top of calendar (mobile only). --&gt;
+            &lt;div class=&quot;btn-group calendar-menu-mobile pull-right hidden-lg hidden-md&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-theme btn-sm dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;
+                    &lt;i class=&quot;fa fa-bars fa-2x&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+                &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
+                    &lt;li&gt;
+                        &lt;a href=&quot;#&quot; data-calendar-view=&quot;year&quot;&gt;Prev&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href=&quot;#&quot; data-calendar-view=&quot;month&quot;&gt;Month&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href=&quot;#&quot; data-calendar-view=&quot;week&quot;&gt;Week&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        &lt;a href=&quot;#&quot; data-calendar-view=&quot;day&quot;&gt;Day&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;pull-right hidden-sm hidden-xs&quot;&gt;
+                &lt;button class=&quot;btn btn-theme btn-sm rounded&quot; data-calendar-view=&quot;year&quot;&gt;Year&lt;/button&gt;
+                &lt;button class=&quot;btn btn-theme btn-sm active rounded&quot; data-calendar-view=&quot;month&quot;&gt;Month&lt;/button&gt;
+                &lt;button class=&quot;btn btn-theme btn-sm rounded&quot; data-calendar-view=&quot;week&quot;&gt;Week&lt;/button&gt;
+                &lt;button class=&quot;btn btn-theme btn-sm rounded&quot; data-calendar-view=&quot;day&quot;&gt;Day&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&quot;calendar&quot; class=&quot;rounded&quot;&gt;&lt;/div&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/bootstrap-calendar/css/calendar.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jstimezonedetect/jstz.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/nl-NL.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/fr-FR.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/de-DE.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/el-GR.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/it-IT.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/pl-PL.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/pt-BR.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/ro-RO.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/es-MX.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/es-ES.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/ru-RU.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/sv-SE.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/zh-CN.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/cs-CZ.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/ko-KR.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/language/id-ID.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-calendar/js/calendar.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING BOOTSTRAP CALENDAR, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.calendar.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="bootstrap-datepicker" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Add datepicker picker to field or to any other element.
+            </p>
+            <p>
+                Official website : <a href="http://vitalets.github.io/bootstrap-datepicker/" target="_blank">http://vitalets.github.io/bootstrap-datepicker</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/form-advanced.html" target="_blank">form-advanced.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;input type=&quot;text&quot; class=&quot;form-control&quot; value=&quot;02-16-2012&quot; id=&quot;dp1&quot;&gt;
+
+&lt;input type=&quot;text&quot; class=&quot;form-control&quot; value=&quot;02/16/12&quot; data-date-format=&quot;mm/dd/yy&quot; id=&quot;dp2&quot;&gt;
+
+&lt;div id=&quot;dp3&quot; data-date=&quot;12-02-2012&quot; data-date-format=&quot;dd-mm-yyyy&quot;&gt;&lt;/div&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/bootstrap-datepicker/css/datepicker.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING BOOTSTRAP DATEPICKER, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.form.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="bootstrap-maxlength" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                This plugin integrates by default with Twitter bootstrap using badges to display the maximum length of the field where the user is inserting text. This plugin uses the HTML5 attribute "maxlength" to work.
+            </p>
+            <p>
+                Official website : <a href="http://mimo84.github.io/bootstrap-maxlength/" target="_blank">http://mimo84.github.io/bootstrap-maxlength</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/form-element.html" target="_blank">form-element.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;textarea class=&quot;form-control character-limit&quot; maxlength=&quot;20&quot; rows=&quot;5&quot; placeholder=&quot;20 character limit&quot;&gt;&lt;/textarea&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/bootstrap-datepicker/css/datepicker.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING BOOTSTRAP CALENDAR, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.form.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="bootstrap-switch" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Turn checkboxes and radio buttons in toggle switches.
+            </p>
+            <p>
+                Official website : <a href="http://www.bootstrap-switch.org/" target="_blank">http://www.bootstrap-switch.org</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/form-advanced.html" target="_blank">form-advanced.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;input type=&quot;checkbox&quot; class=&quot;switch&quot; name=&quot;switch&quot; checked data-on-text=&quot;ON&quot; data-off-text=&quot;OFF&quot; data-on-color=&quot;default&quot;&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING BOOTSTRAP SWITCH, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.form.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="bootstrap-session-timeout" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Session timeout and keep-alive control with a nice Bootstrap warning dialog.
+            </p>
+            <p>
+                Official website : <a href="https://github.com/orangehill/bootstrap-session-timeout" target="_blank">https://github.com/orangehill/bootstrap-session-timeout</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/dashboard.html" target="_blank">dashboard.html</a>, please waiting 20 seconds for view modal info session time.
+            </p>
+            <hr class="dotted"/>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-session-timeout/dist/bootstrap-session-timeout.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING BOOTSTRAP SESSION TIMEOUT, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.dashboard.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="bootstrap-taginput" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                jQuery plugin providing a Twitter Bootstrap user interface for managing tags.
+            </p>
+            <p>
+                Official website : <a href="http://timschlechter.github.io/bootstrap-tagsinput/examples/" target="_blank">http://timschlechter.github.io/bootstrap-tagsinput/examples</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/form-element.html" target="_blank">form-element.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;input type=&quot;text&quot; value=&quot;Tag 1,Tag 2,Tag 3&quot; data-role=&quot;tagsinput&quot; class=&quot;form-control&quot; placeholder=&quot;Type and enter&quot; /&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/bootstrap-taginput/bootstrap-tagsinput.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-taginput/bootstrap-tagsinput.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING BOOTSTRAP TAGINPUT, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.form.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="bootstrap-wizard" class="plugins-wrap">
+    <div class="showcase-screen">
+    <p>
+        This twitter bootstrap plugin builds a wizard out of a formatter tabbable structure. It allows to build a wizard functionality using buttons to go through the different wizard steps and using events allows to hook into each step individually.
+    </p>
+    <p>
+        Official website : <a href="https://github.com/VinceG/twitter-bootstrap-wizard" target="_blank">https://github.com/VinceG/twitter-bootstrap-wizard</a>
+    </p>
+    <p>
+        Demo page : <a href="../../../production/admin/html/form-wizard.html" target="_blank">form-wizard.html</a>
+    </p>
+    <hr class="dotted"/>
+    <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code scroll">
+&lt;div id=&quot;basic-wizard-horizontal&quot;&gt;
+    &lt;h4&gt;Basic Wizard Horizontal&lt;/h4&gt;
+    &lt;div class=&quot;panel panel-tab rounded shadow&quot;&gt;
+        &lt;!-- Start tabs heading --&gt;
+        &lt;div class=&quot;panel-heading no-padding&quot;&gt;
+            &lt;ul class=&quot;nav nav-tabs&quot;&gt;
+                &lt;li class=&quot;active&quot;&gt;
+                    &lt;a href=&quot;#tab1-1&quot; data-toggle=&quot;tab&quot;&gt;
+                        &lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;
+                        &lt;div&gt;
+                            &lt;span class=&quot;text-strong&quot;&gt;Step 1&lt;/span&gt;
+                            &lt;span&gt;Personal&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;#tab1-2&quot; data-toggle=&quot;tab&quot;&gt;
+                        &lt;i class=&quot;fa fa-file-text&quot;&gt;&lt;/i&gt;
+                        &lt;div&gt;
+                            &lt;span class=&quot;text-strong&quot;&gt;Step 2&lt;/span&gt;
+                            &lt;span&gt;Product&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;#tab1-3&quot; data-toggle=&quot;tab&quot;&gt;
+                        &lt;i class=&quot;fa fa-credit-card&quot;&gt;&lt;/i&gt;
+                        &lt;div&gt;
+                            &lt;span class=&quot;text-strong&quot;&gt;Step 3&lt;/span&gt;
+                            &lt;span&gt;Payment&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                    &lt;a href=&quot;#tab1-4&quot; data-toggle=&quot;tab&quot;&gt;
+                        &lt;i class=&quot;fa fa-check-circle&quot;&gt;&lt;/i&gt;
+                        &lt;div&gt;
+                            &lt;span class=&quot;text-strong&quot;&gt;Step 4&lt;/span&gt;
+                            &lt;span&gt;Confirmation&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;&lt;!-- /.panel-heading --&gt;
+        &lt;!--/ End tabs heading --&gt;
+
+        &lt;!-- Start tabs content --&gt;
+        &lt;div class=&quot;panel-body&quot;&gt;
+            &lt;form action=&quot;#&quot; class=&quot;tab-content form-horizontal&quot;&gt;
+                &lt;div class=&quot;tab-pane fade in active inner-all&quot; id=&quot;tab1-1&quot;&gt;
+                    &lt;h4 class=&quot;page-header&quot;&gt;Personal&lt;/h4&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;col-sm-2&quot;&gt;First Name&lt;/label&gt;
+                        &lt;div class=&quot;col-sm-4&quot;&gt;
+                            &lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;col-sm-2&quot;&gt;Last Name&lt;/label&gt;
+                        &lt;div class=&quot;col-sm-4&quot;&gt;
+                            &lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group mb-0&quot;&gt;
+                        &lt;label class=&quot;col-sm-2&quot;&gt;Gender&lt;/label&gt;
+                        &lt;div class=&quot;col-sm-4&quot;&gt;
+                            &lt;div class=&quot;rdio rdio-theme inline mr-10&quot;&gt;
+                                &lt;input checked=&quot;checked&quot; id=&quot;male&quot; name=&quot;radio&quot; type=&quot;radio&quot;&gt;
+                                &lt;label for=&quot;male&quot;&gt;Male&lt;/label&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;rdio rdio-theme inline&quot;&gt;
+                                &lt;input id=&quot;female&quot; name=&quot;radio&quot; type=&quot;radio&quot;&gt;
+                                &lt;label for=&quot;female&quot;&gt;Female&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;tab-pane fade inner-all&quot; id=&quot;tab1-2&quot;&gt;
+                    &lt;h4 class=&quot;page-header&quot;&gt;Product&lt;/h4&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;col-sm-2&quot;&gt;Product ID&lt;/label&gt;
+                        &lt;div class=&quot;col-sm-4&quot;&gt;
+                            &lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;col-sm-2&quot;&gt;Product Name&lt;/label&gt;
+                        &lt;div class=&quot;col-sm-4&quot;&gt;
+                            &lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group mb-0&quot;&gt;
+                        &lt;label class=&quot;col-sm-2&quot;&gt;Category&lt;/label&gt;
+                        &lt;div class=&quot;col-sm-4&quot;&gt;
+                            &lt;select class=&quot;form-control&quot;&gt;
+                                &lt;option value=&quot;&quot;&gt;Choose One&lt;/option&gt;
+                                &lt;option value=&quot;Iphone&quot;&gt;Iphone&lt;/option&gt;
+                                &lt;option value=&quot;Android&quot;&gt;Android&lt;/option&gt;
+                                &lt;option value=&quot;Blackberry&quot;&gt;Blackberry&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;tab-pane fade inner-all&quot; id=&quot;tab1-3&quot;&gt;
+                    &lt;h4 class=&quot;page-header&quot;&gt;Payment&lt;/h4&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;col-sm-2&quot;&gt;Credit Card Type&lt;/label&gt;
+                        &lt;div class=&quot;col-sm-4&quot;&gt;
+                            &lt;select class=&quot;form-control&quot;&gt;
+                                &lt;option value=&quot;&quot;&gt;Choose Credit Card&lt;/option&gt;
+                                &lt;option value=&quot;amex&quot;&gt;American Express&lt;/option&gt;
+                                &lt;option value=&quot;discover&quot;&gt;Discover&lt;/option&gt;
+                                &lt;option value=&quot;mastercard&quot;&gt;MasterCard&lt;/option&gt;
+                                &lt;option value=&quot;visa&quot;&gt;Visa&lt;/option&gt;
+                            &lt;/select&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group&quot;&gt;
+                        &lt;label class=&quot;col-sm-2&quot;&gt;Expiration&lt;/label&gt;
+                        &lt;div class=&quot;col-sm-4&quot;&gt;
+                            &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col-sm-6&quot;&gt;
+                                    &lt;select class=&quot;form-control&quot;&gt;
+                                        &lt;option value=&quot;&quot;&gt;Date Month&lt;/option&gt;
+                                        &lt;option value=&quot;01&quot;&gt;01 - Jan&lt;/option&gt;
+                                        &lt;option value=&quot;02&quot;&gt;02 - Feb&lt;/option&gt;
+                                        &lt;option value=&quot;03&quot;&gt;03 - Mar&lt;/option&gt;
+                                        &lt;option value=&quot;04&quot;&gt;04 - Apr&lt;/option&gt;
+                                        &lt;option value=&quot;05&quot;&gt;05 - May&lt;/option&gt;
+                                        &lt;option value=&quot;06&quot;&gt;06 - Jun&lt;/option&gt;
+                                        &lt;option value=&quot;07&quot;&gt;07 - Jul&lt;/option&gt;
+                                        &lt;option value=&quot;08&quot;&gt;08 - Aug&lt;/option&gt;
+                                        &lt;option value=&quot;09&quot;&gt;09 - Sep&lt;/option&gt;
+                                        &lt;option value=&quot;10&quot;&gt;10 - Oct&lt;/option&gt;
+                                        &lt;option value=&quot;11&quot;&gt;11 - Nov&lt;/option&gt;
+                                        &lt;option value=&quot;12&quot;&gt;12 - Dec&lt;/option&gt;
+                                    &lt;/select&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col-sm-6&quot;&gt;
+                                    &lt;select class=&quot;form-control&quot;&gt;
+                                        &lt;option value=&quot;&quot;&gt;Year&lt;/option&gt;
+                                        &lt;option value=&quot;2007&quot;&gt;2007&lt;/option&gt;
+                                        &lt;option value=&quot;2008&quot;&gt;2008&lt;/option&gt;
+                                        &lt;option value=&quot;2009&quot;&gt;2009&lt;/option&gt;
+                                        &lt;option value=&quot;2010&quot;&gt;2010&lt;/option&gt;
+                                        &lt;option value=&quot;2011&quot;&gt;2011&lt;/option&gt;
+                                        &lt;option value=&quot;2012&quot;&gt;2012&lt;/option&gt;
+                                        &lt;option value=&quot;2013&quot;&gt;2013&lt;/option&gt;
+                                        &lt;option value=&quot;2014&quot;&gt;2014&lt;/option&gt;
+                                        &lt;option value=&quot;2015&quot;&gt;2015&lt;/option&gt;
+                                        &lt;option value=&quot;2016&quot;&gt;2016&lt;/option&gt;
+                                    &lt;/select&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;form-group mb-0&quot;&gt;
+                        &lt;label class=&quot;col-sm-2&quot;&gt;Credit Card Number&lt;/label&gt;
+                        &lt;div class=&quot;col-sm-4&quot;&gt;
+                            &lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;tab-pane fade inner-all&quot; id=&quot;tab1-4&quot;&gt;
+                    &lt;h4 class=&quot;page-header&quot;&gt;Confirmation&lt;/h4&gt;
+                    &lt;div class=&quot;pl-10&quot;&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+                        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;button type=&quot;submit&quot; class=&quot;btn btn-success ml-10&quot;&gt;Submit&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;&lt;!-- /.panel-body --&gt;
+        &lt;!--/ End tabs content --&gt;
+
+        &lt;!-- Start pager --&gt;
+        &lt;div class=&quot;panel-footer&quot;&gt;
+            &lt;ul class=&quot;pager wizard no-margin&quot;&gt;
+                &lt;li class=&quot;previous&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Previous&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;next&quot;&gt;&lt;a href=&quot;javascript:void(0);&quot;&gt;Next&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;&lt;!-- /.panel-footer --&gt;
+        &lt;!--/ End pager --&gt;
+
+    &lt;/div&gt;&lt;!-- /.panel --&gt;
+&lt;/div&gt;&lt;!-- /#basic-wizard-horizontal --&gt;
+</pre>
+    <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+
+    <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING BOOTSTRAP WIZARD, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.form.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+    </div>
+    </div>
+
+    <div id="bootstrap-wysihtml5" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                bootstrap-wysihtml5 is a javascript plugin that makes it easy to create simple, beautiful wysiwyg editors with the help of wysihtml5 and Twitter Bootstrap.
+            </p>
+            <p>
+                Official website : <a href="http://jhollingworth.github.io/bootstrap-wysihtml5/" target="_blank">http://jhollingworth.github.io/bootstrap-wysihtml5</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/form-wysiwyg.html" target="_blank">form-wysiwyg.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;textarea id=&quot;wysihtml5-textarea&quot; class=&quot;form-control&quot; rows=&quot;10&quot; placeholder=&quot;Enter text ...&quot;&gt;&lt;/textarea&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING BOOTSTRAP WYSIHTML5, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.form.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="chosen" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Chosen is a jQuery plugin that makes long, unwieldy select boxes much more user-friendly.
+            </p>
+            <p>
+                Official website : <a href="http://harvesthq.github.io/chosen/" target="_blank">http://harvesthq.github.io/chosen</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/form-element.html" target="_blank">form-element.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code scroll">
+&lt;select data-placeholder=&quot;Choose Your Favorite Football Team&quot; class=&quot;chosen-select&quot; tabindex=&quot;5&quot;&gt;
+    &lt;option value=&quot;0&quot;&gt;Choose Your Favorite Football Team&lt;/option&gt;
+    &lt;optgroup label=&quot;NFC EAST&quot;&gt;
+        &lt;option&gt;Dallas Cowboys&lt;/option&gt;
+        &lt;option&gt;New York Giants&lt;/option&gt;
+        &lt;option&gt;Philadelphia Eagles&lt;/option&gt;
+        &lt;option&gt;Washington Redskins&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;NFC NORTH&quot;&gt;
+        &lt;option&gt;Chicago Bears&lt;/option&gt;
+        &lt;option&gt;Detroit Lions&lt;/option&gt;
+        &lt;option&gt;Green Bay Packers&lt;/option&gt;
+        &lt;option&gt;Minnesota Vikings&lt;/option&gt;
+    &lt;/optgroup&gt;
+    &lt;optgroup label=&quot;NFC SOUTH&quot;&gt;
+        &lt;option&gt;Atlanta Falcons&lt;/option&gt;
+        &lt;option&gt;Carolina Panthers&lt;/option&gt;
+        &lt;option&gt;New Orleans Saints&lt;/option&gt;
+        &lt;option&gt;Tampa Bay Buccaneers&lt;/option&gt;
+    &lt;/optgroup&gt;
+&lt;/select&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/chosen/chosen.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/chosen/chosen.jquery.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING CHOSEN SELECT, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.form.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="datatables" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Datatables is hands down the best jQuery table plugin. I have enjoyed using it over the years and highly recommend it to all. Recently, I have tried to use Datatables in an responsive web project.
+            </p>
+            <p>
+                Official website : <a href="https://github.com/Comanche/datatables-responsive" target="_blank">https://github.com/Comanche/datatables-responsive</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/table-datatable.html" target="_blank">table-datatable.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code scroll">
+&lt;table id=&quot;datatable-dom&quot; class=&quot;table table-striped table-lilac&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th data-class=&quot;expand&quot;&gt;Name&lt;/th&gt;
+            &lt;th data-hide=&quot;phone&quot;&gt;Position&lt;/th&gt;
+            &lt;th data-hide=&quot;phone&quot;&gt;Office&lt;/th&gt;
+            &lt;th data-hide=&quot;phone&quot;&gt;Age&lt;/th&gt;
+            &lt;th data-hide=&quot;phone,tablet&quot;&gt;Start date&lt;/th&gt;
+            &lt;th data-hide=&quot;phone,tablet&quot;&gt;Salary&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Tiger Nixon&lt;/td&gt;
+            &lt;td&gt;System Architect&lt;/td&gt;
+            &lt;td&gt;Edinburgh&lt;/td&gt;
+            &lt;td&gt;61&lt;/td&gt;
+            &lt;td&gt;2011/04/25&lt;/td&gt;
+            &lt;td&gt;$320,800&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Garrett Winters&lt;/td&gt;
+            &lt;td&gt;Accountant&lt;/td&gt;
+            &lt;td&gt;Tokyo&lt;/td&gt;
+            &lt;td&gt;63&lt;/td&gt;
+            &lt;td&gt;2011/07/25&lt;/td&gt;
+            &lt;td&gt;$170,750&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Ashton Cox&lt;/td&gt;
+            &lt;td&gt;Junior Technical Author&lt;/td&gt;
+            &lt;td&gt;San Francisco&lt;/td&gt;
+            &lt;td&gt;66&lt;/td&gt;
+            &lt;td&gt;2009/01/12&lt;/td&gt;
+            &lt;td&gt;$86,000&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Position&lt;/th&gt;
+            &lt;th&gt;Office&lt;/th&gt;
+            &lt;th&gt;Age&lt;/th&gt;
+            &lt;th&gt;Start date&lt;/th&gt;
+            &lt;th&gt;Salary&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/datatables/css/dataTables.bootstrap.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;../../../assets/global/plugins/datatables/css/datatables.responsive.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/datatables/js/jquery.dataTables.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/datatables/js/dataTables.bootstrap.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/datatables/js/datatables.responsive.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING DATATABLES, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.table.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="fuelux" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Extends Twitter Bootstrap with additional lightweight JavaScript controls. Easy to install, customize, update, and optimize. All functionality covered by live documentation and unit tests.
+            </p>
+            <p>
+                Official website : <a href="http://exacttarget.github.io/fuelux/" target="_blank">http://exacttarget.github.io/fuelux</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/fuelux/dist/css/fuelux.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/fuelux/dist/js/fuelux.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="holder" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Holder renders image placeholders entirely in browser. Placeholders can have custom colors, fonts, resizing behavior, and rendering engine (Canvas/SVG).
+            </p>
+            <p>
+                Official website : <a href="http://imsky.github.io/holder/" target="_blank">http://imsky.github.io/holder</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/holder/holder.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="font-awesome" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Font Awesome gives you scalable vector icons that can instantly be customized — size, color, drop shadow, and anything that can be done with the power of CSS.
+            </p>
+            <p>
+                Official website : <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">http://fortawesome.github.io/Font-Awesome</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/component-font-awesome.html" target="_blank">component-font-awesome.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+&lt;link href=&quot;../../../assets/global/plugins/font-awesome/css/font-awesome.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="map-icons" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                An icon font for use with Google Maps API and Google Places API using SVG markers and icon labels.
+            </p>
+            <p>
+                Official website : <a href="http://map-icons.com/" target="_blank">http://map-icons.com</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/component-map-icons.html" target="_blank">component-map-icons.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;div id=&quot;map-icons&quot; class=&quot;map map-lg&quot;&gt;&lt;/div&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/map-icons/css/map-icons.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;http://maps.googleapis.com/maps/api/js?sensor=false&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/map-icons/js/map-icons.min.js&quot;&gt;&lt;/script&gt;
+&lt;!--[if lt IE 7]&gt;
+&lt;script src=&quot;../../../assets/global/plugins/map-icons/js/map-icons-ie7.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="weather-icons" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Weather Icons is a font of 123 weather themed icons, ready to be dropped right into Bootstrap or any other project.
+            </p>
+            <p>
+                Official website : <a href="http://erikflowers.github.io/weather-icons/" target="_blank">http://erikflowers.github.io/weather-icons</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/component-weather-icons.html" target="_blank">component-weather-icons.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/weather-icons/css/weather-icons.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+        </div>
+    </div>
+
+    <div id="ion-rangeslider" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                cool, comfortable and easily customizable range slider.
+            </p>
+            <p>
+                Official website : <a href="http://ionden.com/a/plugins/ion.rangeSlider/en.html" target="_blank">http://ionden.com/a/plugins/ion.rangeSlider/en.html</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/component-sliders.html" target="_blank">component-sliders.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;input id=&quot;slider-1&quot; type=&quot;text&quot; name=&quot;&quot; value=&quot;&quot; /&gt
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/ion-rangeSlider/css/ion.rangeSlider.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/ion-rangeSlider/js/ion.rangeSlider.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING ION RANGESLIDER, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.slider.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="ion-sounds" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                JavaScript-plugin for playing sounds on user actions and page events.
+            </p>
+            <p>
+                Official website : <a href="http://ionden.com/a/plugins/ion.sound/en.html" target="_blank">http://ionden.com/a/plugins/ion.sound/en.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/ion-sound/js/ion.sound.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+            <h4>SCRIPTS (JS)</h4>
+<pre class="js-code scroll no-margin">
+$(document).ready(function(){
+    ion.sound({
+            sounds: [
+                {name: "beer_can_opening"},
+                {name: "bell_ring", volume: 0.6},
+                {name: "branch_break", volume: 0.3},
+                {name: "button_click"},
+                {name: "button_click_on"},
+                {name: "button_push"},
+                {name: "button_tiny", volume: 0.6},
+                {name: "camera_flashing"},
+                {name: "camera_flashing_2", volume: 0.6},
+                {name: "cd_tray"},
+                {name: "computer_error"},
+                {name: "door_bell"},
+                {name: "door_bump", volume: 0.3},
+                {name: "glass"},
+                {name: "keyboard_desk"},
+                {name: "light_bulb_breaking", volume: 0.6},
+                {name: "metal_plate"},
+                {name: "metal_plate_2"},
+                {name: "pop_cork"},
+                {name: "snap"},
+                {name: "staple_gun"},
+                {name: "tap", volume: 0.6},
+                {name: "water_droplet"},
+                {name: "water_droplet_2"},
+                {name: "water_droplet_3", volume: 0.6}
+            ],
+            path: "../../../assets/global/plugins/bower_components/ionsound/sounds/",
+            preload: true
+        });
+
+        // Add effect sound water droplet type 3
+        $('body').on('click', function(){
+            ion.sound.play("water_droplet_3");
+        });
+});
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jasny-bootstrap" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                The missing components for your favorite front-end framework.
+            </p>
+            <p>
+                Official website : <a href="http://jasny.github.io/bootstrap/" target="_blank">http://jasny.github.io/bootstrap</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/jasny-bootstrap-fileinput/css/jasny-bootstrap-fileinput.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jasny-bootstrap-fileinput/js/jasny-bootstrap.fileinput.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                jQuery is a fast, small, and feature-rich JavaScript library.
+            </p>
+            <p>
+                Official website : <a href="http://jquery.com/" target="_blank">http://jquery.com</a>
+            </p>
+            <hr class="dotted"/>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery/jquery.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery-cookie" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                A simple, lightweight jQuery plugin for reading, writing and deleting cookies.
+            </p>
+            <p>
+                Official website : <a href="https://github.com/carhartl/jquery-cookie" target="_blank">https://github.com/carhartl/jquery-cookie</a>
+            </p>
+            <hr class="dotted"/>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery-cookie/jquery.cookie.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery-easing" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                A jQuery plugin from GSGD to give advanced easing options.
+            </p>
+            <p>
+                Official website : <a href="http://gsgd.co.uk/sandbox/jquery/easing/" target="_blank">http://gsgd.co.uk/sandbox/jquery/easing</a>
+            </p>
+            <hr class="dotted"/>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery-easing/jquery.easing.1.3.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery-inputmask" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                jquery.inputmask is a jquery plugin which create an input mask. An inputmask helps the user with the input by ensuring a predefined format. This can be usefull for dates, numerics, phone numbers, ...
+            </p>
+            <p>
+                Official website : <a href="http://robinherbots.github.io/jquery.inputmask/" target="_blank">http://robinherbots.github.io/jquery.inputmask</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/form-advanced.html" target="_blank">form-advanced.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;input class=&quot;form-control input-sm&quot; data-inputmask=&quot;'alias': 'mm/dd/yyyy'&quot;&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING JQUERY INPUTMASK, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.form.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery-mockjack" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                The jQuery Mockjax Plugin provides a simple and extremely flexible interface for mocking or simulating ajax requests and responses.
+            </p>
+            <p>
+                Official website : <a href="https://github.com/appendto/jquery-mockjax" target="_blank">https://github.com/appendto/jquery-mockjax</a>
+            </p>
+            <hr class="dotted"/>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery-mockjax/jquery.mockjax.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery-mousewheel" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                A jQuery plugin that adds cross-browser mouse wheel support.
+            </p>
+            <p>
+                Official website : <a href="http://plugins.jquery.com/mousewheel/" target="_blank">http://plugins.jquery.com/mousewheel</a>
+            </p>
+            <hr class="dotted"/>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery-mousewheel/jquery.mousewheel.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery-nicescroll" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Nicescroll is a jquery plugin, for nice scrollbars with a very similar ios/mobile style.
+            </p>
+            <p>
+                Official website : <a href="http://areaaperta.com/nicescroll/" target="_blank">http://areaaperta.com/nicescroll</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery-niceScroll/jquery.nicescroll.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery-snippet" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                a plugins snippet code to clipboard.
+            </p>
+            <p>
+                Official website : <a href="http://www.steamdev.com/snippet/" target="_blank">http://www.steamdev.com/snippet</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+&lt;link href=&quot;../../../assets/global/plugins/jquery-snippet/jquery.snippet.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery-snippet/jquery.snippet.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery-smooth-scroll" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Automatically make same-page links scroll smoothly.
+            </p>
+            <p>
+                Official website : <a href="https://github.com/kswedberg/jquery-smooth-scroll" target="_blank">https://github.com/kswedberg/jquery-smooth-scroll</a>
+            </p>
+            <hr class="dotted"/>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery-smooth-scroll/jquery.smooth-scroll.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery-sparklines" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                This jQuery plugin generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript.
+            </p>
+            <p>
+                Official website : <a href="http://omnipotent.net/jquery.sparkline/" target="_blank">http://omnipotent.net/jquery.sparkline</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;span id=&quot;sparkline&quot;&gt;1,2,3,4,5,6,7,8,9,10&lt;/span&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery-sparkline/jquery.sparkline.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery-validation" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                This jQuery plugin makes simple clientside form validation easy, whilst still offering plenty of customization options.
+            </p>
+            <p>
+                Official website : <a href="http://omnipotent.net/jquery.sparkline/" target="_blank">http://omnipotent.net/jquery.sparkline</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/form-validation.html" target="_blank">form-validation.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code scroll">
+&lt;form class=&quot;form-horizontal form-bordered&quot; role=&quot;form&quot; id=&quot;basic-validate&quot; action=&quot;#&quot;&gt;
+    &lt;div class=&quot;form-body&quot;&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label class=&quot;col-sm-3 control-label&quot;&gt;Required &lt;span class=&quot;asterisk&quot;&gt;*&lt;/span&gt;&lt;/label&gt;
+            &lt;div class=&quot;col-sm-7&quot;&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control input-sm&quot; name=&quot;bv_required&quot; placeholder=&quot;just type&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- /.form-group --&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label class=&quot;col-sm-3 control-label&quot;&gt;Email&lt;/label&gt;
+            &lt;div class=&quot;col-sm-7&quot;&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control input-sm&quot; name=&quot;bv_email&quot; placeholder=&quot;your@mail.com&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- /.form-group --&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label class=&quot;col-sm-3 control-label&quot;&gt;Date&lt;/label&gt;
+            &lt;div class=&quot;col-sm-7&quot;&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control input-sm&quot; name=&quot;bv_date&quot; placeholder=&quot;mm/dd/yyyy&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- /.form-group --&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label class=&quot;col-sm-3 control-label&quot;&gt;URL&lt;/label&gt;
+            &lt;div class=&quot;col-sm-7&quot;&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control input-sm&quot; name=&quot;bv_url&quot; placeholder=&quot;http://yourwebsite.com&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- /.form-group --&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label class=&quot;col-sm-3 control-label&quot;&gt;Username&lt;/label&gt;
+            &lt;div class=&quot;col-sm-7&quot;&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control input-sm&quot; name=&quot;bv_username&quot; placeholder=&quot;just sample user ready : john, peter, bill, jokowi&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- /.form-group --&gt;
+    &lt;/div&gt;&lt;!-- /.form-body --&gt;
+    &lt;div class=&quot;form-footer&quot;&gt;
+        &lt;div class=&quot;col-sm-offset-3&quot;&gt;
+            &lt;button type=&quot;submit&quot; class=&quot;btn btn-theme&quot;&gt;Validate&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;&lt;!-- /.form-footer --&gt;
+&lt;/form&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery-validation/jquery.validate.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jquery-waypoints" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Waypoints is a jQuery plugin that makes it easy to execute a function whenever you scroll to an element.
+            </p>
+            <p>
+                Official website : <a href="https://github.com/imakewebthings/jquery-waypoints/" target="_blank">https://github.com/imakewebthings/jquery-waypoints</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jquery-waypoints/waypoints.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="jstimezonedetect" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Automatic Timezone Detection Using JavaScript.
+            </p>
+            <p>
+                Official website : <a href="http://pellepim.bitbucket.org/jstz/" target="_blank">http://pellepim.bitbucket.org/jstz</a>
+            </p>
+            <hr class="dotted"/>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/jstimezonedetect/jstz.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="less" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.
+            </p>
+            <p>
+                Official website : <a href="http://lesscss.org/" target="_blank">http://lesscss.org</a>
+            </p>
+            <hr class="dotted"/>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/less/less.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="masonry" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Masonry is a JavaScript grid layout library. It works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall. You’ve probably seen it in use all over the Internet.
+            </p>
+            <p>
+                Official website : <a href="http://masonry.desandro.com/" target="_blank">http://masonry.desandro.com</a>
+            </p>
+            <p>
+                Demo page : <a href="../../production/admin/html/page-blog-list.html" target="_blank">page-blog-list.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code">
+&lt;script src=&quot;../../../assets/global/plugins/masonry/masonry.pkgd.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+            <h4>SCRIPT (JS)</h4>
+<pre class="js-code no-margin">
+$(window).load(function(){
+                var container = document.querySelector('#blog-list');
+                var msnry = new Masonry( container, {
+                    // options
+                    columnWidth: '.col-xs-6',
+                    itemSelector: '.col-xs-6',
+                    isAnimated: true
+                });
+
+                // CHECK ON LOAD
+                if($(window).width() <= 480 )
+                    msnry.destroy();
+
+                // CHECK ON RESIZE
+                $(window).resize(function(){
+                    if($(this).width() <= 480 )
+                        msnry.destroy();
+                });
+            });
+</pre>
+
+        </div>
+    </div>
+
+    <div id="ndoboost" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Flat, simple, useful and responsive web template components based on Bootstrap.
+            </p>
+            <p>
+                Official website : <a href="http://ndoboost.com/" target="_blank">http://ndoboost.com</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;script src=&quot;../../../assets/global/plugins/ndoboost/css/ndoboost.min.css&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="prettify" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                syntax highlighting of code snippets in a web page.
+            </p>
+            <p>
+                Official website : <a href="https://code.google.com/p/google-code-prettify/source/browse/trunk/src/prettify.css" target="_blank">https://code.google.com/p/google-code-prettify/source/browse/trunk/src/prettify.css</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;pre class=&quot;prettyprint linenums&quot;&gt;
+    ...
+&lt;/pre&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/prettify/css/prettify.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/prettify/js/prettify.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="raphael" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Raphaël is a small JavaScript library that should simplify your work with vector graphics on the web.
+            </p>
+            <p>
+                Official website : <a href="http://raphaeljs.com/" target="_blank">http://raphaeljs.com</a>
+            </p>
+            <hr class="dotted"/>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/raphael/raphael-min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="skycons" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Skycons is a set of ten animated weather glyphs, procedurally generated by JavaScript using the HTML5 canvas tag.
+            </p>
+            <p>
+                Official website : <a href="http://darkskyapp.github.io/skycons/" target="_blank">http://darkskyapp.github.io/skycons</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;canvas id=&quot;clear-day&quot; width=&quot;50&quot; height=&quot;50&quot;&gt;&lt;/canvas&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code">
+&lt;script src=&quot;../../../assets/global/plugins/skycons/skycons.js&quot;&gt;&lt;/script&gt;
+</pre>
+            <h4>SCRIPT (JS)</h4>
+<pre class="js-code no-margin">
+var icons = new Skycons({"color": "white"},{"resizeClear": true}),
+                    list  = [
+                        "clear-day", "clear-night", "partly-cloudy-day",
+                        "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+                        "fog"
+                    ],
+                    i;
+
+            for(i = list.length; i--; )
+                icons.set(list[i], list[i]);
+
+            icons.play();
+</pre>
+
+        </div>
+    </div>
+
+    <div id="summernote" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Super Simple WYSIWYG Editor on Bootstrap.
+            </p>
+            <p>
+                Official website : <a href="http://hackerwins.github.io/summernote/" target="_blank">http://hackerwins.github.io/summernote</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/form-wysiwyg.html" target="_blank">form-wysiwyg.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;textarea id=&quot;summernote-textarea&quot; class=&quot;form-control&quot; rows=&quot;10&quot; placeholder=&quot;Enter text ...&quot;&gt;&lt;/textarea&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/summernote/summernote.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/summernote/summernote.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING SUMMERNOTE, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.form.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="underscore" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Underscore is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects.
+            </p>
+            <p>
+                Official website : <a href="http://underscorejs.org/" target="_blank">http://underscorejs.org</a>
+            </p>
+            <hr class="dotted"/>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/underscore/underscore-min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="viewport-resizer" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Viewport resizer is a browser-based tool to test any website’s responsiveness. Just save the bookmarklet, go to the page you want to test, click on your created bookmarklet and check all kinds of screen resolutions of the page.
+            </p>
+            <p>
+                Official website : <a href="http://lab.maltewassermann.com/viewport-resizer/" target="_blank">http://lab.maltewassermann.com/viewport-resizer</a>
+            </p>
+            <p>
+                Demo page : <a href="../../production/admin/html/index.html" target="_blank">index.html</a>
+            </p>
+            <hr class="dotted"/>
+
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code no-margin">
+&lt;a data-text=&quot;try&quot; href='javascript:void((function(d){if(self!=top||d.getElementById(&#039;toolbar&#039;)&amp;&amp;d.getElementById(&#039;toolbar&#039;).getAttribute(&#039;data-Try&#039;))return false;d.write(&#039;&lt;!DOCTYPE HTML&gt;&lt;html style=&quot;opacity:0;&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;/&gt;&lt;/head&gt;&lt;body&gt;&lt;a data-viewport=&quot;1024x600&quot; data-version=&quot;10&quot; data-icon=&quot;notebook&quot; class=&quot;active&quot;&gt;10&quot; Netbook&lt;/a&gt;&lt;script src=&quot;http://lab.maltewassermann.com/viewport-resizer/resizer.min.js&quot;&gt;&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;&#039;)})(document));'&gt;&lt;span&gt;&harr; Try&lt;/span&gt;&lt;/a&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/viewport-resizer/js/viewport-resizer.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="gritter" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                The super awesome background is just to show you that all notifications are transparent! Tested in: FF 3+, Opera 9, IE7, IE8, Safari 4+.
+            </p>
+            <p>
+                Official website : <a href="http://boedesign.com/demos/gritter/" target="_blank">http://boedesign.com/demos/gritter</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/gritter/css/jquery.gritter.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code">
+&lt;script src=&quot;../../../assets/global/plugins/gritter/js/jquery.gritter.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+            <h4>SCRIPTS (JS)</h4>
+<pre class="js-code scroll no-margin">
+$.gritter.add(
+    {
+        title: 'Welcome to Blankon',
+        // (string | mandatory) the text inside the notification
+        text: 'Blankon is a theme fullpack admin template powered by Twitter bootstrap 3 front-end framework.',
+        // (string | optional) the image to display on the left
+        image: '../../assets/global/img/avatar/50/1.png',
+        // (bool | optional) if you want it to fade out on its own or just sit there
+        sticky: false,
+        // (int | optional) the time you want it to be alive for before fading out
+        time: ''
+    }
+);
+</pre>
+
+        </div>
+    </div>
+
+    <!--CHART-->
+    <div id="c3js" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                C3 enables deeper integration of charts into your application.
+            </p>
+            <p>
+                Official website : <a href="http://c3js.org/" target="_blank">http://c3js.org</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/admin%2Fchart%2Fc3js.html" target="_blank">admin%2Fchart%2Fc3js.html</a>
+            </p>
+            <p class="no-margin">
+                Available chart type on Blankon :
+            </p>
+            <ol>
+                <li>Line</li>
+                <li>Bar</li>
+                <li>Area</li>
+                <li>Stacked</li>
+                <li>Pie</li>
+                <li>Donut</li>
+                <li>Combination</li>
+            </ol>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;!-- LINE CHART --&gt;
+&lt;div id=&quot;c3js-line-chart&quot;&gt;&lt;/div&gt;
+
+&lt;!-- BAR CHART --&gt;
+&lt;div id=&quot;c3js-bar-chart&quot;&gt;&lt;/div&gt;
+
+&lt;!-- AREA CHART --&gt;
+&lt;div id=&quot;c3js-area-chart&quot;&gt;&lt;/div&gt;
+
+&lt;!-- STACKED CHART --&gt;
+&lt;div id=&quot;c3js-stacked-chart&quot;&gt;&lt;/div&gt;
+
+&lt;!-- PIE CHART --&gt;
+&lt;div id=&quot;c3js-pie-chart&quot;&gt;&lt;/div&gt;
+
+&lt;!-- DONUT CHART --&gt;
+&lt;div id=&quot;c3js-donut-chart&quot;&gt;&lt;/div&gt;
+
+&lt;!-- COMBINATION CHART --&gt;
+&lt;div id=&quot;c3js-combination-chart&quot;&gt;&lt;/div&gt;
+</pre>
+
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/c3js/c3.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/c3js/c3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/c3js/d3.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING C3JS, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/global/js/pages/blankon.chart.c3.js&quot;&gt;&lt;/script&gt;
+</pre>
+        </div>
+    </div>
+
+    <div id="chartjs" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Simple, clean and engaging charts for designers and developers.
+            </p>
+            <p>
+                Official website : <a href="http://www.chartjs.org/" target="_blank">http://www.chartjs.org</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/admin%2Fchart%2Fchartjs.html" target="_blank">admin%2Fchart%2Fchartjs.html</a>
+            </p>
+            <p class="no-margin">
+                Available chart type on Blankon :
+            </p>
+            <ol>
+                <li>Bar</li>
+                <li>Doughnut</li>
+                <li>Line</li>
+                <li>Pie</li>
+                <li>Polar area</li>
+                <li>Radar</li>
+            </ol>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;!-- BAR CHART --&gt;
+&lt;canvas id=&quot;chartjs-bar-chart&quot; height=&quot;300&quot; width=&quot;600&quot; class=&quot;chartjs&quot;&gt;&lt;/canvas&gt;
+
+&lt;!-- DOUGHNUT CHART --&gt;
+&lt;canvas id=&quot;chartjs-doughnut-chart&quot; height=&quot;300&quot; width=&quot;600&quot; class=&quot;chartjs&quot;&gt;&lt;/canvas&gt;
+
+&lt;!-- LINE CHART --&gt;
+&lt;canvas id=&quot;chartjs-line-chart&quot; height=&quot;300&quot; width=&quot;600&quot; class=&quot;chartjs&quot;&gt;&lt;/canvas&gt;
+
+&lt;!-- PIE CHART --&gt;
+&lt;canvas id=&quot;chartjs-pie-chart&quot; height=&quot;300&quot; width=&quot;600&quot; class=&quot;chartjs&quot;&gt;&lt;/canvas&gt;
+
+&lt;!-- POLAR AREA CHART --&gt;
+&lt;canvas id=&quot;chartjs-polararea-chart&quot; height=&quot;300&quot; width=&quot;600&quot; class=&quot;chartjs&quot;&gt;&lt;/canvas&gt;
+
+&lt;!-- RADAR CHART --&gt;
+&lt;canvas id=&quot;chartjs-radar-chart&quot; height=&quot;300&quot; width=&quot;600&quot; class=&quot;chartjs&quot;&gt;&lt;/canvas&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/chartjs/js/Chart.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING CHARTJS, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/global/js/pages/blankon.chart.js&quot;&gt;&lt;/script&gt;
+</pre>
+        </div>
+    </div>
+
+    <div id="flot" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Attractive JavaScript plotting for jQuery, flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.
+                Works with Internet Explorer 6+, Chrome, Firefox 2+, Safari 3+ and Opera 9.5+
+            </p>
+            <p>
+                Official website :  <a href="http://www.flotcharts.org/" target="_blank">http://www.flotcharts.org</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/admin%2Fchart%2Fflot.html" target="_blank">admin%2Fchart%2Fflot.html</a>
+            </p>
+            <p class="no-margin">
+                Available chart type on Blankon :
+            </p>
+            <ol>
+                <li>Basic</li>
+                <li>Bar</li>
+                <li>Pie</li>
+                <li>Real Time Update</li>
+            </ol>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;!-- BASIC CHART --&gt;
+&lt;div id=&quot;flot-basic-chart&quot; class=&quot;flot&quot;&gt;&lt;/div&gt;
+
+&lt;!-- BAR CHART --&gt;
+&lt;div id=&quot;flot-bar-chart&quot; class=&quot;flot&quot;&gt;&lt;/div&gt;
+
+&lt;!-- PIE CHART --&gt;
+&lt;div id=&quot;flot-pie-chart&quot; class=&quot;flot&quot;&gt;&lt;/div&gt;
+
+&lt;!-- REAL TIME UPDATE CHART --&gt;
+&lt;div id=&quot;flot-realtime-chart&quot; class=&quot;flot&quot;&gt;&lt;/div&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/flot/jquery.flot.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/flot/jquery.flot.tooltip.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/flot/jquery.flot.resize.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/flot/jquery.flot.symbol.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/flot/jquery.flot.crosshair.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/flot/jquery.flot.categories.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/flot/jquery.flot.pie.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING FLOT, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/global/js/pages/blankon.chart.js&quot;&gt;&lt;/script&gt;
+</pre>
+        </div>
+    </div>
+
+    <div id="morris" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                morris.js good-looking charts shouldn't be difficult
+            </p>
+            <p>
+                Official website : <a href="http://morrisjs.github.io/morris.js/" target="_blank">http://morrisjs.github.io/morris.js</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/admin%2Fchart%2Fmorris.html" target="_blank">admin%2Fchart%2Fmorris.html</a>
+            </p>
+            <p class="no-margin">
+                Available chart type on Blankon :
+            </p>
+            <ol>
+                <li>Line</li>
+                <li>Area</li>
+                <li>Bar</li>
+                <li>Donut</li>
+            </ol>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;!-- LINE CHART --&gt;
+&lt;div id=&quot;morris-line-chart&quot;&gt;&lt;/div&gt;
+
+&lt;!-- AREA CHART --&gt;
+&lt;div id=&quot;morris-area-chart&quot;&gt;&lt;/div&gt;
+
+&lt;!-- BAR CHART --&gt;
+&lt;div id=&quot;morris-bar-chart&quot;&gt;&lt;/div&gt;
+
+&lt;!-- DONUT CHART --&gt;
+&lt;div id=&quot;morris-donut-chart&quot;&gt;&lt;/div&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/morris/morris.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;../../../assets/global/plugins/morris/morris.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING MORRIS, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/global/js/pages/blankon.chart.morris.js&quot;&gt;&lt;/script&gt;
+</pre>
+        </div>
+    </div>
+
+    <!--FORM-->
+    <div id="autosize" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Small jQuery plugin to allow dynamic resizing of textarea height, so that it grows as based on visitor input.
+            </p>
+            <p>
+                Official website : <a href="http://www.jacklmoore.com/autosize/" target="_blank">http://www.jacklmoore.com/autosize</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/form-element.html" target="_blank">form-element.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;textarea class=&quot;form-control autosize&quot; rows=&quot;1&quot; placeholder=&quot;Try typing something...&quot;&gt;&lt;/textarea&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code">
+&lt;script src=&quot;../../../assets/global/plugins/autosize/jquery.autosize.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING AUTOSIZE, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.form.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="dropzone" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                DropzoneJS is an open source library that provides drag'n'drop file uploads with image previews.
+            </p>
+            <p>
+                Official website : <a href="http://www.dropzonejs.com/" target="_blank">http://www.dropzonejs.com</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/form-advanced.html" target="_blank">form-advanced.html</a>
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;form action=&quot;../../../assets/admin/data&quot; class=&quot;dropzone&quot;&gt;
+    &lt;div class=&quot;fallback&quot;&gt;
+        &lt;input name=&quot;file&quot; type=&quot;file&quot; multiple /&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/dropzone/css/dropzone.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code">
+&lt;script src=&quot;../../../assets/global/plugins/dropzone/dropzone.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+
+        </div>
+    </div>
+
+    <div id="typeahead" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                a flexible JavaScript library that provides a strong foundation for building robust typeaheads.
+            </p>
+            <p>
+                Official website : <a href="http://twitter.github.io/typeahead.js/" target="_blank">http://twitter.github.io/typeahead.js</a>
+            </p>
+            <p>
+                Demo page : try typing word on input search navbar top Blankon
+            </p>
+            <p class="no-margin">
+                Available on Blankon : All page
+            </p>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;input type=&quot;text&quot; class=&quot;typeahead&quot;&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code">
+&lt;script src=&quot;../../../assets/global/plugins/typeahead/handlebars.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/typeahead/typeahead.bundle.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+            <h4>REQUIRED FILES (JSON)</h4>
+<pre class="js-code scroll">
+[
+    {
+        "value": "typeahead",
+        "name": "typeahead",
+        "description": "This is a really nice typeahead using json file – typing a lot of words here as 'blankon'",
+        "icon": "smile-o",
+        "color": "success",
+        "tokens": [
+            "a","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"
+        ]
+    },
+    {
+        "value": "blankon",
+        "name": "blankon - fullpack admin theme",
+        "description": "Blankon is a theme fullpack admin template powered by Twitter bootstrap 3 front-end framework. Included are multiple example pages, elements styles, and javascript widgets to get your project started.",
+        "icon": "thumbs-o-up",
+        "color": "success",
+        "tokens": [
+            "blankon"
+        ]
+    },
+    {
+        "value": "behance",
+        "name": "behance",
+        "description": "Showcase and discover the latest work from top online portfolios by creative professionals across industries.",
+        "icon": "behance-square",
+        "color": "primary",
+        "tokens": [
+            "behance"
+        ]
+    },
+    {
+        "value": "bitbucket",
+        "name": "bitbucket",
+        "description": "Bitbucket is a free code DVCS hosting site for Git and Mercurial. Manage your development with a hosted wiki, issue tracker and source code.",
+        "icon": "bitbucket",
+        "color": "info",
+        "tokens": [
+            "bitbucket"
+        ]
+    },
+    {
+        "value": "bobo",
+        "name": "bobo - istilahe wong jowo turu dab",
+        "description": "Inyong ngimpi karo jupe, wealah ....",
+        "icon": "heart",
+        "color": "danger",
+        "tokens": [
+            "bobo"
+        ]
+    }
+    ,
+    {
+        "value": "bootstrap",
+        "name": "Bootstrap",
+        "description": "Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.",
+        "icon": "code",
+        "color": "lilac",
+        "tokens": [
+            "bootstrap"
+        ]
+    }
+]
+</pre>
+            <h4>SCRIPTS (JS)</h4>
+<pre class="js-code scroll no-margin">
+$(document).ready(function(){
+    var repos;
+
+    repos = new Bloodhound({
+        datumTokenizer: function(d) { return d.tokens; },
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: '[PATH JSON RESOURCES]'
+    });
+
+    repos.initialize();
+
+    $('.typeahead').typeahead(null, {
+        name: 'typeahead-sample',
+        source: repos.ttAdapter(),
+        templates: {
+        empty: [
+            '&lt;div class=&quot;empty-message&quot;&gt;',
+            'unable to find your type that match the current query',
+            '&lt;/div&gt;'
+        ].join('\n'),
+        suggestion: Handlebars.compile([
+            '&lt;a href=&quot;javascript:void(0);&quot; class=&quot;media border-dotted animated fadeIn&quot;&gt;',
+            '&lt;span class=&quot;media-object pull-left&quot;&gt;',
+            '&lt;i class=&quot;fa fa-{{icon}} bg-{{color}}&quot;&gt;&lt;/i&gt;',
+            '&lt;/span&gt;',
+            '&lt;span class=&quot;media-body&quot;&gt;',
+            '&lt;span class=&quot;media-heading&quot;&gt;{{name}}&lt;/span&gt;',
+            '&lt;span class=&quot;media-text&quot;&gt;{{description}}&lt;/span&gt;',
+            '&lt;/span&gt;',
+            '&lt;/a&gt;'
+        ].join(''))
+        }
+    });
+});
+</pre>
+
+        </div>
+    </div>
+
+    <!--MAP-->
+    <div id="jqvmap" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                JQVMap is a jQuery plugin that renders Vector Maps.  It uses resizable Scalable Vector Graphics (SVG) for modern browsers like Firefox, Safari, Chrome, Opera and Internet Explorer 9.  Legacy support for older versions of Internet Explorer 6-8 is provided via VML.
+            </p>
+            <p>
+                Official website : <a href="http://jqvmap.com/" target="_blank">http://jqvmap.com</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/admin%2Fmaps%2Fvector.html" target="_blank">admin%2Fmaps%2Fvector.html</a>
+            </p>
+            <p class="no-margin">
+                Available vector map type on Blankon :
+            </p>
+            <ol>
+                <li>World Map</li>
+                <li>USA Map</li>
+                <li>Rusia Map</li>
+                <li>Germany Map</li>
+                <li>Algeria Map</li>
+                <li>Continents Map</li>
+            </ol>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;!-- WORLD MAP --&gt;
+&lt;div id=&quot;world-map&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- USA MAP --&gt;
+&lt;div id=&quot;usa-map&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- RUSIA MAP --&gt;
+&lt;div id=&quot;rusia-map&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- GERMANY MAP --&gt;
+&lt;div id=&quot;germany-map&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- ALGERIA MAP --&gt;
+&lt;div id=&quot;algeria-map&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- CONTINENTS MAP --&gt;
+&lt;div id=&quot;asia-map&quot; class=&quot;map-continent&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;europe-map&quot; class=&quot;map-continent&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;australia-map&quot; class=&quot;map-continent&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;africa-map&quot; class=&quot;map-continent&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;northamerica-map&quot; class=&quot;map-continent&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;southamerica-map&quot; class=&quot;map-continent&quot;&gt;&lt;/div&gt;
+
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code">
+&lt;link href=&quot;../../../assets/global/plugins/jqvmap/css/jqvmap.css&quot; rel=&quot;stylesheet&quot;&gt;
+</pre>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code">
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/jquery.vmap.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/maps/jquery.vmap.world.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/maps/jquery.vmap.usa.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/maps/jquery.vmap.russia.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/maps/jquery.vmap.algeria.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/maps/jquery.vmap.germany.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/maps/continents/jquery.vmap.africa.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/maps/continents/jquery.vmap.asia.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/maps/continents/jquery.vmap.australia.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/maps/continents/jquery.vmap.europe.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/maps/continents/jquery.vmap.north-america.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/maps/continents/jquery.vmap.south-america.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/jqvmap/data/jquery.vmap.sampledata.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING VECTOR MAP, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.maps.vector.js&quot;&gt;&lt;/script&gt;
+</pre>
+        </div>
+    </div>
+
+    <div id="gmap3" class="plugins-wrap">
+        <div class="showcase-screen">
+            <p>
+                Enrich your Google Maps using the jquery plugin Gmap3, Gmap3 allows you to easily understand the power of Google Maps 3,
+                due to the simplicity of jQuery.
+            </p>
+            <p>
+                Official website : <a href="http://gmap3.net/" target="_blank">http://gmap3.net</a>
+            </p>
+            <p>
+                Demo page : <a href="../../../production/admin/html/maps-google.html" target="_blank">maps-google.html</a>
+            </p>
+            <p class="no-margin">
+                Available google map type on Blankon :
+            </p>
+            <ol>
+                <li>Street view marker</li>
+                <li>With marker</li>
+                <li>Multiple marker</li>
+                <li>Address map</li>
+                <li>Tag map</li>
+                <li>Circle map</li>
+                <li>Elevation map</li>
+                <li>Info window</li>
+                <li>Traffic map</li>
+                <li>Panel map</li>
+            </ol>
+            <hr class="dotted"/>
+            <h4>SOURCE CODE (HTML)</h4>
+<pre class="html-code">
+&lt;!-- STREET VIEW MARKER --&gt;
+&lt;div id=&quot;map-street-view-marker&quot; class=&quot;map map-lg&quot;&gt;&lt;/div&gt;
+
+&lt;!-- WITH MARKER --&gt;
+&lt;div id=&quot;map-marker&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- MULTIPLE MARKER --&gt;
+&lt;div id=&quot;map-multiple-marker&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- ADDRESS MAP --&gt;
+&lt;div id=&quot;map-address&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- TAG MAP --&gt;
+&lt;div id=&quot;map-tag&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- CIRCLE MAP --&gt;
+&lt;div id=&quot;map-circle&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- ELEVATION MAP --&gt;
+&lt;div id=&quot;map-elevation&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- INFO WINDOW --&gt;
+&lt;div id=&quot;map-infowindow&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- TRAFFIC MAP --&gt;
+&lt;div id=&quot;map-traffic-map&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+
+&lt;!-- PANEL MAP --&gt;
+&lt;div id=&quot;map-panel-map&quot; class=&quot;map&quot;&gt;&lt;/div&gt;
+</pre>
+            <h4>REQUIRED FILES (CSS)</h4>
+<pre class="html-code-no-menu">
+No CSS available
+</pre>
+            <h4>REQUIRED FILES (JS)</h4>
+<pre class="html-code no-margin">
+&lt;script src=&quot;http://maps.googleapis.com/maps/api/js?sensor=false&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;../../../assets/global/plugins/gmap3/gmap3.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- EXAMPLE USING GOOGLE MAP, OPEN THIS FILE TO EDIT --&gt;
+&lt;script src=&quot;../../../assets/admin/js/pages/blankon.maps.google.js&quot;&gt;&lt;/script&gt;
+</pre>
+        </div>
+    </div>
+
+</div>
+<!--/ END PLUGINS -->
+
+<!-- START CHANGE LOG -->
+<div class="section sm" id="change-log">
+    <h1 class="page-header">Change log</h1>
+    <div class="showcase-screen">
+
+        <p>
+            If you have purchased Blankon before this version and you have made or working on an apps with it,
+            you could read patching instructions.
+        </p>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-theme table-striped table-condensed no-margin">
+            <thead>
+            <tr>
+                <th class="text-center">Version</th>
+                <th>Patching</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">1.0.7</td>
+                    <td>
+                        <ul class="list-unstyled no-padding">
+                            <li><span class="text-success">NEW:</span> <a href="../../../production/admin/yii2/web/index.php?r=admin%2Fpage%2Ffaq" target="_blank">FAQ page</a></li>
+                            <li><span class="text-success">NEW:</span> <a href="../../../production/admin/yii2/web/index.php?r=admin%2Fanimate%2Fanimate" target="_blank">Animate.css page</a></li>
+                            <li><span class="text-info">IMPROVEMENT:</span> On logic JS form there are partials form init </li>
+                        </ul>
+                    </td>
+                    <td>May 09, 2015</td>
+                </tr>
+                <tr>
+                    <td class="text-center">1.0.6</td>
+                    <td>
+                        <ul class="list-unstyled no-padding">
+                            <li><span class="text-success">NEW:</span> <a href="../../../production/admin/yii2/web/index.php?r=admin%2Fpage%2Fsignintype2" target="_blank">Login style type 2 design</a></li>
+                            <li><span class="text-success">NEW:</span> <a href="../../../production/admin/yii2/web/index.php?r=admin%2Fcomponent%2Fvideo" target="_blank">Video page</a></li>
+                        </ul>
+                    </td>
+                    <td>April 23, 2015</td>
+                </tr>
+                <tr>
+                    <td class="text-center">1.0.5</td>
+                    <td>
+                        <ul class="list-unstyled no-padding">
+                            <li><span class="text-success">NEW:</span> <a href="../../../production/admin/yii2/web/index.php?r=admin%2Fpage%2Fgallery" target="_blank">Gallery page design</a></li>
+                        </ul>
+                    </td>
+                    <td>March 1, 2015</td>
+                </tr>
+                <tr>
+                    <td class="text-center">1.0.2</td>
+                    <td>
+                        <ul class="list-unstyled no-padding">
+                            <li><span class="text-success">RELEASED:</span> Blankon Fullpack Admin Theme (Yii2 version)</li>
+                        </ul>
+                    </td>
+                    <td>March 1, 2015</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--/ END CHANGE LOG -->
+
+<!-- START QUICK SEARCH -->
+<div class="section sm" id="quick-search">
+<h1 class="page-header">Quick search</h1>
+<div class="showcase-screen">
+    <p>
+        We realized when Developer started using a template there is confusion or forgetting where the code will be taken, here we present a quick search smart system of all the design you are looking on Blankon. Try it!
+    </p>
+</div>
+<select id="quick-search-list" class="form-control input-lg chosen-select">
+<option value="#">Choose CODE</option>
+<optgroup label="ACCOUNT">
+    <option value="admin%2Fpage%2Fsignin">Sign in</option>
+    <option value="admin%2Fpage%2Fsignin">Login</option>
+    <option value="admin%2Fpage%2Fsignin">Member area</option>
+    <option value="admin%2Fpage%2Fsignup">Sign up</option>
+    <option value="admin%2Fpage%2Fsignup">Register</option>
+    <option value="admin%2Fpage%2Flostpassword">Lost password</option>
+    <option value="admin%2Fpage%2Flockscreen">Lock screen</option>
+    <option value="admin%2Fpage%2Flockscreen">Session timeout</option>
+</optgroup>
+<optgroup label="EMAIL">
+    <option value="admin%2Fmail%2Finbox">Mail</option>
+    <option value="admin%2Fmail%2Finbox">Email</option>
+    <option value="admin%2Fmail%2Finbox">Inbox</option>
+    <option value="admin%2Fmail%2Finbox">Draft</option>
+    <option value="admin%2Fmail%2Finbox">Spam</option>
+    <option value="admin%2Fmail%2Finbox">Email sent</option>
+    <option value="admin%2Fmail%2Fcompose">Compose</option>
+    <option value="admin%2Fmail%2Fview">Conversation</option>
+    <option value="admin%2Fmail%2Fview">Email view</option>
+</optgroup>
+<optgroup label="FORM">
+    <option value="admin%2Fform%2Fadvanced">Form advanced</option>
+    <option value="admin%2Fform%2Fadvanced">Toggle switches</option>
+    <option value="admin%2Fform%2Fadvanced">Datepicker</option>
+    <option value="admin%2Fform%2Fadvanced">Dropzone</option>
+    <option value="admin%2Fform%2Fadvanced">Drop files</option>
+    <option value="admin%2Fform%2Fadvanced">Input mask</option>
+    <option value="admin%2Fform%2Felement">Form element</option>
+    <option value="admin%2Fform%2Felement">Input fields</option>
+    <option value="admin%2Fform%2Felement">Select field</option>
+    <option value="admin%2Fform%2Felement">File input</option>
+    <option value="admin%2Fform%2Felement">Upload</option>
+    <option value="admin%2Fform%2Felement">Textarea</option>
+    <option value="admin%2Fform%2Felement">Input grid</option>
+    <option value="admin%2Fform%2Felement">Validation states</option>
+    <option value="admin%2Fform%2Felement">Checkbox</option>
+    <option value="admin%2Fform%2Felement">Radios</option>
+    <option value="admin%2Fform%2Felement">Input groups</option>
+    <option value="admin%2Fform%2Flayout">Form layout</option>
+    <option value="admin%2Fform%2Flayout">Form inline</option>
+    <option value="admin%2Fform%2Flayout">Form horizontal</option>
+    <option value="admin%2Fform%2Flayout">Form bordered</option>
+    <option value="admin%2Fform%2Flayout">Form striped</option>
+    <option value="admin%2Fform%2Flayout">Form comments</option>
+    <option value="admin%2Fform%2Flayout">Form register</option>
+    <option value="admin%2Fform%2Fvalidation">Form validation</option>
+    <option value="admin%2Fform%2Fvalidation">Basic validation</option>
+    <option value="admin%2Fform%2Fvalidation">Number validation</option>
+    <option value="admin%2Fform%2Fvalidation">Password validation</option>
+    <option value="admin%2Fform%2Fvalidation">Checkbox radio validation</option>
+    <option value="admin%2Fform%2Fvalidation">Select boxes validation</option>
+    <option value="admin%2Fform%2Fvalidation">Sample validation</option>
+    <option value="admin%2Fform%2Fvalidation">Register validation</option>
+    <option value="admin%2Fform%2Fvalidation">Billing validation</option>
+    <option value="admin%2Fform%2Fwizard">Form wizard</option>
+    <option value="admin%2Fform%2Fwizard">Wizard horizontal</option>
+    <option value="admin%2Fform%2Fwizard">Wizard vertical</option>
+    <option value="admin%2Fform%2Fwizard">Progress bar wizard</option>
+    <option value="admin%2Fform%2Fwizard">Disabled tab wizard</option>
+    <option value="admin%2Fform%2Fwizard">Form validation wizard</option>
+    <option value="admin%2Fform%2Fwysiwyg">Form wysiwyg</option>
+    <option value="admin%2Fform%2Fwysiwyg">Text editor</option>
+    <option value="admin%2Fform%2Fwysiwyg">Summernote</option>
+</optgroup>
+<optgroup label="FRONTEND THEMES">
+    <option value="admin%2Ffrontend%2Fthemes">Frontend</option>
+    <option value="admin%2Ffrontend%2Fthemes">Landing page</option>
+    <option value="admin%2Ffrontend%2Fthemes">corporate</option>
+    <option value="admin%2Ffrontend%2Fthemes">portfolio</option>
+    <option value="admin%2Ffrontend%2Fthemes">personal</option>
+    <option value="admin%2Ffrontend%2Fthemes">CV</option>
+    <option value="admin%2Ffrontend%2Fthemes">agency</option>
+    <option value="admin%2Ffrontend%2Fthemes">blog</option>
+    <option value="admin%2Ffrontend%2Fthemes">shop</option>
+    <option value="admin%2Ffrontend%2Fthemes">cart</option>
+</optgroup>
+<optgroup label="PAGES">
+    <option value="admin%2Fpage%2Finvoice">Invoice</option>
+    <option value="admin%2Fpage%2Finvoice">Services</option>
+    <option value="admin%2Fpage%2Finvoice">Product</option>
+    <option value="admin%2Fpage%2Finvoice">Payment</option>
+    <option value="admin%2Fpage%2Fmessages">Messages</option>
+    <option value="admin%2Fpage%2Fmessages">Conversation</option>
+    <option value="admin%2Fpage%2Fmessages">Share</option>
+    <option value="admin%2Fpage%2Ftimeline">Timeline</option>
+    <option value="admin%2Fpage%2Ftimeline">Activity</option>
+    <option value="admin%2Fpage%2Ftimeline">Contact</option>
+    <option value="admin%2Fpage%2Ftimeline">Check-in</option>
+    <option value="admin%2Fpage%2Ftimeline">New friends</option>
+    <option value="admin%2Fpage%2Fprofile">Profile</option>
+    <option value="admin%2Fpage%2Fprofile">My album</option>
+    <option value="admin%2Fpage%2Fprofile">Status</option>
+    <option value="admin%2Fpage%2Fprofile">Posting</option>
+    <option value="admin%2Fpage%2Fprofile">Photos</option>
+    <option value="admin%2Fpage%2Fprofile">About</option>
+    <option value="admin%2Fpage%2Fprofile">Friends</option>
+    <option value="admin%2Fblog%2Flist">Blog</option>
+    <option value="admin%2Fblog%2Flist">News</option>
+    <option value="admin%2Fblog%2Flist">Post blog</option>
+    <option value="admin%2Fblog%2Fsingle">Title blog</option>
+    <option value="admin%2Fblog%2Fsingle">Categories blog</option>
+    <option value="admin%2Fblog%2Fsingle">Comments blog</option>
+    <option value="admin%2Fpage%2Ferror403">Error</option>
+    <option value="admin%2Fpage%2Ferror403">403</option>
+    <option value="admin%2Fpage%2Ferror403">Forbidden</option>
+    <option value="admin%2Fpage%2Ferror403">Access denied</option>
+    <option value="admin%2Fpage%2Ferror404">404</option>
+    <option value="admin%2Fpage%2Ferror404">Not found</option>
+    <option value="admin%2Fpage%2Ferror404">Removed</option>
+    <option value="admin%2Fpage%2Ferror404">Unavailable</option>
+    <option value="admin%2Fpage%2Ferror500">500</option>
+    <option value="admin%2Fpage%2Ferror500">Server error</option>
+    <option value="admin%2Fpage%2Ferror500">Wrong page</option>
+</optgroup>
+<optgroup label="SEARCH">
+    <option value="admin%2Fpage%2Fsearchcourse">Search courses</option>
+</optgroup>
+<optgroup label="TABLE">
+    <option value="admin%2Ftable%2Fdefault">Default table</option>
+    <option value="admin%2Ftable%2Fdefault">Basic table</option>
+    <option value="admin%2Ftable%2Fdefault">Bordered table</option>
+    <option value="admin%2Ftable%2Fdefault">Striped table</option>
+    <option value="admin%2Ftable%2Fdefault">Hover table</option>
+    <option value="admin%2Ftable%2Fdefault">Responsive table</option>
+    <option value="admin%2Ftable%2Fdefault">Sample table</option>
+    <option value="admin%2Ftable%2Fdefault">Table with action</option>
+    <option value="admin%2Ftable%2Fdefault">Table with checkbox</option>
+    <option value="admin%2Ftable%2Fcolor">Color table</option>
+    <option value="admin%2Ftable%2Fcolor">Primary table</option>
+    <option value="admin%2Ftable%2Fcolor">Success table</option>
+    <option value="admin%2Ftable%2Fcolor">Warning table</option>
+    <option value="admin%2Ftable%2Fcolor">Danger table</option>
+    <option value="admin%2Ftable%2Fcolor">Info table</option>
+    <option value="admin%2Ftable%2Fdatatable">Datatable</option>
+    <option value="admin%2Ftable%2Fdatatable">Responsive datatable</option>
+    <option value="admin%2Ftable%2Fdatatable">Ajax responsive</option>
+</optgroup>
+<optgroup label="MAP">
+    <option value="admin%2Fmaps%2Fgoogle">Google map</option>
+    <option value="admin%2Fmaps%2Fgoogle">Street view marker</option>
+    <option value="admin%2Fmaps%2Fgoogle">Marker map</option>
+    <option value="admin%2Fmaps%2Fgoogle">Elevation map</option>
+    <option value="admin%2Fmaps%2Fgoogle">Tag map</option>
+    <option value="admin%2Fmaps%2Fgoogle">Traffic map</option>
+    <option value="admin%2Fmaps%2Fvector">Vector map</option>
+    <option value="admin%2Fmaps%2Fvector">World map</option>
+    <option value="admin%2Fmaps%2Fvector">USA map</option>
+    <option value="admin%2Fmaps%2Fvector">Germany map</option>
+    <option value="admin%2Fmaps%2Fvector">Continents map</option>
+</optgroup>
+<optgroup label="FLOT CHART">
+    <option value="admin%2Fchart%2Fflot">Chart</option>
+    <option value="admin%2Fchart%2Fflot">Flot chart</option>
+    <option value="admin%2Fchart%2Fflot">Basic flot chart</option>
+    <option value="admin%2Fchart%2Fflot">Bar flot chart</option>
+    <option value="admin%2Fchart%2Fflot">Pie flot chart</option>
+    <option value="admin%2Fchart%2Fflot">Realtime flot chart</option>
+</optgroup>
+<optgroup label="MORRIS CHART">
+    <option value="admin%2Fchart%2Fmorris">Morris chart</option>
+    <option value="admin%2Fchart%2Fmorris">Line morris chart</option>
+    <option value="admin%2Fchart%2Fmorris">Area morris chart</option>
+    <option value="admin%2Fchart%2Fmorris">Bar morris chart</option>
+    <option value="admin%2Fchart%2Fmorris">Donut morris chart</option>
+</optgroup>
+<optgroup label="CHARTJS CHART">
+    <option value="admin%2Fchart%2Fchartjs">ChartJS chart</option>
+    <option value="admin%2Fchart%2Fchartjs">Bar chartjs chart</option>
+    <option value="admin%2Fchart%2Fchartjs">Doughnut chartjs chart</option>
+    <option value="admin%2Fchart%2Fchartjs">Line chartjs chart</option>
+    <option value="admin%2Fchart%2Fchartjs">Pie chartjs chart</option>
+    <option value="admin%2Fchart%2Fchartjs">Polar area chartjs chart</option>
+    <option value="admin%2Fchart%2Fchartjs">Radar chartjs chart</option>
+</optgroup>
+<optgroup label="C3JS CHART">
+    <option value="admin%2Fchart%2Fc3js">C3JS chart</option>
+    <option value="admin%2Fchart%2Fc3js">Line c3js chart</option>
+    <option value="admin%2Fchart%2Fc3js">Bar c3js chart</option>
+    <option value="admin%2Fchart%2Fc3js">Area c3js chart</option>
+    <option value="admin%2Fchart%2Fc3js">Stacked c3js chart</option>
+    <option value="admin%2Fchart%2Fc3js">Pie c3js chart</option>
+    <option value="admin%2Fchart%2Fc3js">Donut c3js chart</option>
+    <option value="admin%2Fchart%2Fc3js">Combination c3js chart</option>
+</optgroup>
+<optgroup label="UI COMPONENTS">
+    <option value="admin%2Fcomponent%2Fgridsystem">Grid system</option>
+    <option value="admin%2Fcomponent%2Fbuttons">Button</option>
+    <option value="admin%2Fcomponent%2Fbuttons">Social button</option>
+    <option value="admin%2Fcomponent%2Fbuttons">Color button</option>
+    <option value="admin%2Fcomponent%2Fbuttons">Brand button</option>
+    <option value="admin%2Fcomponent%2Fbuttons">Stroke button</option>
+    <option value="admin%2Fcomponent%2Fbuttons">State button</option>
+    <option value="admin%2Fcomponent%2Fbuttons">Size button</option>
+    <option value="admin%2Fcomponent%2Fpanels">Panel</option>
+    <option value="admin%2Fcomponent%2Fpanels">Color panel</option>
+    <option value="admin%2Fcomponent%2Falerts">Alerts</option>
+    <option value="admin%2Fcomponent%2Ffontawesome">Font Awesome icon</option>
+    <option value="admin%2Fcomponent%2Fglyphicons">Glyphicons icon</option>
+    <option value="admin%2Fcomponent%2Fmapicons">Maps icon</option>
+    <option value="admin%2Fcomponent%2Fweathericons">Weather icon</option>
+    <option value="admin%2Fcomponent%2Fmodals">Modal</option>
+    <option value="admin%2Fcomponent%2Fsliders">Slider</option>
+    <option value="admin%2Fcomponent%2Ftabs">Tab</option>
+    <option value="admin%2Fcomponent%2Ftabs">Accordion</option>
+    <option value="admin%2Fcomponent%2Fother">Ribbon</option>
+    <option value="admin%2Fcomponent%2Fother">Thumbnail</option>
+    <option value="admin%2Fcomponent%2Fother">Breadcrumb</option>
+    <option value="admin%2Fcomponent%2Fother">Star rating</option>
+    <option value="admin%2Fcomponent%2Fother">Loader</option>
+    <option value="admin%2Fcomponent%2Fother">Pagination</option>
+    <option value="admin%2Fcomponent%2Fother">Label</option>
+    <option value="admin%2Fcomponent%2Fother">Badge</option>
+    <option value="admin%2Fcomponent%2Fother">Progress bar</option>
+    <option value="admin%2Fcomponent%2Fother">Well</option>
+</optgroup>
+<optgroup label="LAYOUT">
+    <option value="admin%2Flayout%2Fblank">Layout</option>
+    <option value="admin%2Flayout%2Fblank">Blank</option>
+    <option value="admin%2Flayout%2Fboxed">Boxed</option>
+    <option value="admin%2Flayout%2Ffooterfixed">Footer fixed</option>
+    <option value="admin%2Flayout%2Fheaderfixed">Header fixed</option>
+    <option value="admin%2Flayout%2Fsidebardefault">Sidebar</option>
+    <option value="admin%2Flayout%2Fsidebardefault">Quick menu</option>
+    <option value="admin%2Flayout%2Fsidebarboxed">Sidebar box</option>
+    <option value="admin%2Flayout%2Fsidebarcircle">Sidebar circle</option>
+    <option value="admin%2Flayout%2Ffooterfixed">Sidebar fixed</option>
+    <option value="admin%2Flayout%2Fsidebarminimize">Sidebar minimize</option>
+    <option value="admin%2Flayout%2Fsidebarrounded">Sidebar rounded</option>
+</optgroup>
+<optgroup label="OVERVIEW WIDGET">
+    <option value="admin%2Fwidget%2Foverview">Mini stats</option>
+    <option value="admin%2Fwidget%2Foverview">Mini stats graph</option>
+    <option value="admin%2Fwidget%2Foverview">Daily visitor and server status</option>
+    <option value="admin%2Fwidget%2Foverview">Most browser used</option>
+</optgroup>
+<optgroup label="SOCIAL WIDGET">
+    <option value="admin%2Fwidget%2Fsocial">Form post status</option>
+    <option value="admin%2Fwidget%2Fsocial">Mini stats social</option>
+    <option value="admin%2Fwidget%2Fsocial">Friend list</option>
+    <option value="admin%2Fwidget%2Fsocial">Mini profile</option>
+    <option value="admin%2Fwidget%2Fsocial">Mini profile type A</option>
+    <option value="admin%2Fwidget%2Fsocial">Mini profile type B</option>
+    <option value="admin%2Fwidget%2Fsocial">Mini profile type C</option>
+    <option value="admin%2Fwidget%2Fsocial">Mini profile type D</option>
+    <option value="admin%2Fwidget%2Fsocial">Status post type A</option>
+    <option value="admin%2Fwidget%2Fsocial">Status post type B</option>
+    <option value="admin%2Fwidget%2Fsocial">Status post type C</option>
+    <option value="admin%2Fwidget%2Fsocial">Timeline activity</option>
+</optgroup>
+<optgroup label="BLOG WIDGET">
+    <option value="admin%2Fwidget%2Fblog">Basic blog item</option>
+    <option value="admin%2Fwidget%2Fblog">Blog item with slider</option>
+    <option value="admin%2Fwidget%2Fblog">Blog item with ribbon</option>
+    <option value="admin%2Fwidget%2Fblog">Blog item with video</option>
+    <option value="admin%2Fwidget%2Fblog">Blog quote</option>
+    <option value="admin%2Fwidget%2Fblog">Blog list</option>
+    <option value="admin%2Fwidget%2Fblog">Blog list tabs</option>
+    <option value="admin%2Fwidget%2Fblog">Blog list slider</option>
+</optgroup>
+<optgroup label="WEATHER WIDGET">
+    <option value="admin%2Fwidget%2Fweather">Mini weather</option>
+    <option value="admin%2Fwidget%2Fweather">Weather current city</option>
+    <option value="admin%2Fwidget%2Fweather">Weather forecast</option>
+</optgroup>
+<optgroup label="MISC WIDGET">
+    <option value="admin%2Fwidget%2Fmisc">Misc</option>
+    <option value="admin%2Fwidget%2Fmisc">Newsletter</option>
+    <option value="admin%2Fwidget%2Fmisc">Todo list</option>
+    <option value="admin%2Fwidget%2Fmisc">Discount</option>
+</optgroup>
+</select>
+<div class="text-vertically-center">
+    <h1 class="no-margin">
+        <i class="fa fa-code"></i>
+        QUICK SEARCH CODE
+    </h1>
+</div>
+</div>
+<!--/ END QUICK SEARCH -->
+
+<!-- START THANK YOU -->
+<div class="section sm" id="thank-you">
+    <h1 class="page-header">Thank you so much!</h1>
+    <div class="showcase-screen">
+        <p>Once again, thank you so much for purchasing BLANKON. As I said at the starting,
+            I'd be glad to help you if you have any questions relating to this theme.
+            No guarantees, but I'll do my best to assist. If you have a more general question relating to the
+            themes on Wrapbootstrap, you might consider visiting the forums and asking your
+            question in the "Item Discussion" section.</p>
+
+        inspiration name BLANKON ? please read on <a href="http://en.wikipedia.org/wiki/Blangkon" target="_blank">Wikipedia</a>
+
+        <br /><br /><br /><br />
+
+        <p><strong>Djava UI.Inc</strong></p>
+    </div>
+</div>
+<!--/ END THANK YOU -->
+
+</div>
+</div>
+
+<!-- START FOOTER -->
+<footer>
+    <p>Crafted with <i class="fa fa-heart text-danger"></i> by <a href="http://djavaui.com/" target="_blank">Djava UI</a> in Yogyakarta, ID</p>
+    Powered by <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a></p>
+
+    <ul>
+        <li><a href="http://djavaui.com/" title="Djava UI Author" target="_blank">Djava UI</a></li>
+        <li><a href="http://www.yiiframework.com/" title="Yiiframework site" target="_blank">Yiiframework</a></li>
+        <li><a href="http://wrapbootstrap.com/" title="Website template marketplace" target="_blank">Wrapbootstrap</a></li>
+        <li><a href="https://www.facebook.com/groups/twitterbootstrapindonesia/" title="Twitter Bootstrap Indonesian Group" target="_blank">Twitter Bootstrap Indonesia</a></li>
+    </ul>
+</footer>
+<!--/ END FOOTER -->
+
+</div>
+<!--/ END CONTAINER -->
+
+<!-- START JAVASCRIPT SECTION (Load javascripts at bottom to reduce load time) -->
+<!-- START CORE PLUGINS -->
+<script src="../../../assets/global/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../../assets/global/plugins/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!--/ END CORE PLUGINS -->
+
+<!-- START PAGE LEVEL PLUGINS -->
+<script src="../../../assets/global/plugins/bower_components/jquery-smooth-scroll/jquery.smooth-scroll.min.js"></script>
+<script src="../../../assets/global/plugins/bower_components/jquery-snippet/jquery.snippet.min.js"></script>
+<script src="../../../assets/global/plugins/bower_components/google-code-prettify/bin/prettify.min.js"></script>
+<script src="../../../assets/global/plugins/bower_components/chosen_v1.2.0/chosen.jquery.min.js"></script>
+<script src="../../../assets/global/plugins/bower_components/datatables/js/jquery.dataTables.min.js"></script>
+<script src="../../../assets/global/plugins/bower_components/datatables/js/dataTables.bootstrap.js"></script>
+<script src="../../../assets/global/plugins/bower_components/datatables/js/datatables.responsive.js"></script>
+<!--/ END PAGE LEVEL PLUGINS -->
+
+<!-- START PAGE LEVEL SCRIPTS -->
+<script src="../../../assets/documentation/js/doc-yii.js"></script>
+<!--/ END PAGE LEVEL SCRIPTS -->
+<!--/ END JAVASCRIPT SECTION -->
+</body>
+<!--/ END BODY -->
+
+</html>

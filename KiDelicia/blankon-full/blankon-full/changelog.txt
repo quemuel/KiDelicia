@@ -1,0 +1,19 @@
+In this file I will explain more detail about change log Blankon version. Enjoy :D
+
+V.1.0.7
+==================================================================================
++ Improvement on logic JS forms (HTML, AJAX, PHP, Laravel, Yii2, Codeigniter8)
+    - Desc : On files form has removing "blankon.form.js", now there are availble partials form init.
+    - Assets : /assets/admin/js/pages/blankon.form.*.js
+
++ Add new Blankon Codeigniter version
+    - URL : http://localhost/blankon-fullpack-admin-theme/1.0.7/production/admin/codeigniter
+
++ Add new page FAQ design
+    - URL : http://localhost/blankon-fullpack-admin-theme/1.0.7/production/admin/html/page-faq.html
+
++ Add new page Animate.css design
+    - URL : http://localhost/blankon-fullpack-admin-theme/1.0.7/production/admin/html/animate.html
+
++ Add new commercial plugin (Revolution slider, Cube Portfolio)
+    - Assets : /assets/commercial/plugins

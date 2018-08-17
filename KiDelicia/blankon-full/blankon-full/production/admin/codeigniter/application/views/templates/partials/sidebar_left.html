@@ -1,0 +1,447 @@
+<aside id="sidebar-left" class="sidebar-circle">
+
+<!-- Start left navigation - profile shortcut -->
+<div class="sidebar-content">
+    <div class="media">
+        <a class="pull-left has-notif avatar" href="page-profile.html">
+            <img src="{base_url('assets/global/img/avatar/50/1.png')}" alt="admin">
+            <i class="online"></i>
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">Hello, <span>Lee</span></h4>
+            <small>Web Designer</small>
+        </div>
+    </div>
+</div><!-- /.sidebar-content -->
+<!--/ End left navigation -  profile shortcut -->
+
+<!-- Start left navigation - menu -->
+<ul class="sidebar-menu">
+
+<!-- Start navigation - dashboard -->
+<li class="{if isset($active_dashboard)} {$active_dashboard} {/if}">
+<a href="{base_url('production/admin/codeigniter/dashboard')}">
+    <span class="icon"><i class="fa fa-home"></i></span>
+    <span class="text">Dashboard</span>
+    {if isset($active_dashboard)} {'<span class="selected"></span>'} {/if}
+</a>
+</li>
+<!--/ End navigation - dashboard -->
+
+<!-- Start navigation - frontend themes -->
+<li class="{if isset($active_frontend_themes)} {$active_frontend_themes} {/if}">
+    <a href="{base_url('production/admin/codeigniter/frontend-themes')}">
+        <span class="icon"><i class="fa fa-leaf"></i></span>
+        <span class="text">Frontend themes</span>
+        {if isset($active_frontend_themes)} {'<span class="selected"></span>'} {/if}
+    </a>
+</li>
+<!--/ End navigation - frontend themes -->
+
+<!-- Start navigation - blankon versions -->
+<li class="{if isset($active_blankon_versions)} {$active_blankon_versions} {/if}">
+    <a href="{base_url('production/admin/codeigniter/blankon-versions')}">
+        <span class="icon"><i class="fa fa-dropbox"></i></span>
+        <span class="text">Blankon Versions</span>
+        {if isset($active_blankon_versions)} {'<span class="selected"></span>'} {/if}
+    </a>
+</li>
+<!--/ End navigation - blankon versions -->
+
+<!-- Start category apps -->
+<li class="sidebar-category">
+    <span>APPS</span>
+    <span class="pull-right"><i class="fa fa-trophy"></i></span>
+</li>
+<!--/ End category apps -->
+
+<!-- Start navigation - blog -->
+<li class="submenu {if isset($active_blog)} {$active_blog} {/if}">
+    <a href="javascript:void(0);">
+        <span class="icon"><i class="fa fa-globe"></i></span>
+        <span class="text">Blog</span>
+        <span class="arrow"></span>
+        {if isset($active_blog)} {'<span class="selected"></span>'} {/if}
+    </a>
+    <ul>
+        <li class="{if isset($active_blog_grid)} {$active_blog_grid} {/if}"><a href="{base_url('production/admin/codeigniter/blog/blog-grid')}">Grid</a></li>
+        <li class="{if isset($active_blog_list)} {$active_blog_list} {/if}"><a href="{base_url('production/admin/codeigniter/blog/blog-list')}">List</a></li>
+        <li class="{if isset($active_blog_single)} {$active_blog_single} {/if}"><a href="{base_url('production/admin/codeigniter/blog/blog-single')}">Single</a></li>
+    </ul>
+</li>
+<!--/ End navigation - blog -->
+
+<!-- Start navigation - mail -->
+<li class="submenu {if isset($active_mail)} {$active_mail} {/if}">
+    <a href="javascript:void(0);">
+        <span class="icon"><i class="fa fa-envelope"></i></span>
+        <span class="text">Mail</span>
+        <span class="arrow"></span>
+        {if isset($active_mail)} {'<span class="selected"></span>'} {/if}
+    </a>
+    <ul>
+        <li class="{if isset($active_mail_inbox)} {$active_mail_inbox} {/if}"><a href="{base_url('production/admin/codeigniter/mail/mail-inbox')}">Inbox</a></li>
+        <li class="{if isset($active_mail_compose)} {$active_mail_compose} {/if}"><a href="{base_url('production/admin/codeigniter/mail/mail-compose')}">Compose mail</a></li>
+        <li class="{if isset($active_mail_view)} {$active_mail_view} {/if}"><a href="{base_url('production/admin/codeigniter/mail/mail-view')}">View mail</a></li>
+    </ul>
+</li>
+<!--/ End navigation - mail -->
+
+<!-- Start navigation - pages -->
+<li class="submenu {if isset($active_pages)} {$active_pages} {/if}">
+    <a href="javascript:void(0);">
+        <span class="icon"><i class="fa fa-file-o"></i></span>
+        <span class="text">Pages</span>
+        <span class="arrow"></span>
+        {if isset($active_pages)} {'<span class="selected"></span>'} {/if}
+    </a>
+    <ul>
+        <li class="{if isset($active_gallery)} {$active_gallery} {/if}"><a href="{base_url('production/admin/codeigniter/pages/page-gallery')}">Gallery</a></li>
+        <li class="{if isset($active_gallery)} {$active_faq} {/if}"><a href="{base_url('production/admin/codeigniter/pages/page-faq')}">FAQ <span class="label label-danger pull-right">New</span></a></li>
+        <li class="{if isset($active_invoice)} {$active_invoice} {/if}"><a href="{base_url('production/admin/codeigniter/pages/page-invoice')}">Invoice</a></li>
+        <li class="{if isset($active_messages)} {$active_messages} {/if}"><a href="{base_url('production/admin/codeigniter/pages/page-messages')}">Messages</a></li>
+        <li class="{if isset($active_timeline)} {$active_timeline} {/if}"><a href="{base_url('production/admin/codeigniter/pages/page-timeline')}">Timeline</a></li>
+        <li class="{if isset($active_profile)} {$active_profile} {/if}"><a href="{base_url('production/admin/codeigniter/pages/page-profile')}">Profile</a></li>
+        <li class="submenu {if isset($active_search)} {$active_search} {/if}">
+            <a href="javascript:void(0);">Search<span class="arrow"></span></a>
+            <ul>
+                <li class="{if isset($active_search_course)} {$active_search_course} {/if}"><a href="{base_url('production/admin/codeigniter/pages/page-search-course')}">Courses</a></li>
+            </ul>
+        </li>
+        <li class="submenu {if isset($active_error)} {$active_error} {/if}">
+            <a href="javascript:void(0);">Error <span class="arrow"></span></a>
+            <ul>
+                <li><a href="{base_url('production/admin/codeigniter/errors/error-403')}" target="_blank">Error 403</a></li>
+                <li class="{if isset($active_error_403)} {$active_error_403} {/if}"><a href="{base_url('production/admin/codeigniter/pages/page-error-403')}">Error 403 Type 2</a></li>
+                <li><a href="{base_url('production/admin/codeigniter/errors/error-404')}" target="_blank">Error 404</a></li>
+                <li class="{if isset($active_error_404)} {$active_error_404} {/if}"><a href="{base_url('production/admin/codeigniter/pages/page-error-404')}">Error 404 Type 2</a></li>
+                <li><a href="{base_url('production/admin/codeigniter/errors/error-500')}" target="_blank">Error 500</a></li>
+                <li class="{if isset($active_error_500)} {$active_error_500} {/if}"><a href="{base_url('production/admin/codeigniter/pages/page-error-500')}">Error 500 Type 2</a></li>
+            </ul>
+        </li>
+        <li class="submenu">
+            <a href="javascript:void(0);">Account <span class="arrow"></span></a>
+            <ul>
+                <li><a href="{base_url('production/admin/codeigniter/account/sign-in')}" target="_blank">Sign In</a></li>
+                <li><a href="{base_url('production/admin/codeigniter/account/sign-up')}" target="_blank">Sign Up</a></li>
+                <li><a href="{base_url('production/admin/codeigniter/account/lost-password')}" target="_blank">Lost password</a></li>
+                <li><a href="{base_url('production/admin/codeigniter/account/lock-screen')}" target="_blank">Lock Screen</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+<!--/ End navigation - pages -->
+
+<!-- Start category ui kit-->
+<li class="sidebar-category">
+    <span>UI KIT</span>
+    <span class="pull-right"><i class="fa fa-magic"></i></span>
+</li>
+<!--/ End category ui kit-->
+
+<!-- Start navigation - forms -->
+<li class="submenu {if isset($active_forms)} {$active_forms} {/if}">
+    <a href="javascript:void(0);">
+        <span class="icon"><i class="fa fa-list-alt"></i></span>
+        <span class="text">Forms</span>
+        <span class="arrow"></span>
+        {if isset($active_forms)} {'<span class="selected"></span>'} {/if}
+    </a>
+    <ul>
+        <li class="{if isset($active_form_element)} {$active_form_element} {/if}"><a href="{base_url('production/admin/codeigniter/forms/form-element')}">Element</a></li>
+        <li class="{if isset($active_form_advanced)} {$active_form_advanced} {/if}"><a href="{base_url('production/admin/codeigniter/forms/form-advanced')}">Advanced</a></li>
+        <li class="{if isset($active_form_layout)} {$active_form_layout} {/if}"><a href="{base_url('production/admin/codeigniter/forms/form-layout')}">Layout</a></li>
+        <li class="{if isset($active_form_validation)} {$active_form_validation} {/if}"><a href="{base_url('production/admin/codeigniter/forms/form-validation')}">Validation</a></li>
+        <li class="{if isset($active_form_wizard)} {$active_form_wizard} {/if}"><a href="{base_url('production/admin/codeigniter/forms/form-wizard')}">Wizard</a></li>
+        <li class="{if isset($active_form_wysiwyg)} {$active_form_wysiwyg} {/if}"><a href="{base_url('production/admin/codeigniter/forms/form-wysiwyg')}">Text Editor</a></li>
+        <li class="{if isset($active_form_xeditable)} {$active_form_xeditable} {/if}"><a href="{base_url('production/admin/codeigniter/forms/form-xeditable')}">X-Editable</a></li>
+    </ul>
+</li>
+<!--/ End navigation - forms -->
+
+<!-- Start navigation - tables -->
+<li class="submenu {if isset($active_tables)} {$active_tables} {/if}">
+    <a href="javascript:void(0);">
+        <span class="icon"><i class="fa fa-table"></i></span>
+        <span class="text">Tables</span>
+        <span class="arrow"></span>
+        {if isset($active_tables)} {'<span class="selected"></span>'} {/if}
+    </a>
+    <ul>
+        <li class="{if isset($active_table_default)} {$active_table_default} {/if}"><a href="{base_url('production/admin/codeigniter/tables/table-default')}">Default</a></li>
+        <li class="{if isset($active_table_color)} {$active_table_color} {/if}"><a href="{base_url('production/admin/codeigniter/tables/table-color')}">Color</a></li>
+        <li class="{if isset($active_table_datatable)} {$active_table_datatable} {/if}"><a href="{base_url('production/admin/codeigniter/tables/table-datatable')}">Datatable</a></li>
+    </ul>
+</li>
+<!--/ End navigation - tables -->
+
+<!-- Start navigation - maps -->
+<li class="submenu {if isset($active_maps)} {$active_maps} {/if}">
+    <a href="javascript:void(0);">
+        <span class="icon"><i class="fa fa-map-marker"></i></span>
+        <span class="text">Maps</span>
+        <span class="arrow"></span>
+        {if isset($active_maps)} {'<span class="selected"></span>'} {/if}
+    </a>
+    <ul>
+        <li class="{if isset($active_map_google)} {$active_map_google} {/if}"><a href="{base_url('production/admin/codeigniter/maps/map-google')}">Google</a></li>
+        <li class="{if isset($active_map_vector)} {$active_map_vector} {/if}"><a href="{base_url('production/admin/codeigniter/maps/map-vector')}">Vector</a></li>
+    </ul>
+</li>
+<!--/ End navigation - maps -->
+
+<!-- Start navigation - charts -->
+<li class="submenu {if isset($active_charts)} {$active_charts} {/if}">
+    <a href="javascript:void(0);">
+        <span class="icon"><i class="fa fa-signal"></i></span>
+        <span class="text">Charts</span>
+        <span class="arrow"></span>
+        {if isset($active_charts)} {'<span class="selected"></span>'} {/if}
+    </a>
+    <ul>
+        <li class="{if isset($active_chart_flot)} {$active_chart_flot} {/if}"><a href="{base_url('production/admin/codeigniter/charts/chart-flot')}">Flot</a></li>
+        <li class="{if isset($active_chart_morris)} {$active_chart_morris} {/if}"><a href="{base_url('production/admin/codeigniter/charts/chart-morris')}">Morris</a></li>
+        <li class="{if isset($active_chart_chartjs)} {$active_chart_chartjs} {/if}"><a href="{base_url('production/admin/codeigniter/charts/chart-chartjs')}">Chartjs</a></li>
+        <li class="{if isset($active_chart_c3js)} {$active_chart_c3js} {/if}"><a href="{base_url('production/admin/codeigniter/charts/chart-c3js')}">C3js</a></li>
+    </ul>
+</li>
+<!--/ End navigation - charts -->
+
+<!-- Start category development -->
+<li class="sidebar-category">
+    <span>DEVELOP</span>
+    <span class="pull-right"><i class="fa fa-code"></i></span>
+</li>
+<!--/ End category development -->
+
+<!-- Start development - components -->
+<li class="submenu {if isset($active_components)} {$active_components} {/if}">
+    <a href="javascript:void(0);">
+        <span class="icon"><i class="fa fa-cube"></i></span>
+        <span class="text">Components</span>
+        <span class="plus"></span>
+        {if isset($active_components)} {'<span class="selected"></span>'} {/if}
+    </a>
+    <ul>
+        <li class="{if isset($active_component_grid_system)} {$active_component_grid_system} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-grid-system')}">Grid System</a></li>
+        <li class="{if isset($active_component_button)} {$active_component_button} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-button')}">Buttons</a></li>
+        <li class="{if isset($active_component_typography)} {$active_component_typography} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-typography')}">Typography</a></li>
+        <li class="{if isset($active_component_panel)} {$active_component_panel} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-panel')}">Panels</a></li>
+        <li class="{if isset($active_component_alert)} {$active_component_alert} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-alert')}">Alerts</a></li>
+        <li class="{if isset($active_component_modal)} {$active_component_modal} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-modal')}">Modals</a></li>
+        <li class="{if isset($active_component_video)} {$active_component_video} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-video')}">Video <span class="label label-danger pull-right">New</span></a></li>
+        <li class="{if isset($active_component_tabsaccordion)} {$active_component_tabsaccordion} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-tabsaccordion')}">Tabs & Accordion</a></li>
+        <li class="{if isset($active_component_slider)} {$active_component_slider} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-slider')}">Sliders</a></li>
+        <li class="submenu {if isset($active_component_icon)} {$active_component_icon} {/if}">
+            <a href="javascript:void(0);">
+                <span class="text">Icons</span>
+                <span class="count label label-danger">6</span>
+                <span class="arrow"></span>
+            </a>
+            <ul>
+                <li class="{if isset($active_component_icon_glyphicons)} {$active_component_icon_glyphicons} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-glyphicons')}">Glyphicons</a></li>
+                <li class="{if isset($active_component_icon_glyphicons_pro)} {$active_component_icon_glyphicons_pro} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-glyphicons-pro')}">Glyphicons PRO</a></li>
+                <li class="{if isset($active_component_icon_font_awesome)} {$active_component_icon_font_awesome} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-font-awesome')}">Font Awesome</a></li>
+                <li class="{if isset($active_component_icon_weather_icons)} {$active_component_icon_weather_icons} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-weather-icons')}">Weather Icons</a></li>
+                <li class="{if isset($active_component_icon_map_icons)} {$active_component_icon_map_icons} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-map-icons')}">Map Icons</a></li>
+                <li class="{if isset($active_component_icon_simple_line_icons)} {$active_component_icon_simple_line_icons} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-simple-line-icons')}">Simple Line Icons</a></li>
+            </ul>
+        </li>
+        <li class="{if isset($active_component_other)} {$active_component_other} {/if}"><a href="{base_url('production/admin/codeigniter/components/component-other')}">Other</a></li>
+    </ul>
+</li>
+<!--/ End development - components -->
+
+<!-- Start development - sub menu -->
+<li class="submenu">
+    <a href="javascript:void(0);">
+        <span class="icon"><i class="fa fa-align-left"></i></span>
+        <span class="text">Sub Menu</span>
+        <span class="plus"></span>
+    </a>
+    <ul>
+        <!-- Start level 1 -->
+        <li class="submenu">
+            <a href="javascript:void(0);">
+                <span class="text">Level 1</span>
+                <span class="arrow"></span>
+            </a>
+            <ul>
+                <!-- Start level 2 -->
+                <li class="submenu">
+                    <a href="javascript:void(0);">
+                        <span class="text">Level 2</span>
+                        <span class="fa fa-angle-double-right pull-right arrow"></span>
+                    </a>
+                    <ul>
+                        <!-- Start level 3 -->
+                        <li class="submenu">
+                            <a href="javascript:void(0);">
+                                <span class="text">Level 3</span>
+                                <span class="fa fa-angle-double-right pull-right arrow"></span>
+                            </a>
+                            <ul>
+                                <!-- Start level 4 -->
+                                <li class="submenu">
+                                    <a href="javascript:void(0);">
+                                        <span class="text">Level 4</span>
+                                        <span class="fa fa-angle-double-right pull-right arrow"></span>
+                                    </a>
+                                    <ul>
+                                        <!-- Start level 5 -->
+                                        <li>
+                                            <a href="javascript:void(0);">Level 5</a>
+                                        </li>
+                                        <!--/ End level 5 -->
+                                        <li>
+                                            <a href="javascript:void(0);">Level 5</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);">Level 5</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!--/ End level 4 -->
+                                <li>
+                                    <a href="javascript:void(0);">Level 4</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Level 4</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--/ End level 3 -->
+                        <li>
+                            <a href="javascript:void(0);">Level 3</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);">Level 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <!--/ End level 2 -->
+                <li>
+                    <a href="javascript:void(0);">Level 2</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">Level 2</a>
+                </li>
+            </ul>
+        </li>
+        <!--/ End level 1 -->
+        <li>
+            <a href="javascript:void(0);">
+                <span class="text">Level 1</span>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0);">
+                <span class="text">Level 1</span>
+            </a>
+        </li>
+    </ul>
+</li>
+<!--/ End development - sub menu -->
+
+<!-- Start development - animate.css -->
+<li class="{if isset($active_animate)} {$active_animate} {/if}">
+    <a href="{base_url('production/admin/codeigniter/animate')}">
+        <span class="icon"><i class="fa fa-forumbee"></i></span>
+        <span class="text">Animate.css</span>
+        <span class="label label-danger pull-right">New</span>
+        {if isset($active_animate)} {'<span class="selected"></span>'} {/if}
+    </a>
+</li>
+<!--/ End development - animate.css -->
+
+<!-- Start category widget -->
+<li class="sidebar-category">
+    <span>WIDGET</span>
+    <span class="pull-right"><i class="fa fa-cubes"></i></span>
+</li>
+<!--/ End category widget -->
+
+<!-- Start widget - overview -->
+<li class="{if isset($active_widget_overview)} {$active_widget_overview} {/if}">
+    <a href="{base_url('production/admin/codeigniter/widget/widget-overview')}">
+        <span class="icon"><i class="fa fa-desktop"></i></span>
+        <span class="text">Overview</span>
+        <span class="label label-primary pull-right rounded">10</span>
+        {if isset($active_widget_overview)} {'<span class="selected"></span>'} {/if}
+    </a>
+</li>
+<!--/ End widget - overview -->
+
+<!-- Start widget - social -->
+<li class="{if isset($active_widget_social)} {$active_widget_social} {/if}">
+    <a href="{base_url('production/admin/codeigniter/widget/widget-social')}">
+        <span class="icon"><i class="fa fa-group"></i></span>
+        <span class="text">Social</span>
+        <span class="label label-success pull-right rounded">28</span>
+        {if isset($active_widget_social)} {'<span class="selected"></span>'} {/if}
+    </a>
+</li>
+<!--/ End widget - social -->
+
+<!-- Start widget - blog -->
+<li class="{if isset($active_widget_blog)} {$active_widget_blog} {/if}">
+    <a href="{base_url('production/admin/codeigniter/widget/widget-blog')}">
+        <span class="icon"><i class="fa fa-pencil"></i></span>
+        <span class="text">Blog</span>
+        <span class="label label-info pull-right rounded">15</span>
+        {if isset($active_widget_blog)} {'<span class="selected"></span>'} {/if}
+    </a>
+</li>
+<!--/ End widget - blog -->
+
+<!-- Start widget - weather -->
+<li class="{if isset($active_widget_weather)} {$active_widget_weather} {/if}">
+    <a href="{base_url('production/admin/codeigniter/widget/widget-weather')}">
+        <span class="icon"><i class="fa fa-sun-o"></i></span>
+        <span class="text">Weather</span>
+        <span class="label label-warning pull-right rounded">6</span>
+        {if isset($active_widget_weather)} {'<span class="selected"></span>'} {/if}
+    </a>
+</li>
+<!--/ End widget - weather -->
+
+<!-- Start widget - misc -->
+<li class="{if isset($active_widget_misc)} {$active_widget_misc} {/if}">
+    <a href="{base_url('production/admin/codeigniter/widget/widget-misc')}">
+        <span class="icon"><i class="fa fa-puzzle-piece"></i></span>
+        <span class="text">Misc</span>
+        <span class="label label-danger pull-right rounded">9</span>
+        {if isset($active_widget_misc)} {'<span class="selected"></span>'} {/if}
+    </a>
+</li>
+<!--/ End widget - misc -->
+
+<!-- Start category documentation -->
+<li class="sidebar-category">
+    <span><span class="hidden-sidebar-minimize">BLANKON</span> CORE</span>
+    <span class="pull-right"><i class="fa fa-coffee"></i></span>
+</li>
+<!--/ End category documentation -->
+
+<!-- Start documentation - api documentation -->
+<li>
+    <a href="{base_url('documentation/admin/codeigniter/live-preview-documentation.html')}" target="_blank">
+        <span class="icon"><i class="fa fa-book"></i></span>
+        <span class="text">API Documentation</span>
+    </a>
+</li>
+<!--/ End documentation - api documentation -->
+
+</ul><!-- /.sidebar-menu -->
+<!--/ End left navigation - menu -->
+
+<!-- Start left navigation - footer -->
+<div class="sidebar-footer hidden-xs hidden-sm hidden-md">
+    <a id="setting" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Setting"><i class="fa fa-cog"></i></a>
+    <a id="fullscreen" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Fullscreen"><i class="fa fa-desktop"></i></a>
+    <a id="lock-screen" data-url="account/lock-screen" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Lock Screen"><i class="fa fa-lock"></i></a>
+    <a id="logout" data-url="account/sign-in" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Logout"><i class="fa fa-power-off"></i></a>
+</div><!-- /.sidebar-footer -->
+<!--/ End left navigation - footer -->
+
+</aside><!-- /#sidebar-left -->
