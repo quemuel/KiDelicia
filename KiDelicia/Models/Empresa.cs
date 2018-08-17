@@ -12,20 +12,22 @@ namespace KiDelicia.Models
         [Key]
         public int EmpresaId { get; set; }
 
-        [DisplayName("Nome Fatasia")]
+        [DisplayName("Nome Empresa")]
         [Required, StringLength(300)]
-        public string NomeFantasia { get; set; }
+        public string Nome { get; set; }
 
-        [Required, StringLength(14)]
-        public string Cnpj { get; set; }
-
-        [DisplayName("Endereço")]
+        [DisplayName("Representante")]
         [Required, StringLength(500)]
-        public string EnderecoEmpresa { get; set; }
+        public string Representante { get; set; }
 
         [DisplayName("Telefone")]
-        [Required, StringLength(11)]
-        public string TelefoneEmpresa { get; set; }
+        [Required, StringLength(15)]
+        [DataType(DataType.PhoneNumber, ErrorMessage = "Forneça o número do telefone no formato (00) 0000-0000")]
+        public string Telefone { get; set; }
+
+        [DisplayName("Descrição")]
+        [MaxLength(5000)]
+        public string Descricao { get; set; }
 
         public virtual ICollection<ConsumoComanda> ConsumoComandas { get; set; }
         public virtual ICollection<BaixaMes> BaixaMeses { get; set; }

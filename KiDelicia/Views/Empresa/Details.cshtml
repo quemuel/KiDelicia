@@ -5,7 +5,7 @@
 }
 <section id="page-content">
     <div class="header-content">
-        <h2><i class="fa fa-coffee"></i>Visualizar Empresa</h2>
+        <h2><i class="fa fa-building-o"></i>@ViewBag.Title</h2>
         <div class="breadcrumb-wrapper hidden-xs">
             <span class="label">Você está aqui:</span>
             <ol class="breadcrumb">
@@ -14,7 +14,7 @@
                     <a href="@Url.Action("index", "Home")">Home</a>
                     <i class="fa fa-angle-right"></i>
                 </li>
-                <li class="active">Visualizar Empresa</li>
+                <li class="active">@ViewBag.Title</li>
             </ol>
         </div>
     </div>
@@ -25,41 +25,40 @@
                 <table class="table">
                     <tr>
                         <th class="text-right">
-                            @string.Format("{0}:", Html.DisplayNameFor(model => model.NomeFantasia)):
+                            @Html.DisplayNameFor(model => model.Nome):
                         </th>
                         <td class="text-left">
-                            @Html.DisplayFor(model => model.NomeFantasia)
+                            @Html.DisplayFor(model => model.Nome)
                         </td>
                     </tr>
                     <tr>
                         <th class="text-right">
-                            @string.Format("{0}:", Html.DisplayNameFor(model => model.Cnpj)):
+                            @Html.DisplayNameFor(model => model.Representante):
                         </th>
                         <td class="text-left">
-                            @Html.DisplayFor(model => model.Cnpj)
+                            @Html.DisplayFor(model => model.Representante)
                         </td>
                      </tr>
                      <tr>
                         <th class="text-right">
-                            @string.Format("{0}:", Html.DisplayNameFor(model => model.EnderecoEmpresa)):
+                            @Html.DisplayNameFor(model => model.Telefone):
                         </th>
                         <td class="text-left">
-                            @Html.DisplayFor(model => model.EnderecoEmpresa)
+                            @Html.DisplayFor(model => model.Telefone)
                         </td>
                     </tr>
-                    |
                      <tr>
                          <th class="text-right">
-                             @string.Format("{0}:", Html.DisplayNameFor(model => model.TelefoneEmpresa)):
+                             @Html.DisplayNameFor(model => model.Descricao):
                          </th>
                          <td class="text-left">
-                             @Html.DisplayFor(model => model.TelefoneEmpresa)
+                             @Html.DisplayFor(model => model.Descricao)
                          </td>
                      </tr>
                 </table>
                 <p>
-                    @Html.ActionLink("Editar", "Edit", new { id = Model.EmpresaId }) |
-                    @Html.ActionLink("Voltar", "Index")
+                    @Html.ActionLink("Voltar", "Index") | @Html.ActionLink("Editar", "Edit", new { id = Model.EmpresaId })
+                    
                 </p>
             </div>
         </div>
