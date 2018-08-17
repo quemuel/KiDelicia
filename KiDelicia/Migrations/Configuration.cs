@@ -11,6 +11,7 @@ namespace KiDelicia.Migrations
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
+            SetSqlGenerator("System.Data.SqlClient", new DefaultValueSqlServerMigrationSqlGenerator());
         }
 
         protected override void Seed(KiDelicia.Contexts.EFContext context)

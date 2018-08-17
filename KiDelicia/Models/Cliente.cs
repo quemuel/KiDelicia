@@ -12,9 +12,9 @@ namespace KiDelicia.Models
         [Key]
         public int ClienteId { get; set; }
 
-        [DisplayName("Nome")]
+        [DisplayName("Nome Cliente")]
         [Required, StringLength(300)]
-        public string Nome { get; set; }
+        public string NomeCliente { get; set; }
 
         [DisplayName("Empresa")]
         [StringLength(100)]

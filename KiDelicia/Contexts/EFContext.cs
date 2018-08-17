@@ -7,6 +7,7 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using KiDelicia.Models;
 using KiDelicia.Migrations;
+using System.ComponentModel;
 
 namespace KiDelicia.Contexts
 {
@@ -20,7 +21,7 @@ namespace KiDelicia.Contexts
 
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Empresa> Empresas { get; set; }
-        public DbSet<ConsumoComanda> ConsumoComandas { get; set; }
+        public DbSet<ConsumoComanda> ConsumoComandas { get; set; }        
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<BaixaMes> BaixaMeses { get; set; }
 
@@ -28,6 +29,8 @@ namespace KiDelicia.Contexts
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            var convention = new AttributeToColumnAnnotationConvention<DefaultValueAttribute, string>("SqlDefaultValue", (p, attributes) => attributes.SingleOrDefault().Value.ToString());
+            modelBuilder.Conventions.Add(convention);
         }
     }
 }
