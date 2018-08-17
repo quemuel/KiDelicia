@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -10,25 +11,33 @@ namespace KiDelicia.Models
     public class ConsumoComanda
     {
         [Key]
-        public int ConsumoComandaId { get; set; }        
+        public int ConsumoComandaId { get; set; }
 
+        [DisplayName("Valor Consumo")]
         [DisplayFormat(DataFormatString = "{0:n2}",
             ApplyFormatInEditMode = true,
             NullDisplayText = "Sem preço")]
         public decimal ValorConsumo { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayName("Data do Consumo")]
         [Required]
-        public DateTime DataConsumo { get; set; }        
+        public DateTime DataConsumo { get; set; }
+
+        [DisplayName("Tipo Consumidor")]
+        [DefaultValue(1)]
+        public bool FlagCliente { get; set; }
 
         [DisplayName("Cliente")]
-        [Required(ErrorMessage = "Escolha o cliente")]
         public int? ClienteId { get; set; }
         public Cliente Cliente { get; set; }
 
         [DisplayName("Empresa")]
-        [Required(ErrorMessage = "Escolha a empresa")]
         public int? EmpresaId { get; set; }
         public Empresa Empresa { get; set; }
+
+        [DisplayName("Data de Cadastro")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DefaultValue("getdate()")]
+        public DateTime DataCadastro { get; set; }
     }
 }

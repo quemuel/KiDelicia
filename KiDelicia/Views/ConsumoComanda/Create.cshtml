@@ -7,7 +7,7 @@
 @Styles.Render("~/Content/bootstrapDatepicker")
 <section id="page-content">
     <div class="header-content">
-        <h2><i class="fa fa-share"></i>Lançar Consumo</h2>
+        <h2><i class="fa fa-share"></i>@ViewBag.Title</h2>
         <div class="breadcrumb-wrapper hidden-xs">
             <span class="label">Você está aqui:</span>
             <ol class="breadcrumb">
@@ -16,7 +16,7 @@
                     <a href="@Url.Action("index", "Home")">Home</a>
                     <i class="fa fa-angle-right"></i>
                 </li>
-                <li class="active">Lançar Consumo</li>
+                <li class="active">@ViewBag.Title</li>
             </ol>
         </div>
     </div>
@@ -32,35 +32,35 @@
                             <label class="control-label">Fonte</label>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input type="checkbox" class="switch" id="fonte" name="fonte" checked data-on-text="Cliente" data-off-text="Empresa" data-on-color="success">
+                                    @Html.CheckBoxFor(c => c.FlagCliente, new { @class="form-control switch", @data_on_text="Cliente", @checked="", @data_off_text="Empresa", @data_on_color="success"})
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row" id="div_cliente">
                                 <div class="col-md-6">
-                                    @Html.LabelFor(model => model.ClienteId, "ClienteId", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.ClienteId, string.Format("{0}:", Html.DisplayNameFor(model => model.ClienteId)), htmlAttributes: new { @class = "control-label" })
                                     @Html.DropDownList("ClienteId", null, "Selecione...", htmlAttributes: new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="row" id="div_empresa" style="display:none">
                                 <div class="col-md-6">
-                                    @Html.LabelFor(model => model.EmpresaId, "EmpresaId", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.EmpresaId, string.Format("{0}:", Html.DisplayNameFor(model => model.EmpresaId)), htmlAttributes: new { @class = "control-label" })
                                     @Html.DropDownList("EmpresaId", null, "Selecione...", htmlAttributes: new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.EmpresaId, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    @Html.LabelFor(model => model.ValorConsumo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.ValorConsumo, htmlAttributes: new { @class = "control-label" })
                                     @Html.EditorFor(model => model.ValorConsumo, new { htmlAttributes = new { @class = "form-control maskMoney" } })
                                     @Html.ValidationMessageFor(model => model.ValorConsumo, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    @Html.LabelFor(model => model.DataConsumo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.LabelFor(model => model.DataConsumo, htmlAttributes: new { @class = "control-label" })
                                     @Html.EditorFor(model => model.DataConsumo, new { htmlAttributes = new { @class = "form-control maskDate"} })
                                     @Html.ValidationMessageFor(model => model.DataConsumo, "", new { @class = "text-danger" })
                                 </div>

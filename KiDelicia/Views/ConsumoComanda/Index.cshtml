@@ -31,7 +31,7 @@
                             @Html.DisplayNameFor(model => model.Cliente.NomeCliente)
                         </th>
                         <th>
-                            @Html.DisplayNameFor(model => model.Empresa.NomeFantasia)
+                            @Html.DisplayNameFor(model => model.Empresa.NomeEmpresa)
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.ValorConsumo)
@@ -39,17 +39,17 @@
                         <th>
                             @Html.DisplayNameFor(model => model.DataConsumo)
                         </th>
-                        <th></th>
+                        <th>Opções</th>
                     </tr>
 
                     @foreach (var item in Model)
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Cliente.NomeCliente)
+                                @(item.Cliente == null ? "--": item.Cliente.NomeCliente)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Empresa.NomeFantasia)
+                                @(item.Empresa == null ? "--" : item.Empresa.NomeEmpresa)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.ValorConsumo)
@@ -58,9 +58,9 @@
                                 @Html.DisplayFor(modelItem => item.DataConsumo)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.ConsumoComandaId }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.ConsumoComandaId }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.ConsumoComandaId })
+                                @Html.ActionLink("Editar", "Edit", new { id = item.ConsumoComandaId }) |
+                                @Html.ActionLink("Visualizar", "Details", new { id = item.ConsumoComandaId }) |
+                                @Html.ActionLink("Deletar", "Delete", new { id = item.ConsumoComandaId })
                             </td>
                         </tr>
                     }

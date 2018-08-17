@@ -226,6 +226,7 @@
     <Compile Include="Helpers\CnpjAttribute.cs" />
     <Compile Include="Helpers\CpfAttribute.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\DefaultValueSqlServerMigrationSqlGenerator.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BaixaMes.cs" />
     <Compile Include="Models\Cliente.cs" />

@@ -14,7 +14,7 @@ namespace KiDelicia.Models
 
         [DisplayName("Nome Empresa")]
         [Required, StringLength(300)]
-        public string Nome { get; set; }
+        public string NomeEmpresa { get; set; }
 
         [DisplayName("Representante")]
         [Required, StringLength(500)]

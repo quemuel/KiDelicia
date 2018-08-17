@@ -1,50 +1,69 @@
 ﻿@model KiDelicia.Models.ConsumoComanda
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Visualizar Lançamento";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>ConsumoComanda</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Cliente.NomeCliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cliente.NomeCliente)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Empresa.NomeFantasia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Empresa.NomeFantasia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ValorConsumo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ValorConsumo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DataConsumo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DataConsumo)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ConsumoComandaId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-share"></i>@ViewBag.Title</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <span class="label">Você está aqui:</span>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="@Url.Action("index", "Home")">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">@ViewBag.Title</li>
+            </ol>
+        </div>
+    </div>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    @if (Model.Empresa == null) {
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.Cliente.NomeCliente):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.Cliente.NomeCliente)
+                        </td>
+                    </tr>
+                    } else {
+                    <r>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.Empresa.NomeEmpresa):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.Empresa.NomeEmpresa)
+                        </td>
+                    </r>
+                    }
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.ValorConsumo):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.ValorConsumo)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.DataConsumo):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.DataConsumo)
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.ClienteId }) | @Html.ActionLink("Voltar", "Index")
+                </p>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_footerAdmin")
+</section>
