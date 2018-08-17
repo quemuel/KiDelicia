@@ -1,0 +1,67 @@
+﻿@model IEnumerable<KiDelicia.Models.Empresa>
+
+@{
+    ViewBag.Title = "Empresas";
+}
+
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-coffee"></i>Listar Empresas</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <span class="label">Você está aqui:</span>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="@Url.Action("index", "Home")">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">Listar Empresas</li>
+            </ol>
+        </div>
+    </div>
+
+    <p>
+       
+        @Html.ActionLink("Nova Empresa", "Create", "Empresa")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeFantasia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cnpj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnderecoEmpresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefoneEmpresa)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeFantasia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cnpj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnderecoEmpresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TelefoneEmpresa)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.EmpresaId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.EmpresaId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.EmpresaId })
+                </td>
+            </tr>
+        }
+
+    </table>

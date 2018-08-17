@@ -47,7 +47,7 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdProduto,Codigo,Nome,Valor")] Produto produto)
+        public ActionResult Create([Bind(Include = "ProdutoId,CodigoProduto,NomeProduto,ValorProduto")] Produto produto)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdProduto,Codigo,Nome,Valor")] Produto produto)
+        public ActionResult Edit([Bind(Include = "ProdutoId,CodigoProduto,NomeProduto,ValorProduto")] Produto produto)
         {
             if (ModelState.IsValid)
             {

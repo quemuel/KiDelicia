@@ -1,42 +1,59 @@
 ﻿@model KiDelicia.Models.Cliente
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Visualizar Cliente";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Cliente</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Endereco)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Endereco)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Telefone)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCliente }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-user"></i>Visualizar Cliente</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <span class="label">Você está aqui:</span>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="@Url.Action("index", "Home")">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">Visualizar Cliente</li>
+            </ol>
+        </div>
+    </div>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">  
+                <table class="table">
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.NomeCliente):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.NomeCliente)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.EnderecoCliente):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.EnderecoCliente)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.TelefoneCliente):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.TelefoneCliente)
+                        </td>
+                    </tr>
+                </table>                    
+                <p>
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.ClienteId }) |
+                    @Html.ActionLink("Voltar", "Index")
+                </p>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_footerAdmin")
+</section>

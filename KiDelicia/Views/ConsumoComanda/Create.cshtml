@@ -1,48 +1,86 @@
 ﻿@model KiDelicia.Models.ConsumoComanda
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Lançar Consumo";
 }
 
-<h2>Create</h2>
-
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>ConsumoComanda</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.ValorConsumo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ValorConsumo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ValorConsumo, "", new { @class = "text-danger" })
-            </div>
+@Styles.Render("~/Content/bootstrapDatepicker")
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-share"></i>Lançar Consumo</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <span class="label">Você está aqui:</span>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="@Url.Action("index", "Home")">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">Lançar Consumo</li>
+            </ol>
         </div>
+    </div>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <label class="control-label">Fonte</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="checkbox" class="switch" id="fonte" name="fonte" checked data-on-text="Cliente" data-off-text="Empresa" data-on-color="success">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row" id="div_cliente">
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.ClienteId, "ClienteId", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.DropDownList("ClienteId", null, "Selecione...", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row" id="div_empresa" style="display:none">
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.EmpresaId, "EmpresaId", htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.DropDownList("EmpresaId", null, "Selecione...", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.EmpresaId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.ValorConsumo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.EditorFor(model => model.ValorConsumo, new { htmlAttributes = new { @class = "form-control maskMoney" } })
+                                    @Html.ValidationMessageFor(model => model.ValorConsumo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    @Html.LabelFor(model => model.DataConsumo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.EditorFor(model => model.DataConsumo, new { htmlAttributes = new { @class = "form-control maskDate"} })
+                                    @Html.ValidationMessageFor(model => model.DataConsumo, "", new { @class = "text-danger" })
+                                </div>
+                            </div>                            
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.dataHoraLancamento, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.dataHoraLancamento, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.dataHoraLancamento, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12 btn-group">
+                                    @Html.ActionLink("Voltar", "Index", "", new { @class = "btn btn-default" })
+                                    <input type="submit" value="Lançar" class="btn btn-success" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    @Html.Partial("_footerAdmin")
+</section>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrapDatepicker")

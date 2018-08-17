@@ -9,19 +9,21 @@ namespace KiDelicia.Models
     public class Empresa
     {
         [Key]
-        public int IdEmpresa { get; set; }
+        public int EmpresaId { get; set; }
 
         [Required, StringLength(300)]
         public string NomeFantasia { get; set; }
-        
-        public int Cnpj { get; set; }
+
+        [Required, StringLength(14)]
+        public string Cnpj { get; set; }
 
         [Required, StringLength(500)]
-        public string Endereco { get; set; }
+        public string EnderecoEmpresa { get; set; }
 
         [Required, StringLength(11)]
-        public string Telefone { get; set; }
+        public string TelefoneEmpresa { get; set; }
 
         public virtual ICollection<ConsumoComanda> ConsumoComandas { get; set; }
+        public virtual ICollection<BaixaMes> BaixaMeses { get; set; }
     }
 }

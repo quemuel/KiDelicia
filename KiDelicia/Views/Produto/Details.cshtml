@@ -1,42 +1,59 @@
 ﻿@model KiDelicia.Models.Produto
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Visualizar Produto";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Produto</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Codigo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Codigo)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Valor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Valor)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdProduto }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-coffee"></i>Visualizar Produto</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <span class="label">Você está aqui:</span>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="@Url.Action("index", "Home")">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">Visualizar Produto</li>
+            </ol>
+        </div>
+    </div>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <tr>
+                        <th class="text-right">
+                            @HttpUtility.HtmlDecode(string.Format("{0}:", Html.DisplayNameFor(model => model.CodigoProduto))):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.CodigoProduto)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                           @string.Format("{0}:", Html.DisplayNameFor(model => model.NomeProduto)):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.NomeProduto)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @HttpUtility.HtmlDecode(string.Format("{0}:", Html.DisplayNameFor(model => model.ValorProduto))):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.ValorProduto)
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.ProdutoId }) |
+                    @Html.ActionLink("Voltar", "Index")
+                </p>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_footerAdmin")
+</section>

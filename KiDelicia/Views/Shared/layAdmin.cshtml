@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Blankon is a theme fullpack admin template powered by Twitter bootstrap 3 front-end framework. Included are multiple example pages, elements styles, and javascript widgets to get your project started.">
+    <meta name="keywords" content="">
+    <meta name="author" content="Djava UI">
+    <title>@ViewBag.Title - K Delícia</title>
+
+    <!-- FAVICONS -->
+    <link href="@Url.Content("/Content")/global/img/ico/apple-touch-icon-144x144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+    <link href="@Url.Content("/Content")/global/img/ico/apple-touch-icon-114x114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link href="@Url.Content("/Content")/global/img/ico/apple-touch-icon-72x72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link href="@Url.Content("/Content")/global/img/ico/apple-touch-icon-57x57-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="@Url.Content("/Content")/global/img/ico/apple-touch-icon.png" rel="shortcut icon">
+    <!--/ END FAVICONS -->
+
+    <!-- START FONT STYLES -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Oswald:700,400" rel="stylesheet">
+    <!--/ END FONT STYLES -->
+    @Styles.Render("~/Content/styleCore")
+    @Styles.Render("~/Content/styleThemeBlankon")
+</head>
+<body class="page-session page-header-fixed page-sidebar-fixed">
+    <section id="wrapper">
+
+        @Html.Partial("_headerAdmin")
+
+        @Html.Partial("_sidebarLeft")
+
+        @RenderBody()
+
+        @Html.Partial("_sidebarRight")
+    </section>
+
+    <div id="back-top" class="animated pulse circle">
+        <i class="fa fa-angle-up"></i>
+    </div>
+
+    @Scripts.Render("~/bundles/scriptCoreBlankon")
+    @Scripts.Render("~/bundles/scriptPageLevelBlankon")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
