@@ -1,64 +1,91 @@
 ﻿@model KiDelicia.Models.BaixaMes
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Excluir Baixa Mensal";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>BaixaMes</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Cliente.NomeCliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cliente.NomeCliente)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Empresa.NomeFantasia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Empresa.NomeFantasia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ValorMes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ValorMes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DataMesReferencia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DataMesReferencia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DataCadastro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DataCadastro)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-download"></i>@ViewBag.Title</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <span class="label">Você está aqui:</span>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="@Url.Action("index", "Home")">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">@ViewBag.Title</li>
+            </ol>
         </div>
-    }
-</div>
+    </div>
+    <div class="body-content animated fadeIn">
+        <h4>Você tem certeza que quer excluir esta baixa mensal?</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    @if (Model.FlagCliente)
+                    {
+                        <tr>
+                            <th class="text-right">
+                                @Html.DisplayNameFor(model => model.Cliente.NomeCliente):
+                            </th>
+                            <td class="text-left">
+                                @Html.DisplayFor(model => model.Cliente.NomeCliente)
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <r>
+                            <th class="text-right">
+                                @Html.DisplayNameFor(model => model.Empresa.NomeEmpresa):
+                            </th>
+                            <td class="text-left">
+                                @Html.DisplayFor(model => model.Empresa.NomeEmpresa)
+                            </td>
+                        </r>
+                    }
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.DataMesReferencia):
+                        </th>
+                        <td class="text-left">
+                            @Model.DataMesReferencia.Month
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.ValorMes):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.ValorMes)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.DataCadastro):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.DataCadastro)
+                        </td>
+                    </tr>
+                </table>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <br />
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12 btn-group">
+                                @Html.ActionLink("Voltar", "Index", "", new { @class = "btn btn-default" })
+                                <input type="submit" value="Excluir" class="btn btn-danger" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_footerAdmin")
+</section>

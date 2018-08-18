@@ -20,21 +20,26 @@ namespace KiDelicia.Models
         public decimal ValorMes { get; set; }
 
         [DisplayName("Mês Referencia")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required]
         public DateTime DataMesReferencia { get; set; }
 
         [DisplayName("Cliente")]
-        [Required(ErrorMessage = "Escolha o cliente")]
         public int? ClienteId { get; set; }
         public Cliente Cliente { get; set; }
 
+        [DisplayName("Tipo Consumidor")]
+        [DefaultValue(1)]
+        public bool FlagCliente { get; set; }
+
         [DisplayName("Empresa")]
-        [Required(ErrorMessage = "Escolha a empresa")]
         public int? EmpresaId { get; set; }
         public Empresa Empresa { get; set; }
 
         [DisplayName("Data de Cadastro")]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:d}")]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy HH:mm:ss}")]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [DefaultValue("getdate()")]
         public DateTime DataCadastro { get; set; }

@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<KiDelicia.Models.Cliente>
 
 @{
-    ViewBag.Title = "Clientes";
+    ViewBag.Title = "Listar Clientes";
 }
 
 <section id="page-content">
     <div class="header-content">
-        <h2><i class="fa fa-users"></i>Listar Clientes</h2>
+        <h2><i class="fa fa-users"></i>@ViewBag.Title</h2>
         <div class="breadcrumb-wrapper hidden-xs">
             <span class="label">Você está aqui:</span>
             <ol class="breadcrumb">
@@ -15,7 +15,7 @@
                     <a href="@Url.Action("index", "Home")">Home</a>
                     <i class="fa fa-angle-right"></i>
                 </li>
-                <li class="active">Listar Clientes</li>
+                <li class="active">@ViewBag.Title</li>
             </ol>
         </div>
     </div>
@@ -52,16 +52,16 @@
                                 @Html.DisplayFor(modelItem => item.NomeCliente)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Empresa)
+                                @(item.Empresa == null ? "--" : item.Empresa)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Setor)
+                                @(item.Setor == null ? "--" : item.Setor)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Telefone)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Descricao)
+                                @(item.Descricao == null ? "--" : item.Descricao)
                             </td>
                             <td>
                                 @Html.ActionLink("Editar", "Edit", new { id = item.ClienteId }) |

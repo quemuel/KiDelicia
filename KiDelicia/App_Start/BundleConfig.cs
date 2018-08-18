@@ -84,7 +84,7 @@ namespace KiDelicia
             bundles.Add(new StyleBundle("~/Content/bootstrapDatepicker").Include(
                 "~/Content/global/plugins/bower_components/dropzone/downloads/css/dropzone.css",
                 "~/Content/global/plugins/bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css",
-                "~/Content/global/plugins/bower_components/bootstrap-datepicker-vitalets/css/datepicker.css"
+                "~/Content/global/plugins/bower_components/bootstrap-datepicker-vitalets/css/bootstrap-datepicker.css"
             ));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrapDatepicker").Include(
@@ -92,7 +92,7 @@ namespace KiDelicia
                 "~/Content/global/plugins/bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js",
                 "~/Content/global/plugins/bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.min.js",
                 "~/Content/global/plugins/bower_components/bootstrap-datepicker-vitalets/js/bootstrap-datepicker.js",
-                "~/Content/global/plugins/bower_components/bootstrap-datepicker-vitalets/js/locales/bootstrap-datepicker.pt-BR",
+                "~/Content/global/plugins/bower_components/bootstrap-datepicker-vitalets/locales/bootstrap-datepicker.pt-BR.min.js",
                 "~/Content/admin/js/pages/blankon.form.advanced.js"
             ));
 
