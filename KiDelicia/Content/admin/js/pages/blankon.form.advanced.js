@@ -44,18 +44,17 @@ var BlankonFormAdvanced = function () {
         // BOOTSTRAP DATEPICKER
         // =========================================================================
         bootstrapDatepicker: function () {
-            $.fn.datepicker.dates['pt-BR'] = {
-                days: ["Domingo", "Segunda", "Ter\u00e7a", "Quarta", "Quinta", "Sexta", "S\u00e1bado", "Domingo"],
-                daysShort: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "S\u00e1b", "Dom"],
-                daysMin: ["Do", "Se", "Te", "Qu", "Qu", "Se", "Sa", "Do"],
-                months: ["Janeiro", "Fevereiro", "Mar\u00e7o", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
-                monthsShort: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
-                today: "Hoje"
-            };
             $('.maskDate').datepicker({
                 format: 'dd/mm/yyyy',
                 language: 'pt-BR',
                 todayBtn: 'linked'
+            });
+            $('.maskDateMonth').datepicker({
+                format: "mm/yyyy",
+                minViewMode: 1,
+                todayBtn: "linked",
+                language: "pt-BR",
+                autoclose: true
             });
             if($('#dp').length){
                 $('#dp1').datepicker({

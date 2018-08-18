@@ -29,7 +29,7 @@ namespace KiDelicia.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BaixaMes baixaMes = db.BaixaMeses.Find(id);
+            BaixaMes baixaMes = db.BaixaMeses.Include(b => b.Cliente).Include(b => b.Empresa).First(b => b.BaixaMesId == id);
             if (baixaMes == null)
             {
                 return HttpNotFound();
@@ -41,7 +41,7 @@ namespace KiDelicia.Controllers
         public ActionResult Create()
         {
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente");
-            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeFantasia");
+            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa");
             return View();
         }
 
@@ -50,17 +50,25 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BaixaMesId,ValorMes,DataMesReferencia,DataCadastro,ClienteId,EmpresaId")] BaixaMes baixaMes)
+        public ActionResult Create([Bind(Include = "BaixaMesId,ValorMes,DataMesReferencia,DataCadastro,ClienteId,EmpresaId,FlagCliente")] BaixaMes baixaMes)
         {
             if (ModelState.IsValid)
             {
+                if (baixaMes.FlagCliente)
+                {
+                    baixaMes.EmpresaId = null;
+                }
+                else
+                {
+                    baixaMes.ClienteId = null;
+                }
                 db.BaixaMeses.Add(baixaMes);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", baixaMes.ClienteId);
-            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeFantasia", baixaMes.EmpresaId);
+            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", baixaMes.EmpresaId);
             return View(baixaMes);
         }
 
@@ -77,7 +85,7 @@ namespace KiDelicia.Controllers
                 return HttpNotFound();
             }
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", baixaMes.ClienteId);
-            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeFantasia", baixaMes.EmpresaId);
+            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", baixaMes.EmpresaId);
             return View(baixaMes);
         }
 
@@ -86,16 +94,24 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BaixaMesId,ValorMes,DataMesReferencia,DataCadastro,ClienteId,EmpresaId")] BaixaMes baixaMes)
+        public ActionResult Edit([Bind(Include = "BaixaMesId,ValorMes,DataMesReferencia,DataCadastro,ClienteId,EmpresaId,FlagCliente")] BaixaMes baixaMes)
         {
             if (ModelState.IsValid)
             {
+                if (baixaMes.FlagCliente)
+                {
+                    baixaMes.EmpresaId = null;
+                }
+                else
+                {
+                    baixaMes.ClienteId = null;
+                }
                 db.Entry(baixaMes).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", baixaMes.ClienteId);
-            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeFantasia", baixaMes.EmpresaId);
+            ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", baixaMes.EmpresaId);
             return View(baixaMes);
         }
 
@@ -106,7 +122,7 @@ namespace KiDelicia.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BaixaMes baixaMes = db.BaixaMeses.Find(id);
+            BaixaMes baixaMes = db.BaixaMeses.Include(b => b.Cliente).Include(b => b.Empresa).First(b => b.BaixaMesId == id);
             if (baixaMes == null)
             {
                 return HttpNotFound();

@@ -29,7 +29,7 @@
                     <div class="form-horizontal">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-group">
-                            <label class="control-label">Fonte</label>
+                            @Html.LabelFor(model => model.FlagCliente, string.Format("{0}:", Html.DisplayNameFor(model => model.FlagCliente)), htmlAttributes: new { @class = "control-label" })
                             <div class="row">
                                 <div class="col-md-6">
                                     @Html.CheckBoxFor(c => c.FlagCliente, new { @class="form-control switch", @data_on_text="Cliente", @checked="", @data_off_text="Empresa", @data_on_color="success"})
@@ -53,14 +53,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    @Html.LabelFor(model => model.ValorConsumo, htmlAttributes: new { @class = "control-label" })
+                                    @Html.LabelFor(model => model.ValorConsumo, string.Format("{0}:", Html.DisplayNameFor(model => model.ValorConsumo)), htmlAttributes: new { @class = "control-label" })
                                     @Html.EditorFor(model => model.ValorConsumo, new { htmlAttributes = new { @class = "form-control maskMoney" } })
                                     @Html.ValidationMessageFor(model => model.ValorConsumo, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    @Html.LabelFor(model => model.DataConsumo, htmlAttributes: new { @class = "control-label" })
+                                    @Html.LabelFor(model => model.DataConsumo, string.Format("{0}:", Html.DisplayNameFor(model => model.DataConsumo)), htmlAttributes: new { @class = "control-label" })
                                     @Html.EditorFor(model => model.DataConsumo, new { htmlAttributes = new { @class = "form-control maskDate"} })
                                     @Html.ValidationMessageFor(model => model.DataConsumo, "", new { @class = "text-danger" })
                                 </div>

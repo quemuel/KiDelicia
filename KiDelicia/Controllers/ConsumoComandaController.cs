@@ -95,20 +95,20 @@ namespace KiDelicia.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ConsumoComandaId,FlagCliente,ValorConsumo,DataConsumo,ClienteId,EmpresaId")] ConsumoComanda consumoComanda)
         {
-            //try
-            //{
-
-                if (ModelState.IsValid)
+            if (ModelState.IsValid)
+            {
+                if (consumoComanda.FlagCliente)
                 {
-                    db.Entry(consumoComanda).State = EntityState.Modified;
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
+                    consumoComanda.EmpresaId = null;
                 }
-            //}
-            //catch (Exception ec)
-            //{
-            //    Console.WriteLine(ec.Message);
-            //}
+                else
+                {
+                    consumoComanda.ClienteId = null;
+                }
+                db.Entry(consumoComanda).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", consumoComanda.ClienteId);
             ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", consumoComanda.EmpresaId);

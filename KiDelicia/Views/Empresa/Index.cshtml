@@ -55,7 +55,7 @@
                                 @Html.DisplayFor(modelItem => item.Telefone)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Descricao)
+                                @(item.Descricao == null ? "--" : item.Descricao)
                             </td>
                             <td>
                                 @Html.ActionLink("Editar", "Edit", new { id = item.EmpresaId }) |

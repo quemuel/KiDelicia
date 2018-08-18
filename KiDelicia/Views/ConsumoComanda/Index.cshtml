@@ -28,10 +28,7 @@
                 <table class="table">
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.Cliente.NomeCliente)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Empresa.NomeEmpresa)
+                            Consumidor
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.ValorConsumo)
@@ -46,16 +43,13 @@
                     {
                         <tr>
                             <td>
-                                @(item.Cliente == null ? "--": item.Cliente.NomeCliente)
-                            </td>
-                            <td>
-                                @(item.Empresa == null ? "--" : item.Empresa.NomeEmpresa)
+                                @(item.FlagCliente ? ("Cliente: "  + item.Cliente.NomeCliente) : ("Empresa: " + item.Empresa.NomeEmpresa))
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.ValorConsumo)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.DataConsumo)
+                                @item.DataConsumo.Date.ToShortDateString()
                             </td>
                             <td>
                                 @Html.ActionLink("Editar", "Edit", new { id = item.ConsumoComandaId }) |
@@ -64,7 +58,6 @@
                             </td>
                         </tr>
                     }
-
                 </table>
             </div>
         </div>
