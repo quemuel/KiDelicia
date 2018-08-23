@@ -24,22 +24,28 @@
         <div class="row">
             <div class="col-md-12">
                 <table class="table">
-                    <tr>
-                        <th class="text-right">
-                            @Html.DisplayNameFor(model => model.Cliente.NomeCliente):
-                        </th>
-                        <td class="text-left">
-                            @Html.DisplayFor(model => model.Cliente.NomeCliente)
-                        </td>
-                    </tr>
-                    <tr>
-                        <th class="text-right">
-                            @Html.DisplayNameFor(model => model.Empresa.NomeEmpresa):
-                        </th>
-                        <td class="text-left">
-                            @Html.DisplayFor(model => model.Empresa.NomeEmpresa)
-                        </td>
-                    </tr>
+                    @if (Model.FlagCliente)
+                    {
+                        <tr>
+                            <th class="text-right">
+                                @Html.DisplayNameFor(model => model.Cliente.NomeCliente):
+                            </th>
+                            <td class="text-left">
+                                @Html.DisplayFor(model => model.Cliente.NomeCliente)
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <r>
+                            <th class="text-right">
+                                @Html.DisplayNameFor(model => model.Empresa.NomeEmpresa):
+                            </th>
+                            <td class="text-left">
+                                @Html.DisplayFor(model => model.Empresa.NomeEmpresa)
+                            </td>
+                        </r>
+                    }
                     <tr>
                         <th class="text-right">
                             @Html.DisplayNameFor(model => model.ValorConsumo):

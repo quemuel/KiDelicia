@@ -1,58 +1,80 @@
 ﻿@model KiDelicia.Models.BaixaMes
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Visualizar Baixa Mensal";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>BaixaMes</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Cliente.NomeCliente)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cliente.NomeCliente)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Empresa.NomeFantasia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Empresa.NomeFantasia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ValorMes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ValorMes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DataMesReferencia)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DataMesReferencia)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DataCadastro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DataCadastro)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BaixaMesId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<section id="page-content">
+    <div class="header-content">
+        <h2><i class="fa fa-download"></i>@ViewBag.Title</h2>
+        <div class="breadcrumb-wrapper hidden-xs">
+            <span class="label">Você está aqui:</span>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-home"></i>
+                    <a href="@Url.Action("index", "Home")">Home</a>
+                    <i class="fa fa-angle-right"></i>
+                </li>
+                <li class="active">@ViewBag.Title</li>
+            </ol>
+        </div>
+    </div>
+    <div class="body-content animated fadeIn">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    @if (Model.FlagCliente)
+                    {
+                        <tr>
+                            <th class="text-right">
+                                @Html.DisplayNameFor(model => model.Cliente.NomeCliente):
+                            </th>
+                            <td class="text-left">
+                                @Html.DisplayFor(model => model.Cliente.NomeCliente)
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <r>
+                            <th class="text-right">
+                                @Html.DisplayNameFor(model => model.Empresa.NomeEmpresa):
+                            </th>
+                            <td class="text-left">
+                                @Html.DisplayFor(model => model.Empresa.NomeEmpresa)
+                            </td>
+                        </r>
+                    }
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.DataMesReferencia):
+                        </th>
+                        <td class="text-left">
+                            @Model.DataMesReferencia.Month
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.ValorMes):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.ValorMes)
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-right">
+                            @Html.DisplayNameFor(model => model.DataCadastro):
+                        </th>
+                        <td class="text-left">
+                            @Html.DisplayFor(model => model.DataCadastro)
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.ClienteId }) | @Html.ActionLink("Voltar", "Index")
+                </p>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_footerAdmin")
+</section>
