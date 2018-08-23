@@ -14,9 +14,7 @@ namespace KiDelicia.Models
         public int ConsumoComandaId { get; set; }
 
         [DisplayName("Valor Consumo")]
-        [DisplayFormat(DataFormatString = "{0:n2}",
-            ApplyFormatInEditMode = true,
-            NullDisplayText = "Sem preço")]
+        [DataType(DataType.Currency)]
         public decimal ValorConsumo { get; set; }
 
         [DisplayName("Data do Consumo")]

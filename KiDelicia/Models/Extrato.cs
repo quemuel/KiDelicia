@@ -27,15 +27,11 @@ namespace KiDelicia.Models
         public Empresa Empresa { get; set; }
 
         [DisplayName("Valor Pago Mensal")]
-        [DisplayFormat(DataFormatString = "{0:n2}",
-            ApplyFormatInEditMode = true,
-            NullDisplayText = "Sem preço")]
+        [DataType(DataType.Currency)]
         public decimal ValorGasto { get; set; }
 
         [DisplayName("Valor Pago Mensal")]
-        [DisplayFormat(DataFormatString = "{0:n2}",
-            ApplyFormatInEditMode = true,
-            NullDisplayText = "Sem preço")]
+        [DataType(DataType.Currency)]
         public decimal ValorPago { get; set; }
     }
 }

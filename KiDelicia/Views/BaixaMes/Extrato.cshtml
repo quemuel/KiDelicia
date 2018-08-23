@@ -110,10 +110,10 @@
                                             @(item.DataMesReferencia.Month + "/" + @item.DataMesReferencia.Year)
                                         </td>
                                         <td>
-                                            @item.ValorGasto
+                                            @Html.DisplayFor(modelItem => item.ValorGasto)
                                         </td>
                                         <td>
-                                            @item.ValorPago
+                                            @Html.DisplayFor(modelItem => item.ValorPago)
                                         </td>
                                         <th @((saldoParcial < 0) ? "class=text-danger" : "class=text-success")>
                                             @saldoParcial
