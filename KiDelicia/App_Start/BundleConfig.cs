@@ -34,6 +34,7 @@ namespace KiDelicia
                 "~/Content/admin/css/plugins.css",
                 //"~/Content/admin/css/yii-custom.css",
                 "~/Content/admin/css/themes/default.theme.css",
+                "~/Content/admin/css/custom.css",
                 "~/Content/admin/css/site.css"
             ));
 
