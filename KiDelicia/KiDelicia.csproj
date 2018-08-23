@@ -228,6 +228,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\DefaultValueSqlServerMigrationSqlGenerator.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Extrato.cs" />
     <Compile Include="Models\BaixaMes.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ConsumoComanda.cs" />
@@ -9003,6 +9004,7 @@
     <Content Include="Views\Empresa\Details.cshtml" />
     <Content Include="Views\Empresa\Edit.cshtml" />
     <Content Include="Views\Empresa\Index.cshtml" />
+    <Content Include="Views\BaixaMes\Extrato.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -23,6 +23,16 @@ namespace KiDelicia.Models
         [DisplayFormat(DataFormatString = "{0:MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required]
         public DateTime DataMesReferencia { get; set; }
+            
+        [DisplayName("Mês Referencia Inicial")]
+        [DisplayFormat(DataFormatString = "{0:MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Required, NotMapped]
+        public DateTime DataMesReferenciaInicial { get; set; }
+
+        [DisplayName("Mês Referencia Final")]
+        [DisplayFormat(DataFormatString = "{0:MM/yyyy}", ApplyFormatInEditMode = true)]
+        [Required, NotMapped]
+        public DateTime DataMesReferenciaFinal { get; set; }
 
         [DisplayName("Cliente")]
         public int? ClienteId { get; set; }
