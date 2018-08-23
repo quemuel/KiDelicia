@@ -207,11 +207,11 @@ namespace KiDelicia.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Extrato([Bind(Include = "DataMesReferenciaInicial,DataMesReferenciaFinal, ClienteId, EmpresaId, FlagCliente")] BaixaMes baixaMesPost)
         {
-
-            //List<Extrato> dadosExtrato
+            
             dynamic dadosExtrato = new List<Extrato>();
             if (baixaMesPost.FlagCliente)
-            {               
+            {
+                baixaMesPost.EmpresaId = null;
                 var extrato = from consumoComanda in db.ConsumoComandas
                     join baixaMes in db.BaixaMeses on new
                     {
@@ -254,6 +254,7 @@ namespace KiDelicia.Controllers
                 });
             } else
             {
+                baixaMesPost.ClienteId = null;
                 var extrato = from consumoComanda in db.ConsumoComandas
                     join baixaMes in db.BaixaMeses on new
                     {

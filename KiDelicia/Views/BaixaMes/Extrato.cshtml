@@ -32,19 +32,19 @@
                             @Html.LabelFor(model => model.FlagCliente, string.Format("{0}:", Html.DisplayNameFor(model => model.FlagCliente)), htmlAttributes: new { @class = "control-label" })
                             <div class="row">
                                 <div class="col-md-6">
-                                    @Html.CheckBoxFor(c => c.FlagCliente, new { @class = "form-control switch", @data_on_text = "Cliente", @checked = "", @data_off_text = "Empresa", @data_on_color = "success" })
+                                    @Html.CheckBoxFor(c => c.FlagCliente, new { @class = "form-control switch", @data_on_text = "Cliente", @checked="", @data_off_text = "Empresa", @data_on_color = "success" })
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="row" id="div_cliente">
+                            <div class="row" id="div_cliente" @(Model == null || Model.FlagCliente ? "" : "style=display:none")>
                                 <div class="col-md-6">
                                     @Html.LabelFor(model => model.ClienteId, string.Format("{0}:", Html.DisplayNameFor(model => model.ClienteId)), htmlAttributes: new { @class = "control-label" })
                                     @Html.DropDownList("ClienteId", null, "Selecione...", htmlAttributes: new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <div class="row" id="div_empresa" style="display:none">
+                            <div class="row" id="div_empresa"  @(Model == null || Model.FlagCliente  ? "style=display:none" : "")>
                                 <div class="col-md-6">
                                     @Html.LabelFor(model => model.EmpresaId, string.Format("{0}:", Html.DisplayNameFor(model => model.EmpresaId)), htmlAttributes: new { @class = "control-label" })
                                     @Html.DropDownList("EmpresaId", null, "Selecione...", htmlAttributes: new { @class = "form-control" })
@@ -81,31 +81,72 @@
             <div class="row">
                 <div class="col-md-12">
                     <table class="table">
-                        <tr>
-                            <th>
-                                Mês Referencia
-                            </th>
-                            <th>
-                                Valor Gasto
-                            </th>
-                            <th>
-                                Valor Pago
-                            </th>
-                        </tr>
-                        @foreach (var item in ViewBag.extrato as List<KiDelicia.Models.Extrato>)
-                        {
+                        <thead>
                             <tr>
-                                <td>
-                                    @(item.DataMesReferencia.Month + "/" + @item.DataMesReferencia.Year)
-                                </td>
-                                <td>
-                                    @item.ValorGasto
-                                </td>
-                                <td>
-                                    @item.ValorPago
-                                </td>
+                                <th class="text-strong">
+                                    Mês Referencia
+                                </th>
+                                <th class="text-strong">
+                                    Valor Gasto
+                                </th>
+                                <th class="text-strong">
+                                    Valor Pago
+                                </th>
+                                <th class="text-strong">
+                                    Saldo
+                                </th>
                             </tr>
-                        }
+                        </thead>
+                        <tbody>
+                            @{
+                                List<KiDelicia.Models.Extrato> extrato = ViewBag.extrato;
+                            }
+                            @if (extrato.Count > 0) {
+                                foreach (var item in extrato)
+                                {
+                                    decimal saldoParcial = (item.ValorPago - item.ValorGasto);
+                                    <tr>
+                                        <td>
+                                            @(item.DataMesReferencia.Month + "/" + @item.DataMesReferencia.Year)
+                                        </td>
+                                        <td>
+                                            @item.ValorGasto
+                                        </td>
+                                        <td>
+                                            @item.ValorPago
+                                        </td>
+                                        <th @((saldoParcial < 0) ? "class=text-danger" : "class=text-success")>
+                                            @saldoParcial
+                                        </th>
+                                    </tr>
+                                }
+                                decimal somaValorGasto = extrato.Sum(x => x.ValorGasto);
+                                decimal somaValorPago = extrato.Sum(x => x.ValorPago);
+                                decimal saldo = somaValorPago - somaValorGasto;
+                                <tr class="active">
+                                    <th>
+                                        Total
+                                    </th>
+                                    <th>
+                                        @somaValorGasto
+                                    </th>
+                                    <th>
+                                        @somaValorPago
+                                    </th>
+                                    <th @((saldo < 0) ? "class=text-danger" : "class=text-success")>
+                                        @saldo
+                                    </th>
+                                </tr>
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-center">
+                                        Não há registro para este filtro
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
                     </table>
                 </div>
             </div>
