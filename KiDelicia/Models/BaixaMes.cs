@@ -14,9 +14,7 @@ namespace KiDelicia.Models
         public int BaixaMesId { get; set; }
 
         [DisplayName("Valor Pago Mensal")]
-        [DisplayFormat(DataFormatString = "{0:n2}",
-            ApplyFormatInEditMode = true,
-            NullDisplayText = "Sem preço")]
+        [DataType(DataType.Currency)]
         public decimal ValorMes { get; set; }
 
         [DisplayName("Mês Referencia")]

@@ -43,7 +43,14 @@
                     {
                         <tr>
                             <td>
-                                @(item.FlagCliente ? ("Cliente: "  + item.Cliente.NomeCliente) : ("Empresa: " + item.Empresa.NomeEmpresa))
+                                @if (item.FlagCliente)
+                                {
+                                    <b class="text-teal">Cliente: </b> @item.Cliente.NomeCliente
+                                }
+                                else
+                                {
+                                    <b class="text-lilac">Empresa: </b> @item.Empresa.NomeEmpresa
+                                }
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.ValorConsumo)
@@ -54,7 +61,7 @@
                             <td>
                                 @Html.ActionLink("Editar", "Edit", new { id = item.ConsumoComandaId }) |
                                 @Html.ActionLink("Visualizar", "Details", new { id = item.ConsumoComandaId }) |
-                                @Html.ActionLink("Deletar", "Delete", new { id = item.ConsumoComandaId })
+                                @Html.ActionLink("Excluir", "Delete", new { id = item.ConsumoComandaId })
                             </td>
                         </tr>
                     }

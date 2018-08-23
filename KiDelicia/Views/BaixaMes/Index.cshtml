@@ -46,21 +46,28 @@
                     {
                         <tr>
                             <td>
-                                @(item.FlagCliente ? ("Cliente: " + item.Cliente.NomeCliente) : ("Empresa: " + item.Empresa.NomeEmpresa))
+                                @if (item.FlagCliente)
+                                {
+                                    <b class="text-teal">Cliente: </b> @item.Cliente.NomeCliente
+                                }
+                                else
+                                {
+                                    <b class="text-lilac">Empresa: </b> @item.Empresa.NomeEmpresa
+                                }
                             </td>
                             <td>
-                                @item.DataMesReferencia.Month
+                                @item.DataMesReferencia.ToString("MMMM")
                             </td>
                             <td>
-                                @item.ValorMes
+                                @Html.DisplayFor(modelItem => item.ValorMes)
                             </td>
                             <td>
-                                @item.DataCadastro.Date
+                                @item.DataCadastro.ToString("dd/MM/yyyy HH:mm:ss")
                             </td>
                             <td>
                                 @Html.ActionLink("Editar", "Edit", new { id = item.BaixaMesId }) |
                                 @Html.ActionLink("Visualizar", "Details", new { id = item.BaixaMesId }) |
-                                @Html.ActionLink("Deletar", "Delete", new { id = item.BaixaMesId })
+                                @Html.ActionLink("Excluir", "Delete", new { id = item.BaixaMesId })
                             </td>
                         </tr>
                     }
