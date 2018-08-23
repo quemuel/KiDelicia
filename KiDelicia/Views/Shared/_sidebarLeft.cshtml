@@ -2,41 +2,67 @@
 <aside id="sidebar-left" class="sidebar-circles">
     <br/>
     <ul class="sidebar-menu">
-        <li class="">
-            <a href="@Url.Action("index", "Home")">
+        @{bool homeUrl = Request.RawUrl == "/Home/Index" || Request.RawUrl == "/Home" || Request.RawUrl == "/"; }
+        <li class="@(homeUrl ? "active": "")">
+            <a href="@Url.Action("Index", "Home")">
                 <span class="icon"><i class="fa fa-home"></i></span>
-                <span class="text">Home</span>
-                <span class="selected"></span>
+                <span class="text">Home</span> 
+                @if (homeUrl)
+                {<span class="selected"></span>}              
             </a>
         </li>
-        <li class="">
-            <a href="@Url.Action("index", "Cliente")">
+        @{bool clienteUrl = Request.RawUrl == "/Cliente/Index" || Request.RawUrl == "/Cliente"; }
+        <li class="@(clienteUrl ? "active": "")">
+            <a href="@Url.Action("Index", "Cliente")">
                 <span class="icon"><i class="fa fa-user"></i></span>
-                <span class="text">Cliente</span>
+                <span class="text">Cliente</span>    
+                @if (clienteUrl)
+                {<span class="selected"></span>}            
             </a>
         </li>
-        <li class="">
-            <a href="@Url.Action("index", "Produto")">
+        @{bool produtoUrl = Request.RawUrl == "/Produto/Index" || Request.RawUrl == "/Produto"; }
+        <li class="@(produtoUrl ? "active": "")">
+            <a href="@Url.Action("Index", "Produto")">
                 <span class="icon"><i class="fa fa-coffee"></i></span>
-                <span class="text">Produto</span>
+                <span class="text">Produto</span>    
+                @if (produtoUrl)
+                {<span class="selected"></span>}         
             </a>
         </li>
-        <li class="">
-            <a href="@Url.Action("index", "Empresa")">
+        @{bool empresaUrl = Request.RawUrl == "/Empresa/Index" || Request.RawUrl == "/Empresa"; }
+        <li class="@(empresaUrl ? "active": "")">
+            <a href="@Url.Action("Index", "Empresa")">
                 <span class="icon"><i class="fa fa-building-o"></i></span>
                 <span class="text">Empresa</span>
+                @if (empresaUrl)
+                {<span class="selected"></span>}
             </a>
         </li>
-        <li class="">
-            <a href="@Url.Action("index", "ConsumoComanda")">
+        @{bool consumoComandaUrl = Request.RawUrl == "/ConsumoComanda/Index" || Request.RawUrl == "/ConsumoComanda"; }
+        <li class="@(consumoComandaUrl ? "active": "")">
+            <a href="@Url.Action("Index", "ConsumoComanda")">
                 <span class="icon"><i class="fa fa-share"></i></span>
                 <span class="text">Lançar Consumo</span>
+                @if (consumoComandaUrl)
+                {<span class="selected"></span>}
             </a>
         </li>
-        <li class="">
-            <a href="@Url.Action("index", "BaixaMes")">
+        @{bool baixaMesUrl = Request.RawUrl == "/BaixaMes/Index" || Request.RawUrl == "/BaixaMes"; }
+        <li class="@(baixaMesUrl ? "active": "")">
+            <a href="@Url.Action("Index", "BaixaMes")">
                 <span class="icon"><i class="fa fa-download"></i></span>
                 <span class="text">Dar Baixa</span>
+                @if (baixaMesUrl)
+                {<span class="selected"></span>}
+            </a>
+        </li>
+        @{bool extratoUrl = Request.RawUrl == "/BaixaMes/Extrato"; }
+        <li class="@(extratoUrl ? "active": "")">
+            <a href="@Url.Action("Extrato", "BaixaMes")">
+                <span class="icon"><i class="fa fa-file-text"></i></span>
+                <span class="text">Extrato</span>
+                @if (extratoUrl)
+                {<span class="selected"></span>}
             </a>
         </li>
     </ul>

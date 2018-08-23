@@ -20,6 +20,7 @@ namespace KiDelicia.Models
         public decimal ValorConsumo { get; set; }
 
         [DisplayName("Data do Consumo")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required]
         public DateTime DataConsumo { get; set; }
 
