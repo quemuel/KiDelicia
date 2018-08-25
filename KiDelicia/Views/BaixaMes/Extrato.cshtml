@@ -115,7 +115,7 @@
                                         <td>
                                             @Html.DisplayFor(modelItem => item.ValorPago)
                                         </td>
-                                        <th @((saldoParcial < 0) ? "class=text-danger" : "class=text-success")>
+                                        <th @((saldoParcial < 0) ? "class=text-danger" : ((saldoParcial == 0) ? "" : "class=text-success"))>
                                             @saldoParcial
                                         </th>
                                     </tr>
@@ -133,7 +133,7 @@
                                     <th>
                                         @somaValorPago
                                     </th>
-                                    <th @((saldo < 0) ? "class=text-danger" : "class=text-success")>
+                                    <th @((saldo < 0) ? "class=text-danger" : ((saldo == 0) ? "" : "class=text-success"))>
                                         @saldo
                                     </th>
                                 </tr>

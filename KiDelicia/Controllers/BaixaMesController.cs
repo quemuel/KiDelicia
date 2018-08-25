@@ -177,27 +177,31 @@ namespace KiDelicia.Controllers
                     db.BaixaMeses,
                     consumoComanda => new { consumoComanda.ClienteId, consumoComanda.DataConsumo.Month, consumoComanda.DataConsumo.Year },
                     baixaMes => new { baixaMes.ClienteId, baixaMes.DataMesReferencia.Month, baixaMes.DataMesReferencia.Year },
-                    (consumoComanda, baixaMes) => new { consumoComanda, baixaMes }
+                    (consumoComanda, baixaMes) => new {
+                        consumoComanda.ClienteId,
+                        consumoComanda.DataConsumo,
+                        consumoComanda.ValorConsumo,
+                        baixaMes.ValorMes,
+                        baixaMes.DataMesReferencia
+                    }
                 )
-                .Where(x => x.consumoComanda.ClienteId == baixaMesPost.ClienteId)
+                .Where(pe => pe.ClienteId == baixaMesPost.ClienteId)
                 //BETWEEN COM DataConsumo ENTRE O DataMesReferenciaInicial E O DataMesReferenciaFinal COM O 
-                .Where(x => x.consumoComanda.DataConsumo.Month >= baixaMesPost.DataMesReferenciaInicial.Month)
-                .Where(x => x.consumoComanda.DataConsumo.Month <= baixaMesPost.DataMesReferenciaFinal.Month)
-                .Where(x => x.consumoComanda.DataConsumo.Year >= baixaMesPost.DataMesReferenciaInicial.Year)
-                .Where(x => x.consumoComanda.DataConsumo.Year <= baixaMesPost.DataMesReferenciaFinal.Year)
-                .GroupBy(x => new
+                .Where(pe => pe.DataConsumo.Month >= baixaMesPost.DataMesReferenciaInicial.Month && pe.DataConsumo.Month <= baixaMesPost.DataMesReferenciaFinal.Month)
+                .Where(pe => pe.DataConsumo.Year >= baixaMesPost.DataMesReferenciaInicial.Year && pe.DataConsumo.Year <= baixaMesPost.DataMesReferenciaFinal.Year)
+                .GroupBy(pe => new
                 {
-                    ClienteId = x.consumoComanda.ClienteId,
-                    MesAnoConsumo = x.consumoComanda.DataConsumo.Month + "/" + x.consumoComanda.DataConsumo.Year,
-                    ValorMes = x.baixaMes.ValorMes
+                    ClienteId = pe.ClienteId,
+                    MesAnoConsumo = pe.DataConsumo.Month + "/" + pe.DataConsumo.Year,
+                    ValorMes = pe.ValorMes
                 })
-                .OrderByDescending(x => x.Key.MesAnoConsumo)
-                .Select(x => new
+                .OrderByDescending(pe => pe.Key.MesAnoConsumo)
+                .Select(pe => new
                 {
-                    x.Key.ClienteId,
-                    DataMesReferencia = x.Key.MesAnoConsumo,
-                    ValorGasto = x.Sum(y => y.consumoComanda.ValorConsumo),
-                    ValorPago = x.Key.ValorMes
+                    pe.Key.ClienteId,
+                    DataMesReferencia = pe.Key.MesAnoConsumo,
+                    ValorGasto = pe.Sum(x => x.ValorConsumo),
+                    ValorPago = pe.Key.ValorMes
                 });
 
 
