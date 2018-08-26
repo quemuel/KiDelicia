@@ -2558,8 +2558,6 @@
     <Content Include="Content\global\plugins\bower_components\angular-loading-bar\build\loading-bar.js" />
     <Content Include="Content\global\plugins\bower_components\angular-loading-bar\build\loading-bar.min.css" />
     <Content Include="Content\global\plugins\bower_components\angular-loading-bar\build\loading-bar.min.js" />
-    <Content Include="Content\global\plugins\bower_components\angular-ui-router\release\angular-ui-router.js" />
-    <Content Include="Content\global\plugins\bower_components\angular-ui-router\release\angular-ui-router.min.js" />
     <Content Include="Content\global\plugins\bower_components\angular-xeditable\CHANGELOG.txt" />
     <Content Include="Content\global\plugins\bower_components\angular-xeditable\dist\css\xeditable.css" />
     <Content Include="Content\global\plugins\bower_components\angular-xeditable\dist\js\xeditable.js" />
@@ -3661,8 +3659,6 @@
     <Content Include="Content\global\plugins\bower_components\get-style-property\get-style-property.js" />
     <Content Include="Content\global\plugins\bower_components\gmap3\dist\gmap3.js" />
     <Content Include="Content\global\plugins\bower_components\gmap3\dist\gmap3.min.js" />
-    <Content Include="Content\global\plugins\bower_components\google-code-prettify\bin\prettify.min.css" />
-    <Content Include="Content\global\plugins\bower_components\google-code-prettify\bin\prettify.min.js" />
     <Content Include="Content\global\plugins\bower_components\handlebars.js\lib\handlebars.js" />
     <Content Include="Content\global\plugins\bower_components\holderjs\holder.js" />
     <Content Include="Content\global\plugins\bower_components\html5shiv\dist\html5shiv.js" />
@@ -4217,6 +4213,7 @@
     <Content Include="Content\global\plugins\bower_components\bootstrap-datepicker-vitalets\css\bootstrap-datepicker3.min.css.map" />
     <Content Include="Content\global\plugins\bower_components\bootstrap-datepicker-vitalets\css\bootstrap-datepicker3.standalone.css.map" />
     <Content Include="Content\global\plugins\bower_components\bootstrap-datepicker-vitalets\css\bootstrap-datepicker3.standalone.min.css.map" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\KiDelicia.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
