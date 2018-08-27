@@ -2558,8 +2558,6 @@
     <Content Include="Content\global\plugins\bower_components\angular-loading-bar\build\loading-bar.js" />
     <Content Include="Content\global\plugins\bower_components\angular-loading-bar\build\loading-bar.min.css" />
     <Content Include="Content\global\plugins\bower_components\angular-loading-bar\build\loading-bar.min.js" />
-    <Content Include="Content\global\plugins\bower_components\angular-ui-router\release\angular-ui-router.js" />
-    <Content Include="Content\global\plugins\bower_components\angular-ui-router\release\angular-ui-router.min.js" />
     <Content Include="Content\global\plugins\bower_components\angular-xeditable\CHANGELOG.txt" />
     <Content Include="Content\global\plugins\bower_components\angular-xeditable\dist\css\xeditable.css" />
     <Content Include="Content\global\plugins\bower_components\angular-xeditable\dist\js\xeditable.js" />
@@ -3661,8 +3659,6 @@
     <Content Include="Content\global\plugins\bower_components\get-style-property\get-style-property.js" />
     <Content Include="Content\global\plugins\bower_components\gmap3\dist\gmap3.js" />
     <Content Include="Content\global\plugins\bower_components\gmap3\dist\gmap3.min.js" />
-    <Content Include="Content\global\plugins\bower_components\google-code-prettify\bin\prettify.min.css" />
-    <Content Include="Content\global\plugins\bower_components\google-code-prettify\bin\prettify.min.js" />
     <Content Include="Content\global\plugins\bower_components\handlebars.js\lib\handlebars.js" />
     <Content Include="Content\global\plugins\bower_components\holderjs\holder.js" />
     <Content Include="Content\global\plugins\bower_components\html5shiv\dist\html5shiv.js" />
@@ -4199,7 +4195,6 @@
     <Content Include="Content\global\plugins\bower_components\yamm3\index.html" />
     <Content Include="Content\global\plugins\bower_components\yamm3\LICENSE.txt" />
     <Content Include="Content\global\plugins\bower_components\yamm3\yamm\yamm.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="ApplicationInsights.config">
@@ -4411,15 +4406,24 @@
     <Content Include="Views\Empresa\Edit.cshtml" />
     <Content Include="Views\Empresa\Index.cshtml" />
     <Content Include="Views\BaixaMes\Extrato.cshtml" />
+    <None Include="Web.EdvaCasa.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.EdvaOutra.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.QuemuelCasa.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.QuemuelEmpresa.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\commercial\plugins\glyphicons-pro\glyphicons_filetypes\web\html_css\fonts\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <Content Include="Content\admin\data\datatable-sample.json" />
     <Content Include="Content\admin\data\reload-sample.json" />
@@ -5061,6 +5065,42 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'QuemuelCasa|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EdvaCasa|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'QuemuelEmpresa|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EdvaOutra|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
