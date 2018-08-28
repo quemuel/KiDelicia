@@ -97,13 +97,13 @@ namespace KiDelicia
                 "~/Content/admin/js/pages/blankon.form.advanced.js"
             ));
 
-            bundles.Add(new StyleBundle("~/Content/select2").Include(
-                "~/Content/global/plugins/bower_components/select2-ng/css/select2-bootstrap.min.css"
+            bundles.Add(new StyleBundle("~/Content/bootstrapSelect").Include(
+                "~/Content/global/plugins/bower_components/bootstrap-select/css/bootstrap-select.min.css"
             ));
 
-            bundles.Add(new ScriptBundle("~/bundles/select2").Include(
-                "~/Content/global/plugins/bower_components/select2-ng/js/select2.min.js",
-                "~/Content/global/plugins/bower_components/select2-ng/js/i18n/pt-BR.js"
+            bundles.Add(new ScriptBundle("~/bundles/bootstrapSelectScript").Include(
+                "~/Content/global/plugins/bower_components/bootstrap-select/js/bootstrap-select.min.js",
+                "~/Content/global/plugins/bower_components/bootstrap-select/js/i18n/defaults-pt_BR.min.js"
             ));
 
             //bundles.Add(new ScriptBundle("~/Script/bootstrapDatepickerOriginal").Include(

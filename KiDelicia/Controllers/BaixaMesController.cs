@@ -196,76 +196,86 @@ namespace KiDelicia.Controllers
                 //GROUP BY consumoComanda.ClienteId, baixaMes.ValorMes, (DATENAME(mm, consumoComanda.DataConsumo) + '/' + DATENAME(yyyy, consumoComanda.DataConsumo))
 
                 //INSTRUCOES LINQ TO OBJECT
-                var extrato = db.ConsumoComandas
-                //GroupJoin pesquisar linq left join Using lambda expression
-                .Join(
-                    db.BaixaMeses,
-                    consumoComanda => new { consumoComanda.ClienteId, consumoComanda.DataConsumo.Month, consumoComanda.DataConsumo.Year },
-                    baixaMes => new { baixaMes.ClienteId, baixaMes.DataMesReferencia.Month, baixaMes.DataMesReferencia.Year },
-                    (consumoComanda, baixaMes) => new {
-                        consumoComanda.ClienteId,
-                        consumoComanda.DataConsumo,
-                        consumoComanda.ValorConsumo,
-                        baixaMes.ValorMes,
-                        baixaMes.DataMesReferencia
-                    }
-                )
-                .Where(pe => pe.ClienteId == baixaMesPost.ClienteId)
-                //BETWEEN COM DataConsumo ENTRE O DataMesReferenciaInicial E O DataMesReferenciaFinal COM O 
-                .Where(pe => pe.DataConsumo.Month >= baixaMesPost.DataMesReferenciaInicial.Month && pe.DataConsumo.Month <= baixaMesPost.DataMesReferenciaFinal.Month)
-                .Where(pe => pe.DataConsumo.Year >= baixaMesPost.DataMesReferenciaInicial.Year && pe.DataConsumo.Year <= baixaMesPost.DataMesReferenciaFinal.Year)
-                .GroupBy(pe => new
-                {
-                    ClienteId = pe.ClienteId,
-                    MesAnoConsumo = pe.DataConsumo.Month + "/" + pe.DataConsumo.Year,
-                    ValorMes = pe.ValorMes
-                })
-                .OrderByDescending(pe => pe.Key.MesAnoConsumo)
-                .Select(pe => new
-                {
-                    pe.Key.ClienteId,
-                    DataMesReferencia = pe.Key.MesAnoConsumo,
-                    ValorGasto = pe.Sum(x => x.ValorConsumo),
-                    ValorPago = pe.Key.ValorMes
-                });
+                // var extrato = db.ConsumoComandas
+                // //GroupJoin pesquisar linq left join Using lambda expression
+                // .Join(
+                //     db.BaixaMeses,
+                //     consumoComanda => new { consumoComanda.ClienteId, consumoComanda.DataConsumo.Month, consumoComanda.DataConsumo.Year },
+                //     baixaMes => new { baixaMes.ClienteId, baixaMes.DataMesReferencia.Month, baixaMes.DataMesReferencia.Year },
+                //     (consumoComanda, baixaMes) => new {
+                //         consumoComanda.ClienteId,
+                //         consumoComanda.DataConsumo,
+                //         consumoComanda.ValorConsumo,
+                //         baixaMes.ValorMes,
+                //         baixaMes.DataMesReferencia
+                //     }
+                // )
+                ////.SelectMany(
+                ////   pe => pe.baixaMes.DefaultIfEmpty(),
+                ////   (pe, pe2) =>
+                ////      new
+                ////      {
+                ////          i = pe.consumoComanda,
+                ////          p = pe2
+                ////      }
+                ////)
+                // .Where(pe => pe.ClienteId == baixaMesPost.ClienteId)
+                // //BETWEEN COM DataConsumo ENTRE O DataMesReferenciaInicial E O DataMesReferenciaFinal COM O 
+                // .Where(pe => pe.DataConsumo.Month >= baixaMesPost.DataMesReferenciaInicial.Month && pe.DataConsumo.Month <= baixaMesPost.DataMesReferenciaFinal.Month)
+                // .Where(pe => pe.DataConsumo.Year >= baixaMesPost.DataMesReferenciaInicial.Year && pe.DataConsumo.Year <= baixaMesPost.DataMesReferenciaFinal.Year)
+                // .GroupBy(pe => new
+                // {
+                //     ClienteId = pe.ClienteId,
+                //     MesAnoConsumo = pe.DataConsumo.Month + "/" + pe.DataConsumo.Year,
+                //     ValorMes = pe.ValorMes
+                // })
+                // .OrderByDescending(pe => pe.Key.MesAnoConsumo)
+                // .Select(pe => new
+                // {
+                //     pe.Key.ClienteId,
+                //     DataMesReferencia = pe.Key.MesAnoConsumo,
+                //     ValorGasto = pe.Sum(x => x.ValorConsumo),
+                //     ValorPago = pe.Key.ValorMes
+                // });
 
 
                 //INSTRUCOES LINQ TO SQL
-                //var extrato =
-                //    from consumoComanda in db.ConsumoComandas
-                //    join baixaMes in db.BaixaMeses on new
-                //    {
-                //        ClienteId = consumoComanda.ClienteId,
-                //        mes = consumoComanda.DataConsumo.Month,
-                //        ano = consumoComanda.DataConsumo.Year,
-                //    } equals
-                //    new
-                //    {
-                //        ClienteId = baixaMes.ClienteId,
-                //        mes = baixaMes.DataMesReferencia.Month,
-                //        ano = baixaMes.DataMesReferencia.Year,
-                //    }
-                //    where consumoComanda.ClienteId == baixaMesPost.ClienteId
-                //    where consumoComanda.DataConsumo.Month >= baixaMesPost.DataMesReferenciaInicial.Month
-                //    where consumoComanda.DataConsumo.Month <= baixaMesPost.DataMesReferenciaFinal.Month
-                //    where consumoComanda.DataConsumo.Year >= baixaMesPost.DataMesReferenciaInicial.Year
-                //    where consumoComanda.DataConsumo.Year <= baixaMesPost.DataMesReferenciaFinal.Year
-                //    let dtConsumo = consumoComanda.DataConsumo
-                //    let dtMesReferencia = baixaMes.DataMesReferencia
-                //    group consumoComanda by new
-                //    {
-                //        ClienteId = consumoComanda.ClienteId,
-                //        MesAnoConsumo = dtConsumo.Month + "/" + dtConsumo.Year,
-                //        ValorMes = baixaMes.ValorMes
-                //    } into g
-                //    orderby g.Key.MesAnoConsumo descending
-                //    select new
-                //    {
-                //        ClienteId = g.Key.ClienteId,
-                //        DataMesReferencia = g.Key.MesAnoConsumo,
-                //        ValorGasto = g.Sum(x => x.ValorConsumo),
-                //        ValorPago = g.Key.ValorMes
-                //    };
+                var extrato =
+                    from consumoComanda in db.ConsumoComandas
+                    join baixaMes in db.BaixaMeses on new
+                    {
+                        ClienteId = consumoComanda.ClienteId,
+                        mes = consumoComanda.DataConsumo.Month,
+                        ano = consumoComanda.DataConsumo.Year,
+                    } equals
+                    new
+                    {
+                        ClienteId = baixaMes.ClienteId,
+                        mes = baixaMes.DataMesReferencia.Month,
+                        ano = baixaMes.DataMesReferencia.Year,
+                    } into leftJoinBaixaMes
+                    from leftJoinBM in leftJoinBaixaMes.DefaultIfEmpty()
+                    where consumoComanda.ClienteId == baixaMesPost.ClienteId
+                    where consumoComanda.DataConsumo.Month >= baixaMesPost.DataMesReferenciaInicial.Month
+                    where consumoComanda.DataConsumo.Month <= baixaMesPost.DataMesReferenciaFinal.Month
+                    where consumoComanda.DataConsumo.Year >= baixaMesPost.DataMesReferenciaInicial.Year
+                    where consumoComanda.DataConsumo.Year <= baixaMesPost.DataMesReferenciaFinal.Year
+                    let dtConsumo = consumoComanda.DataConsumo
+                    let dtMesReferencia = leftJoinBM.DataMesReferencia
+                    group consumoComanda by new
+                    {
+                        ClienteId = consumoComanda.ClienteId,
+                        MesAnoConsumo = dtConsumo.Month + "/" + dtConsumo.Year,
+                        ValorMes = (leftJoinBM == null ? 0m : leftJoinBM.ValorMes)
+                    } into g
+                    orderby g.Key.MesAnoConsumo descending
+                    select new
+                    {
+                        ClienteId = g.Key.ClienteId,
+                        DataMesReferencia = g.Key.MesAnoConsumo,
+                        ValorGasto = g.Sum(x => x.ValorConsumo),
+                        ValorPago = g.Key.ValorMes
+                    };
 
                 extrato.ToList().ForEach(x =>
                 {
@@ -283,72 +293,73 @@ namespace KiDelicia.Controllers
                 baixaMesPost.ClienteId = null;
 
                 //INSTRUCOES LINQ TO OBJECT
-                var extrato = db.ConsumoComandas
-                //JOIN COM BaixaMeses
-                .Join(
-                    db.BaixaMeses,
-                    consumoComanda => new { consumoComanda.EmpresaId, consumoComanda.DataConsumo.Month, consumoComanda.DataConsumo.Year },
-                    baixaMes => new { baixaMes.EmpresaId, baixaMes.DataMesReferencia.Month, baixaMes.DataMesReferencia.Year },
-                    (consumoComanda, baixaMes) => new { consumoComanda, baixaMes }
-                )
-                .Where(x => x.consumoComanda.EmpresaId == baixaMesPost.EmpresaId)
-                //BETWEEN COM DataConsumo ENTRE O DataMesReferenciaInicial E O DataMesReferenciaFinal COM O 
-                .Where(x => x.consumoComanda.DataConsumo.Month >= baixaMesPost.DataMesReferenciaInicial.Month)
-                .Where(x => x.consumoComanda.DataConsumo.Month <= baixaMesPost.DataMesReferenciaFinal.Month)
-                .Where(x => x.consumoComanda.DataConsumo.Year >= baixaMesPost.DataMesReferenciaInicial.Year)
-                .Where(x => x.consumoComanda.DataConsumo.Year <= baixaMesPost.DataMesReferenciaFinal.Year)
-                .GroupBy(x => new
-                {
-                    EmpresaId = x.consumoComanda.EmpresaId,
-                    //GROUPBY DO MESANO 
-                    MesAnoConsumo = x.consumoComanda.DataConsumo.Month + "/" + x.consumoComanda.DataConsumo.Year,
-                    ValorMes = x.baixaMes.ValorMes
-                })
-                .OrderByDescending(x => x.Key.MesAnoConsumo)
-                .Select(x => new
-                {
-                    x.Key.EmpresaId,
-                    DataMesReferencia = x.Key.MesAnoConsumo,
-                    ValorGasto = x.Sum(y => y.consumoComanda.ValorConsumo),
-                    ValorPago = x.Key.ValorMes
-                });
+                //var extrato = db.ConsumoComandas
+                ////JOIN COM BaixaMeses
+                //.Join(
+                //    db.BaixaMeses,
+                //    consumoComanda => new { consumoComanda.EmpresaId, consumoComanda.DataConsumo.Month, consumoComanda.DataConsumo.Year },
+                //    baixaMes => new { baixaMes.EmpresaId, baixaMes.DataMesReferencia.Month, baixaMes.DataMesReferencia.Year },
+                //    (consumoComanda, baixaMes) => new { consumoComanda, baixaMes }
+                //)
+                //.Where(x => x.consumoComanda.EmpresaId == baixaMesPost.EmpresaId)
+                ////BETWEEN COM DataConsumo ENTRE O DataMesReferenciaInicial E O DataMesReferenciaFinal COM O 
+                //.Where(x => x.consumoComanda.DataConsumo.Month >= baixaMesPost.DataMesReferenciaInicial.Month)
+                //.Where(x => x.consumoComanda.DataConsumo.Month <= baixaMesPost.DataMesReferenciaFinal.Month)
+                //.Where(x => x.consumoComanda.DataConsumo.Year >= baixaMesPost.DataMesReferenciaInicial.Year)
+                //.Where(x => x.consumoComanda.DataConsumo.Year <= baixaMesPost.DataMesReferenciaFinal.Year)
+                //.GroupBy(x => new
+                //{
+                //    EmpresaId = x.consumoComanda.EmpresaId,
+                //    //GROUPBY DO MESANO 
+                //    MesAnoConsumo = x.consumoComanda.DataConsumo.Month + "/" + x.consumoComanda.DataConsumo.Year,
+                //    ValorMes = x.baixaMes.ValorMes
+                //})
+                //.OrderByDescending(x => x.Key.MesAnoConsumo)
+                //.Select(x => new
+                //{
+                //    x.Key.EmpresaId,
+                //    DataMesReferencia = x.Key.MesAnoConsumo,
+                //    ValorGasto = x.Sum(y => y.consumoComanda.ValorConsumo),
+                //    ValorPago = x.Key.ValorMes
+                //});
 
                 //INSTRUCOES LINQ TO SQL
-                //var extrato = 
-                //    from consumoComanda in db.ConsumoComandas
-                //    join baixaMes in db.BaixaMeses on new
-                //    {
-                //        EmpresaId = consumoComanda.EmpresaId,
-                //        mes = consumoComanda.DataConsumo.Month,
-                //        ano = consumoComanda.DataConsumo.Year,
-                //    } equals
-                //    new
-                //    {
-                //        EmpresaId = baixaMes.EmpresaId,
-                //        mes = baixaMes.DataMesReferencia.Month,
-                //        ano = baixaMes.DataMesReferencia.Year,
-                //    }
-                //    where consumoComanda.EmpresaId == baixaMesPost.EmpresaId
-                //    where consumoComanda.DataConsumo.Month >= baixaMesPost.DataMesReferenciaInicial.Month
-                //    where consumoComanda.DataConsumo.Month <= baixaMesPost.DataMesReferenciaFinal.Month
-                //    where consumoComanda.DataConsumo.Year >= baixaMesPost.DataMesReferenciaInicial.Year
-                //    where consumoComanda.DataConsumo.Year <= baixaMesPost.DataMesReferenciaFinal.Year
-                //    let dtConsumo = consumoComanda.DataConsumo
-                //    let dtMesReferencia = baixaMes.DataMesReferencia
-                //    group consumoComanda by new
-                //    {
-                //        EmpresaId = consumoComanda.EmpresaId,
-                //        MesAnoConsumo = dtConsumo.Month + "/" + dtConsumo.Year,
-                //        ValorMes = baixaMes.ValorMes
-                //    } into g
-                //    orderby g.Key.MesAnoConsumo descending
-                //    select new
-                //    {
-                //        EmpresaId = g.Key.EmpresaId,
-                //        DataMesReferencia = g.Key.MesAnoConsumo,
-                //        ValorGasto = g.Sum(x => x.ValorConsumo),
-                //        ValorPago = g.Key.ValorMes
-                //    };
+                var extrato =
+                    from consumoComanda in db.ConsumoComandas
+                    join baixaMes in db.BaixaMeses on new
+                    {
+                        EmpresaId = consumoComanda.EmpresaId,
+                        mes = consumoComanda.DataConsumo.Month,
+                        ano = consumoComanda.DataConsumo.Year,
+                    } equals
+                    new
+                    {
+                        EmpresaId = baixaMes.EmpresaId,
+                        mes = baixaMes.DataMesReferencia.Month,
+                        ano = baixaMes.DataMesReferencia.Year,
+                    } into leftJoinBaixaMes
+                    from leftJoinBM in leftJoinBaixaMes.DefaultIfEmpty()
+                    where consumoComanda.EmpresaId == baixaMesPost.EmpresaId
+                    where consumoComanda.DataConsumo.Month >= baixaMesPost.DataMesReferenciaInicial.Month
+                    where consumoComanda.DataConsumo.Month <= baixaMesPost.DataMesReferenciaFinal.Month
+                    where consumoComanda.DataConsumo.Year >= baixaMesPost.DataMesReferenciaInicial.Year
+                    where consumoComanda.DataConsumo.Year <= baixaMesPost.DataMesReferenciaFinal.Year
+                    let dtConsumo = consumoComanda.DataConsumo
+                    let dtMesReferencia = leftJoinBM.DataMesReferencia
+                    group consumoComanda by new
+                    {
+                        EmpresaId = consumoComanda.EmpresaId,
+                        MesAnoConsumo = dtConsumo.Month + "/" + dtConsumo.Year,
+                        ValorMes = (leftJoinBM == null ? 0m : leftJoinBM.ValorMes)
+                    } into g
+                    orderby g.Key.MesAnoConsumo descending
+                    select new
+                    {
+                        EmpresaId = g.Key.EmpresaId,
+                        DataMesReferencia = g.Key.MesAnoConsumo,
+                        ValorGasto = g.Sum(x => x.ValorConsumo),
+                        ValorPago = g.Key.ValorMes
+                    };
 
                 extrato.ToList().ForEach(x => {
                     Extrato e = new Extrato();

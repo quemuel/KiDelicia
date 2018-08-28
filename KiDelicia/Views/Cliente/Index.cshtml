@@ -25,53 +25,55 @@
                 <p>
                     @Html.ActionLink("Novo cliente", "Create", "Cliente")
                 </p>
-                <table class="table">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.NomeCliente)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Empresa)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Setor)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Telefone)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Descricao)
-                        </th>
-                        <th></th>
-                    </tr>
-
-                    @foreach (var item in Model)
-                    {
+                <div class="table-responsive">
+                    <table class="table">
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NomeCliente)
-                            </td>
-                            <td>
-                                @(item.Empresa == null ? "--" : item.Empresa)
-                            </td>
-                            <td>
-                                @(item.Setor == null ? "--" : item.Setor)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Telefone)
-                            </td>
-                            <td>
-                                @(item.Descricao == null ? "--" : item.Descricao)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.ClienteId }) |
-                                @Html.ActionLink("Visualizar", "Details", new { id = item.ClienteId }) |
-                                @Html.ActionLink("Excluir", "Delete", new { id = item.ClienteId })
-                            </td>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NomeCliente)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Empresa)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Setor)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Telefone)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Descricao)
+                            </th>
+                            <th></th>
                         </tr>
-                    }
 
-                </table>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NomeCliente)
+                                </td>
+                                <td>
+                                    @(item.Empresa == null ? "--" : item.Empresa)
+                                </td>
+                                <td>
+                                    @(item.Setor == null ? "--" : item.Setor)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Telefone)
+                                </td>
+                                <td>
+                                    @(item.Descricao == null ? "--" : item.Descricao)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.ClienteId }) |
+                                    @Html.ActionLink("Visualizar", "Details", new { id = item.ClienteId }) |
+                                    @Html.ActionLink("Excluir", "Delete", new { id = item.ClienteId })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
             </div>
         </div>
     </div>

@@ -25,54 +25,55 @@
                 <p>
                     @Html.ActionLink("Dar Baixa Mensal", "Create", "BaixaMes")
                 </p>
-                <table class="table">
-                    <tr>
-                        <th>
-                            Consumidor
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DataMesReferencia)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ValorMes)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DataCadastro)
-                        </th>
-                        <th>Opções</th>
-                    </tr>
-
-                    @foreach (var item in Model)
-                    {
+                <div class="table-responsive">
+                    <table class="table">
                         <tr>
-                            <td>
-                                @if (item.FlagCliente)
-                                {
-                                    <b class="text-teal">Cliente: </b> @item.Cliente.NomeCliente
-                                }
-                                else
-                                {
-                                    <b class="text-lilac">Empresa: </b> @item.Empresa.NomeEmpresa
-                                }
-                            </td>
-                            <td>
-                                @item.DataMesReferencia.ToString("MMMM")
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ValorMes)
-                            </td>
-                            <td>
-                                @item.DataCadastro.ToString("dd/MM/yyyy HH:mm:ss")
-                            </td>
-                            <td>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.BaixaMesId }) |
-                                @Html.ActionLink("Visualizar", "Details", new { id = item.BaixaMesId }) |
-                                @Html.ActionLink("Excluir", "Delete", new { id = item.BaixaMesId })
-                            </td>
+                            <th>
+                                Consumidor
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DataMesReferencia)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ValorMes)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DataCadastro)
+                            </th>
+                            <th>Opções</th>
                         </tr>
-                    }
-                </table>
 
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @if (item.FlagCliente)
+                                    {
+                                        <b class="text-teal">Cliente: </b> @item.Cliente.NomeCliente
+                                    }
+                                    else
+                                    {
+                                        <b class="text-lilac">Empresa: </b> @item.Empresa.NomeEmpresa
+                                    }
+                                </td>
+                                <td>
+                                    @item.DataMesReferencia.ToString("MMMM")
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ValorMes)
+                                </td>
+                                <td>
+                                    @item.DataCadastro.ToString("dd/MM/yyyy HH:mm:ss")
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.BaixaMesId }) |
+                                    @Html.ActionLink("Visualizar", "Details", new { id = item.BaixaMesId }) |
+                                    @Html.ActionLink("Excluir", "Delete", new { id = item.BaixaMesId })
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
             </div>
         </div>
     </div>
