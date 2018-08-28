@@ -40,7 +40,12 @@ namespace KiDelicia.Controllers
         // GET: BaixaMes/Create
         public ActionResult Create()
         {
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente");
+            ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
+                                                select new
+                                                {
+                                                    ClienteId = cliente.ClienteId,
+                                                    Descricao = cliente.Empresa == null || cliente.Empresa == "" ? cliente.NomeCliente : cliente.NomeCliente + " / " + cliente.Empresa
+                                                }), "ClienteId", "Descricao");
             ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa");
             return View();
         }
@@ -66,8 +71,12 @@ namespace KiDelicia.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", baixaMes.ClienteId);
+            ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
+                                                select new
+                                                {
+                                                    ClienteId = cliente.ClienteId,
+                                                    Descricao = cliente.Empresa == null || cliente.Empresa == "" ? cliente.NomeCliente : cliente.NomeCliente + " / " + cliente.Empresa
+                                                }), "ClienteId", "Descricao", baixaMes.ClienteId);
             ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", baixaMes.EmpresaId);
             return View(baixaMes);
         }
@@ -84,7 +93,12 @@ namespace KiDelicia.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", baixaMes.ClienteId);
+            ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
+                                                select new
+                                                {
+                                                    ClienteId = cliente.ClienteId,
+                                                    Descricao = cliente.Empresa == null || cliente.Empresa == "" ? cliente.NomeCliente : cliente.NomeCliente + " / " + cliente.Empresa
+                                                }), "ClienteId", "Descricao", baixaMes.ClienteId);
             ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", baixaMes.EmpresaId);
             return View(baixaMes);
         }
@@ -110,7 +124,12 @@ namespace KiDelicia.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", baixaMes.ClienteId);
+            ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
+                                                select new
+                                                {
+                                                    ClienteId = cliente.ClienteId,
+                                                    Descricao = cliente.Empresa == null || cliente.Empresa == "" ? cliente.NomeCliente : cliente.NomeCliente + " / " + cliente.Empresa
+                                                }), "ClienteId", "Descricao", baixaMes.ClienteId);
             ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", baixaMes.EmpresaId);
             return View(baixaMes);
         }
@@ -144,7 +163,12 @@ namespace KiDelicia.Controllers
         // GET: BaixaMes/Extrato
         public ActionResult Extrato()
         {
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente");
+            ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
+                                                select new
+                                                {
+                                                    ClienteId = cliente.ClienteId,
+                                                    Descricao = cliente.Empresa == null || cliente.Empresa == "" ? cliente.NomeCliente : cliente.NomeCliente + " / " + cliente.Empresa
+                                                }), "ClienteId", "Descricao");
             ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa");
             return View();
         }
@@ -173,6 +197,7 @@ namespace KiDelicia.Controllers
 
                 //INSTRUCOES LINQ TO OBJECT
                 var extrato = db.ConsumoComandas
+                //GroupJoin pesquisar linq left join Using lambda expression
                 .Join(
                     db.BaixaMeses,
                     consumoComanda => new { consumoComanda.ClienteId, consumoComanda.DataConsumo.Month, consumoComanda.DataConsumo.Year },
@@ -338,7 +363,12 @@ namespace KiDelicia.Controllers
 
             ViewBag.extrato = dadosExtrato;
 
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", baixaMesPost.ClienteId);
+            ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
+                                                select new
+                                                {
+                                                    ClienteId = cliente.ClienteId,
+                                                    Descricao = cliente.Empresa == null || cliente.Empresa == "" ? cliente.NomeCliente : cliente.NomeCliente + " / " + cliente.Empresa
+                                                }), "ClienteId", "Descricao", baixaMesPost.ClienteId);
             ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", baixaMesPost.EmpresaId);
             return View(baixaMesPost);
         }

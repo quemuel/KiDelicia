@@ -81,7 +81,7 @@ namespace KiDelicia
             //    //and other extensions you want to include
             //    "~/Scripts/inputmask/inputmask.numeric.extensions.js"
             //));
-
+            
             bundles.Add(new StyleBundle("~/Content/bootstrapDatepicker").Include(
                 "~/Content/global/plugins/bower_components/dropzone/downloads/css/dropzone.css",
                 "~/Content/global/plugins/bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css",
@@ -95,6 +95,15 @@ namespace KiDelicia
                 "~/Content/global/plugins/bower_components/bootstrap-datepicker-vitalets/js/bootstrap-datepicker.js",
                 "~/Content/global/plugins/bower_components/bootstrap-datepicker-vitalets/locales/bootstrap-datepicker.pt-BR.min.js",
                 "~/Content/admin/js/pages/blankon.form.advanced.js"
+            ));
+
+            bundles.Add(new StyleBundle("~/Content/select2").Include(
+                "~/Content/global/plugins/bower_components/select2-ng/css/select2-bootstrap.min.css"
+            ));
+
+            bundles.Add(new ScriptBundle("~/bundles/select2").Include(
+                "~/Content/global/plugins/bower_components/select2-ng/js/select2.min.js",
+                "~/Content/global/plugins/bower_components/select2-ng/js/i18n/pt-BR.js"
             ));
 
             //bundles.Add(new ScriptBundle("~/Script/bootstrapDatepickerOriginal").Include(
