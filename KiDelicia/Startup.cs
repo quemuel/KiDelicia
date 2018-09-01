@@ -1,5 +1,6 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using Microsoft.Owin.Security.Cookies;
 
 [assembly: OwinStartupAttribute(typeof(KiDelicia.Startup))]
 namespace KiDelicia
@@ -8,7 +9,12 @@ namespace KiDelicia
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            //ConfigureAuth(app);
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationType = "AplicationCookie",
+                LoginPath= new PathString("/Autenticacao/Login")
+            });
         }
     }
 }
