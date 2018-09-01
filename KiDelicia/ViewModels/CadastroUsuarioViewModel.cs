@@ -27,5 +27,6 @@ namespace KiDelicia.ViewModel
         [MinLength(6, ErrorMessage = "A senha deve ter pelo menos 6 caracteres")]
         [Compare(nameof(Senha), ErrorMessage ="A senha e a confirmação não estao iguais")]
         public string ConfinacaoSenha { get; set; }
+
     }
 }

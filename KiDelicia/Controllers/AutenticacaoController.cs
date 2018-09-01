@@ -1,8 +1,8 @@
 ﻿using KiDelicia.Contexts;
+using KiDelicia.Models;
 using KiDelicia.Utils;
 using KiDelicia.ViewModel;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
@@ -18,6 +18,28 @@ namespace KiDelicia.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Cadastrar(CadastroUsuarioViewModel cadastroUsuarioViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(cadastroUsuarioViewModel);
+            }
+
+            Usuario novoUsuario = new Usuario
+            {
+                Nome = cadastroUsuarioViewModel.Nome,
+                Login = cadastroUsuarioViewModel.Login,
+                Senha = cadastroUsuarioViewModel.Senha
+            };
+
+            db.Usuarios.Add(novoUsuario);
+            db.SaveChanges();
+
+            return RedirectToAction("Login","Autenticacao");
+        }
+
 
 
         public ActionResult Login(string ReturnUrl)
