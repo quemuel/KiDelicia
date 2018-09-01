@@ -6,11 +6,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KiDelicia.Models
-{   
+{
     [Table("Usuarios")]
     public class Usuario
     {
-      
         public int Id { get; set; }
         [Required]
         [MaxLength(100)]

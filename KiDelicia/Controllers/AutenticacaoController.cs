@@ -27,16 +27,24 @@ namespace KiDelicia.Controllers
                 return View(cadastroUsuarioViewModel);
             }
 
+            if (db.Usuarios.Count(u => u.Login == cadastroUsuarioViewModel.Login) > 0)
+            {
+                ModelState.AddModelError("Login", "Esse login já está em uso");
+                return View(cadastroUsuarioViewModel);
+
+            }
+
             Usuario novoUsuario = new Usuario
             {
                 Nome = cadastroUsuarioViewModel.Nome,
                 Login = cadastroUsuarioViewModel.Login,
-                Senha = cadastroUsuarioViewModel.Senha
+                Senha = Hash.GeraHash(cadastroUsuarioViewModel.Senha)
             };
 
             db.Usuarios.Add(novoUsuario);
             db.SaveChanges();
 
+            TempData["Mensagem"] = "Cadastro ralizado com sucesso. Efetue login";
             return RedirectToAction("Login","Autenticacao");
         }
 
@@ -53,25 +61,25 @@ namespace KiDelicia.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(LoginViewModel  loginViewModel)
+        public ActionResult Login(LoginViewModel  loginviewModel)
         {
             if (!ModelState.IsValid)
             {
-                return View(loginViewModel);
+                return View(loginviewModel);
             }
 
-            var usuario = db.Usuarios.FirstOrDefault(u => u.Login == loginViewModel.Login);
+            var usuario = db.Usuarios.FirstOrDefault(u => u.Login == loginviewModel.Login);
 
             if (usuario == null)
             {
                 ModelState.AddModelError("Login", "Login incorreto");
-                return View(loginViewModel);
+                return View(loginviewModel);
             }
 
-            if(usuario.Senha!= Hash.GeraHash(loginViewModel.Senha))
+            if(usuario.Senha!= Hash.GeraHash(loginviewModel.Senha))
             {
                 ModelState.AddModelError("Senha", "Senha incorreta");
-                return View(loginViewModel);
+                return View(loginviewModel);
             }
 
             var identity = new ClaimsIdentity(new[]
@@ -82,9 +90,9 @@ namespace KiDelicia.Controllers
 
             Request.GetOwinContext().Authentication.SignIn(identity);
 
-            if (!String.IsNullOrWhiteSpace(loginViewModel.UrlRetorno) || Url.IsLocalUrl(loginViewModel.UrlRetorno))
+            if (!String.IsNullOrWhiteSpace(loginviewModel.UrlRetorno) || Url.IsLocalUrl(loginviewModel.UrlRetorno))
 
-                return Redirect(loginViewModel.UrlRetorno);
+                return Redirect(loginviewModel.UrlRetorno);
             else
                 return RedirectToAction("Index", "Painel");
         }
