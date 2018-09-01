@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KiDelicia.Models
 {   
-    [Table("Usarios")]
+    [Table("Usuarios")]
     public class Usuario
     {
       
