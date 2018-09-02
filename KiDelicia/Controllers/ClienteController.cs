@@ -16,12 +16,14 @@ namespace KiDelicia.Controllers
         private EFContext db = new EFContext();
 
         // GET: Cliente
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Clientes.ToList());
         }
 
         // GET: Cliente/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: Cliente/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +50,7 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "ClienteId,NomeCliente,Telefone,Empresa,Setor,Descricao")] Cliente cliente)
         {
             if (ModelState.IsValid)
@@ -60,6 +64,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: Cliente/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,6 +84,7 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "ClienteId,NomeCliente,Telefone,Empresa,Setor,Descricao")] Cliente cliente)
         {
             if (ModelState.IsValid)
@@ -91,6 +97,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: Cliente/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,6 +115,7 @@ namespace KiDelicia.Controllers
         // POST: Cliente/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Cliente cliente = db.Clientes.Find(id);

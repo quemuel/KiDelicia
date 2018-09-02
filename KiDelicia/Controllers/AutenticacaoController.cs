@@ -14,12 +14,14 @@ namespace KiDelicia.Controllers
     {
         private EFContext db = new EFContext();
         // GET: Autenticacao
+        [Authorize]
         public ActionResult Cadastrar()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Cadastrar(CadastroUsuarioViewModel cadastroUsuarioViewModel)
         {
             if (!ModelState.IsValid)
@@ -45,7 +47,7 @@ namespace KiDelicia.Controllers
             db.SaveChanges();
 
             TempData["Mensagem"] = "Cadastro ralizado com sucesso. Efetue login";
-            return RedirectToAction("Login","Autenticacao");
+            return RedirectToAction("Index","Home");
         }
 
 
@@ -94,7 +96,14 @@ namespace KiDelicia.Controllers
 
                 return Redirect(loginviewModel.UrlRetorno);
             else
-                return RedirectToAction("Index", "Painel");
+                return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult Logout()
+        {
+            Request.GetOwinContext().Authentication.SignOut("ApplicationCookie");
+            return RedirectToAction("Index", "Home");
+
         }
     }
 }
