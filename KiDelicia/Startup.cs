@@ -1,6 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 using Microsoft.Owin.Security.Cookies;
+using System.Web.Helpers;
+
 
 [assembly: OwinStartupAttribute(typeof(KiDelicia.Startup))]
 namespace KiDelicia
@@ -15,6 +17,8 @@ namespace KiDelicia
                 AuthenticationType = "ApplicationCookie",
                 LoginPath= new PathString("/Autenticacao/Login")
             });
+
+            AntiForgeryConfig.UniqueClaimTypeIdentifier = "Login";
         }
     }
 }
