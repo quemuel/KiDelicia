@@ -16,6 +16,15 @@
             </ol>
         </div>
     </div>
+
+    @if (TempData["Mensagem"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Mensagem"];
+        </div>
+    }
+
+
     <div class="body-content animated fadeIn">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6">
