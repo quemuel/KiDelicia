@@ -15,6 +15,7 @@ namespace KiDelicia.Controllers
     {
         private EFContext db = new EFContext();
 
+        [Authorize]
         // GET: Produto
         public ActionResult Index()
         {
@@ -22,6 +23,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: Produto/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,7 +38,7 @@ namespace KiDelicia.Controllers
             return View(produto);
         }
 
-        // GET: Produto/Create
+        // GET: Produto/Create[Authorize]
         public ActionResult Create()
         {
             return View();
