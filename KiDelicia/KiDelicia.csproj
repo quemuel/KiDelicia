@@ -226,6 +226,7 @@
     <Compile Include="Controllers\ConsumoComandaController.cs" />
     <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PerfilController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -245,6 +246,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Utils\Hash.cs" />
+    <Compile Include="ViewModels\AlterarSenhaViewModel.cs" />
     <Compile Include="ViewModels\CadastroUsuarioViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
   </ItemGroup>
@@ -4416,6 +4418,7 @@
     <Content Include="Views\BaixaMes\Extrato.cshtml" />
     <Content Include="Views\Autenticacao\Cadastrar.cshtml" />
     <Content Include="Views\Autenticacao\Login.cshtml" />
+    <Content Include="Views\Perfil\AlterarSenha.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
