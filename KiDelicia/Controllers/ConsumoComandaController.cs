@@ -16,6 +16,7 @@ namespace KiDelicia.Controllers
         private EFContext db = new EFContext();
 
         // GET: ConsumoComanda
+        [Authorize]
         public ActionResult Index()
         {
             var consumoComandas = db.ConsumoComandas.Include(c => c.Cliente).Include(c => c.Empresa);
@@ -23,6 +24,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: ConsumoComanda/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +40,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: ConsumoComanda/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente");
@@ -50,6 +53,7 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "ConsumoComandaId,FlagCliente,ValorConsumo,DataConsumo,ClienteId,EmpresaId")] ConsumoComanda consumoComanda)
         {
             if (ModelState.IsValid)
@@ -72,6 +76,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: ConsumoComanda/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -93,6 +98,7 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "ConsumoComandaId,FlagCliente,ValorConsumo,DataConsumo,ClienteId,EmpresaId")] ConsumoComanda consumoComanda)
         {
             if (ModelState.IsValid)
@@ -116,6 +122,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: ConsumoComanda/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -133,6 +140,7 @@ namespace KiDelicia.Controllers
         // POST: ConsumoComanda/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             ConsumoComanda consumoComanda = db.ConsumoComandas.Find(id);

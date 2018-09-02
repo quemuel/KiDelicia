@@ -14,12 +14,14 @@ namespace KiDelicia.Controllers
     {
         private EFContext db = new EFContext();
         // GET: Autenticacao
+        [Authorize]
         public ActionResult Cadastrar()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Cadastrar(CadastroUsuarioViewModel cadastroUsuarioViewModel)
         {
             if (!ModelState.IsValid)
