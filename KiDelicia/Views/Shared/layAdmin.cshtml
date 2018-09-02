@@ -32,7 +32,11 @@
 
         @RenderBody()
 
-        @Html.Partial("_sidebarRight")
+        @if (User.Identity.Name == "Ediva Gt" || User.Identity.Name == "Quemuel Leal") {
+
+           @Html.Partial("_sidebarRight");
+        }
+       
     </section>
 
     <div id="back-top" class="animated pulse circle">
