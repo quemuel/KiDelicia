@@ -25,41 +25,43 @@
                 <p>
                     @Html.ActionLink("Novo Produto", "Create", "Produto")
                 </p>
-                <table class="table">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.CodigoProduto)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.NomeProduto)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ValorProduto)
-                        </th>
-                        <th></th>
-                    </tr>
-
-                    @foreach (var item in Model)
-                    {
+                <div class="table-responsive">
+                    <table class="table">
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.CodigoProduto)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NomeProduto)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ValorProduto)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.ProdutoId }) |
-                                @Html.ActionLink("Visualizar", "Details", new { id = item.ProdutoId }) |
-                                @Html.ActionLink("Excluir", "Delete", new { id = item.ProdutoId })
-                            </td>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CodigoProduto)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NomeProduto)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ValorProduto)
+                            </th>
+                            <th></th>
                         </tr>
-                    }
 
-                </table>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CodigoProduto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NomeProduto)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ValorProduto)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.ProdutoId }) |
+                                    @Html.ActionLink("Visualizar", "Details", new { id = item.ProdutoId }) |
+                                    @Html.ActionLink("Excluir", "Delete", new { id = item.ProdutoId })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
             </div>
         </div>
     </div>

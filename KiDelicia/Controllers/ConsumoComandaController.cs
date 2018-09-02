@@ -43,7 +43,12 @@ namespace KiDelicia.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente");
+            ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
+                                                select new
+                                                {
+                                                    ClienteId = cliente.ClienteId,
+                                                    Descricao = cliente.Empresa == null || cliente.Empresa == "" ? cliente.NomeCliente : cliente.NomeCliente + " / " + cliente.Empresa
+                                                }), "ClienteId", "Descricao");
             ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa");
             return View();
         }
@@ -70,7 +75,13 @@ namespace KiDelicia.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", consumoComanda.ClienteId);
+
+            ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
+                                                select new
+                                                {
+                                                    ClienteId = cliente.ClienteId,
+                                                    Descricao = cliente.Empresa == null || cliente.Empresa == "" ? cliente.NomeCliente : cliente.NomeCliente + " / " + cliente.Empresa
+                                                }), "ClienteId", "Descricao", consumoComanda.ClienteId);
             ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", consumoComanda.EmpresaId);
             return View(consumoComanda);
         }
@@ -88,7 +99,12 @@ namespace KiDelicia.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", consumoComanda.ClienteId);
+            ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
+                                                select new
+                                                {
+                                                    ClienteId = cliente.ClienteId,
+                                                    Descricao = cliente.Empresa == null || cliente.Empresa == "" ? cliente.NomeCliente : cliente.NomeCliente + " / " + cliente.Empresa
+                                                }), "ClienteId", "Descricao", consumoComanda.ClienteId);
             ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", consumoComanda.EmpresaId);
             return View(consumoComanda);
         }
@@ -116,7 +132,12 @@ namespace KiDelicia.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ClienteId = new SelectList(db.Clientes, "ClienteId", "NomeCliente", consumoComanda.ClienteId);
+            ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
+                                                select new
+                                                {
+                                                    ClienteId = cliente.ClienteId,
+                                                    Descricao = cliente.Empresa == null || cliente.Empresa == "" ? cliente.NomeCliente : cliente.NomeCliente + " / " + cliente.Empresa
+                                                }), "ClienteId", "Descricao", consumoComanda.ClienteId);
             ViewBag.EmpresaId = new SelectList(db.Empresas, "EmpresaId", "NomeEmpresa", consumoComanda.EmpresaId);
             return View(consumoComanda);
         }

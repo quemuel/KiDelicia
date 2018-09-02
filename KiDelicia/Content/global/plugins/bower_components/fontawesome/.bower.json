@@ -12,8 +12,8 @@
     "CC-BY-3.0"
   ],
   "main": [
-    "./css/font-awesome.css",
-    "./fonts/*"
+    "./css/font-awesome.min.css",
+    "./Content/global/plugins/bower_components/fontawesome/*"
   ],
   "ignore": [
     "*/.*",

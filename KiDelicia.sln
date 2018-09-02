@@ -8,11 +8,23 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		EdvaCasa|Any CPU = EdvaCasa|Any CPU
+		EdvaOutra|Any CPU = EdvaOutra|Any CPU
+		QuemuelCasa|Any CPU = QuemuelCasa|Any CPU
+		QuemuelEmpresa|Any CPU = QuemuelEmpresa|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.EdvaCasa|Any CPU.ActiveCfg = EdvaCasa|Any CPU
+		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.EdvaCasa|Any CPU.Build.0 = EdvaCasa|Any CPU
+		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.EdvaOutra|Any CPU.ActiveCfg = EdvaOutra|Any CPU
+		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.EdvaOutra|Any CPU.Build.0 = EdvaOutra|Any CPU
+		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.QuemuelCasa|Any CPU.ActiveCfg = QuemuelCasa|Any CPU
+		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.QuemuelCasa|Any CPU.Build.0 = QuemuelCasa|Any CPU
+		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.QuemuelEmpresa|Any CPU.ActiveCfg = QuemuelEmpresa|Any CPU
+		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.QuemuelEmpresa|Any CPU.Build.0 = QuemuelEmpresa|Any CPU
 		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8D258C0-D9B4-448E-89C0-D8C90E649D7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

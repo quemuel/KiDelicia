@@ -5,6 +5,7 @@
 }
 
 @Styles.Render("~/Content/bootstrapDatepicker")
+@Styles.Render("~/Content/bootstrapSelect")
 <section id="page-content">
     <div class="header-content">
         <h2><i class="fa fa-download"></i> @ViewBag.Title</h2>
@@ -40,16 +41,32 @@
                         <div class="form-group">
                             <div class="row" id="div_cliente" @(Model.FlagCliente ? "" : "style=display:none") >
                                 <div class="col-md-6">
-                                    @Html.LabelFor(model => model.ClienteId, string.Format("{0}:", Html.DisplayNameFor(model => model.ClienteId)), htmlAttributes: new { @class = "control-label" })
-                                    @Html.DropDownList("ClienteId", null, "Selecione...", htmlAttributes: new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @Html.LabelFor(model => model.ClienteId, string.Format("{0}:", Html.DisplayNameFor(model => model.ClienteId)), htmlAttributes: new { @class = "control-label" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @Html.DropDownList("ClienteId", null, "Selecione...", htmlAttributes: new { @class = "form-control selectpicker", @data_live_search = "true" })
+                                            @Html.ValidationMessageFor(model => model.ClienteId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row" id="div_empresa" @(Model.FlagCliente ? "style=display:none" : "")>
                                 <div class="col-md-6">
-                                    @Html.LabelFor(model => model.EmpresaId, string.Format("{0}:", Html.DisplayNameFor(model => model.EmpresaId)), htmlAttributes: new { @class = "control-label" })
-                                    @Html.DropDownList("EmpresaId", null, "Selecione...", htmlAttributes: new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.EmpresaId, "", new { @class = "text-danger" })
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @Html.LabelFor(model => model.EmpresaId, string.Format("{0}:", Html.DisplayNameFor(model => model.EmpresaId)), htmlAttributes: new { @class = "control-label" })
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            @Html.DropDownList("EmpresaId", null, "Selecione...", htmlAttributes: new { @class = "form-control selectpicker", @data_live_search = "true" })
+                                            @Html.ValidationMessageFor(model => model.EmpresaId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -84,3 +101,4 @@
 </section>  
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrapDatepicker")
+@Scripts.Render("~/bundles/bootstrapSelectScript")

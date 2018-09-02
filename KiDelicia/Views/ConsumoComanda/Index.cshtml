@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Listar Lançamentos";
 }
-
 <section id="page-content">
     <div class="header-content">
         <h2><i class="fa fa-share"></i>@ViewBag.Title</h2>
@@ -25,47 +24,49 @@
                 <p>
                     @Html.ActionLink("Novo Lançamento", "Create", "ConsumoComanda")
                 </p>
-                <table class="table">
-                    <tr>
-                        <th>
-                            Consumidor
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.ValorConsumo)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.DataConsumo)
-                        </th>
-                        <th>Opções</th>
-                    </tr>
-
-                    @foreach (var item in Model)
-                    {
+                <div class="table-responsive">
+                    <table class="table">
                         <tr>
-                            <td>
-                                @if (item.FlagCliente)
-                                {
-                                    <b class="text-teal">Cliente: </b> @item.Cliente.NomeCliente
-                                }
-                                else
-                                {
-                                    <b class="text-lilac">Empresa: </b> @item.Empresa.NomeEmpresa
-                                }
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.ValorConsumo)
-                            </td>
-                            <td>
-                                @item.DataConsumo.Date.ToShortDateString()
-                            </td>
-                            <td>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.ConsumoComandaId }) |
-                                @Html.ActionLink("Visualizar", "Details", new { id = item.ConsumoComandaId }) |
-                                @Html.ActionLink("Excluir", "Delete", new { id = item.ConsumoComandaId })
-                            </td>
+                            <th>
+                                Consumidor
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ValorConsumo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DataConsumo)
+                            </th>
+                            <th>Opções</th>
                         </tr>
-                    }
-                </table>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @if (item.FlagCliente)
+                                    {
+                                        <b class="text-teal">Cliente: </b> @item.Cliente.NomeCliente
+                                    }
+                                    else
+                                    {
+                                        <b class="text-lilac">Empresa: </b> @item.Empresa.NomeEmpresa
+                                    }
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ValorConsumo)
+                                </td>
+                                <td>
+                                    @item.DataConsumo.Date.ToShortDateString()
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.ConsumoComandaId }) |
+                                    @Html.ActionLink("Visualizar", "Details", new { id = item.ConsumoComandaId }) |
+                                    @Html.ActionLink("Excluir", "Delete", new { id = item.ConsumoComandaId })
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
             </div>
         </div>
     </div>

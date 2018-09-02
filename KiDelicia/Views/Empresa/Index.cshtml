@@ -25,47 +25,49 @@
                 <p>
                     @Html.ActionLink("Nova Empresa", "Create", "Empresa")
                 </p>
-                <table class="table">
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.NomeEmpresa)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Representante)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Telefone)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Descricao)
-                        </th>
-                        <th></th>
-                    </tr>
-
-                    @foreach (var item in Model)
-                    {
+                <div class="table-responsive">
+                    <table class="table">
                         <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NomeEmpresa)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Representante)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Telefone)
-                            </td>
-                            <td>
-                                @(item.Descricao == null ? "--" : item.Descricao)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Editar", "Edit", new { id = item.EmpresaId }) |
-                                @Html.ActionLink("Visualizar", "Details", new { id = item.EmpresaId }) |
-                                @Html.ActionLink("Excluir", "Delete", new { id = item.EmpresaId })
-                            </td>
+                            <th>
+                                @Html.DisplayNameFor(model => model.NomeEmpresa)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Representante)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Telefone)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Descricao)
+                            </th>
+                            <th></th>
                         </tr>
-                    }
 
-                </table>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NomeEmpresa)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Representante)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Telefone)
+                                </td>
+                                <td>
+                                    @(item.Descricao == null ? "--" : item.Descricao)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Editar", "Edit", new { id = item.EmpresaId }) |
+                                    @Html.ActionLink("Visualizar", "Details", new { id = item.EmpresaId }) |
+                                    @Html.ActionLink("Excluir", "Delete", new { id = item.EmpresaId })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
             </div>
         </div>
     </div>
