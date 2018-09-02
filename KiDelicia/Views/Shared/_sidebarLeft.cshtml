@@ -77,32 +77,38 @@
                     </a>
                 </li>
 
-               if (User.Identity.Name == "Ediva Gt") { 
-               bool CadastrarUrl = Request.RawUrl == "/Autenticacao/Cadastrar";
-                <li class="@(CadastrarUrl ? "active" : "")">
-                    <a href="@Url.Action("Cadastrar", "Autenticacao")">
-                        <span class="icon"><i class="fa fa-file-text"></i></span>
-                        <span class="text">Cadastro de Usuario</span>
-                        @if (CadastrarUrl)
-                        {<span class="selected"></span>}
-                    </a>
-                </li>
+                if (User.Identity.Name == "Ediva Gt" || User.Identity.Name == "Quemuel Leal")
+                {
+                    bool CadastrarUrl = Request.RawUrl == "/Autenticacao/Cadastrar";
+                    <li class="@(CadastrarUrl ? "active" : "")">
+                        <a href="@Url.Action("Cadastrar", "Autenticacao")">
+                            <span class="icon"><i class="fa fa-user"></i></span>
+                            <span class="text">Cadastro de Usuario</span>
+                            @if (CadastrarUrl)
+                            {<span class="selected"></span>}
+                        </a>
+                    </li>
+
+                }
+
+
 
                 bool AlterarSenhaUrl = Request.RawUrl == "/Perfil/AlterarSenha";
                 <li class="@(AlterarSenhaUrl ? "active" : "")">
                     <a href="@Url.Action("AlterarSenha", "Perfil")">
-                        <span class="icon"><i class="fa fa-file-text"></i></span>
+                        <span class="icon"><i class="fa fa-user"></i></span>
                         <span class="text">Alterar Senha</span>
                         @if (AlterarSenhaUrl)
                         {<span class="selected"></span>}
                     </a>
                 </li>
-            }
 
-            bool LogoutUrl = Request.RawUrl == "/Autenticacao/Logout";
+
+
+                bool LogoutUrl = Request.RawUrl == "/Autenticacao/Logout";
                 <li class="@(LogoutUrl ? "active": "")">
                     <a href="@Url.Action("Logout", "Autenticacao")">
-                        <span class="icon"><i class="fa fa-file-text"></i></span>
+                        <span class="icon"><i class="fa fa-user"></i></span>
                         <span class="text">Logout</span>
                         @if (LogoutUrl)
                         {<span class="selected"></span>}
