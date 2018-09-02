@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 bool produtoUrl = Request.RawUrl == "/Produto/Index" || Request.RawUrl == "/Produto";
-                <li class="@(produtoUrl ? "active": "")">
+                <li class="@(produtoUrl ? "active" : "")">
                     <a href="@Url.Action("Index", "Produto")">
                         <span class="icon"><i class="fa fa-coffee"></i></span>
                         <span class="text">Produto</span>
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 bool consumoComandaUrl = Request.RawUrl == "/ConsumoComanda/Index" || Request.RawUrl == "/ConsumoComanda";
-                <li class="@(consumoComandaUrl ? "active": "")">
+                <li class="@(consumoComandaUrl ? "active" : "")">
                     <a href="@Url.Action("Index", "ConsumoComanda")">
                         <span class="icon"><i class="fa fa-share"></i></span>
                         <span class="text">Lançar Consumo</span>
@@ -59,7 +59,7 @@
                     </a>
                 </li>
                 bool baixaMesUrl = Request.RawUrl == "/BaixaMes/Index" || Request.RawUrl == "/BaixaMes";
-                <li class="@(baixaMesUrl ? "active": "")">
+                <li class="@(baixaMesUrl ? "active" : "")">
                     <a href="@Url.Action("Index", "BaixaMes")">
                         <span class="icon"><i class="fa fa-download"></i></span>
                         <span class="text">Dar Baixa</span>
@@ -68,7 +68,7 @@
                     </a>
                 </li>
                 bool extratoUrl = Request.RawUrl == "/BaixaMes/Extrato";
-                <li class="@(extratoUrl ? "active": "")">
+                <li class="@(extratoUrl ? "active" : "")">
                     <a href="@Url.Action("Extrato", "BaixaMes")">
                         <span class="icon"><i class="fa fa-file-text"></i></span>
                         <span class="text">Extrato</span>
@@ -77,8 +77,9 @@
                     </a>
                 </li>
 
-                bool CadastrarUrl = Request.RawUrl == "/Autenticacao/Cadastrar";
-                <li class="@(CadastrarUrl ? "active": "")">
+               if (User.Identity.Name == "Ediva Gt") { 
+               bool CadastrarUrl = Request.RawUrl == "/Autenticacao/Cadastrar";
+                <li class="@(CadastrarUrl ? "active" : "")">
                     <a href="@Url.Action("Cadastrar", "Autenticacao")">
                         <span class="icon"><i class="fa fa-file-text"></i></span>
                         <span class="text">Cadastro de Usuario</span>
@@ -88,7 +89,7 @@
                 </li>
 
                 bool AlterarSenhaUrl = Request.RawUrl == "/Perfil/AlterarSenha";
-                <li class="@(AlterarSenhaUrl ? "active": "")">
+                <li class="@(AlterarSenhaUrl ? "active" : "")">
                     <a href="@Url.Action("AlterarSenha", "Perfil")">
                         <span class="icon"><i class="fa fa-file-text"></i></span>
                         <span class="text">Alterar Senha</span>
@@ -96,9 +97,9 @@
                         {<span class="selected"></span>}
                     </a>
                 </li>
+            }
 
-
-                bool LogoutUrl = Request.RawUrl == "/Autenticacao/Logout";
+            bool LogoutUrl = Request.RawUrl == "/Autenticacao/Logout";
                 <li class="@(LogoutUrl ? "active": "")">
                     <a href="@Url.Action("Logout", "Autenticacao")">
                         <span class="icon"><i class="fa fa-file-text"></i></span>
