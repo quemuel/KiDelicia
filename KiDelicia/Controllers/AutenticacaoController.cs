@@ -45,7 +45,7 @@ namespace KiDelicia.Controllers
             db.SaveChanges();
 
             TempData["Mensagem"] = "Cadastro ralizado com sucesso. Efetue login";
-            return RedirectToAction("Login","Autenticacao");
+            return RedirectToAction("Index","Home");
         }
 
 
