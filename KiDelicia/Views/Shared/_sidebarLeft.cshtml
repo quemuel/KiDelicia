@@ -4,6 +4,7 @@
             <div class="media-body text-center">
                 <h4 class="media-heading text-center"><small class="text-default">Restaurante e Churrascaria</small></h4>
                 <small>Sistema de controle de clientes</small>
+                <span>@User.Identity.Name</span> 
             </div>
         </div>
     </div>
@@ -17,79 +18,101 @@
                 {<span class="selected"></span>}
             </a>
         </li>
-        @{bool clienteUrl = Request.RawUrl == "/Cliente/Index" || Request.RawUrl == "/Cliente"; }
-        <li class="@(clienteUrl ? "active": "")">
-            <a href="@Url.Action("Index", "Cliente")">
-                <span class="icon"><i class="fa fa-user"></i></span>
-                <span class="text">Cliente</span>
-                @if (clienteUrl)
-                {<span class="selected"></span>}
-            </a>
-        </li>
-        @{bool produtoUrl = Request.RawUrl == "/Produto/Index" || Request.RawUrl == "/Produto"; }
-        <li class="@(produtoUrl ? "active": "")">
-            <a href="@Url.Action("Index", "Produto")">
-                <span class="icon"><i class="fa fa-coffee"></i></span>
-                <span class="text">Produto</span>
-                @if (produtoUrl)
-                {<span class="selected"></span>}
-            </a>
-        </li>
-        @{bool empresaUrl = Request.RawUrl == "/Empresa/Index" || Request.RawUrl == "/Empresa"; }
-        <li class="@(empresaUrl ? "active": "")">
-            <a href="@Url.Action("Index", "Empresa")">
-                <span class="icon"><i class="fa fa-building-o"></i></span>
-                <span class="text">Empresa</span>
-                @if (empresaUrl)
-                {<span class="selected"></span>}
-            </a>
-        </li>
-        @{bool consumoComandaUrl = Request.RawUrl == "/ConsumoComanda/Index" || Request.RawUrl == "/ConsumoComanda"; }
-        <li class="@(consumoComandaUrl ? "active": "")">
-            <a href="@Url.Action("Index", "ConsumoComanda")">
-                <span class="icon"><i class="fa fa-share"></i></span>
-                <span class="text">Lançar Consumo</span>
-                @if (consumoComandaUrl)
-                {<span class="selected"></span>}
-            </a>
-        </li>
-        @{bool baixaMesUrl = Request.RawUrl == "/BaixaMes/Index" || Request.RawUrl == "/BaixaMes"; }
-        <li class="@(baixaMesUrl ? "active": "")">
-            <a href="@Url.Action("Index", "BaixaMes")">
-                <span class="icon"><i class="fa fa-download"></i></span>
-                <span class="text">Dar Baixa</span>
-                @if (baixaMesUrl)
-                {<span class="selected"></span>}
-            </a>
-        </li>
-        @{bool extratoUrl = Request.RawUrl == "/BaixaMes/Extrato"; }
-        <li class="@(extratoUrl ? "active": "")">
-            <a href="@Url.Action("Extrato", "BaixaMes")">
-                <span class="icon"><i class="fa fa-file-text"></i></span>
-                <span class="text">Extrato</span>
-                @if (extratoUrl)
-                {<span class="selected"></span>}
-            </a>
-        </li>
-        @{bool CadastrarUrl = Request.RawUrl == "/Autenticacao/Cadastrar"; }
-        <li class="@(CadastrarUrl ? "active": "")">
-            <a href="@Url.Action("Cadastrar", "Autenticacao")">
-                <span class="icon"><i class="fa fa-file-text"></i></span>
-                <span class="text">Cadastro de Usuario</span>
-                @if (CadastrarUrl)
-                {<span class="selected"></span>}
-            </a>
-        </li>
 
-        @{bool LoginUrl = Request.RawUrl == "/Autenticacao/Login"; }
-        <li class="@(LoginUrl ? "active": "")">
-            <a href="@Url.Action("Login", "Autenticacao")">
-                <span class="icon"><i class="fa fa-file-text"></i></span>
-                <span class="text">Login</span>
-                @if (LoginUrl)
-                {<span class="selected"></span>}
-            </a>
-        </li>
+        @{
+          if(User.Identity.IsAuthenticated){
+            bool clienteUrl = Request.RawUrl == "/Cliente/Index" || Request.RawUrl == "/Cliente"; 
+            <li class='(clienteUrl ? "active": "")'>
+                <a href="@Url.Action("Index", "Cliente")">
+                    <span class="icon"><i class="fa fa-user"></i></span>
+                    <span class="text">Cliente</span>
+                    @if(clienteUrl)
+                    {<span class="selected"></span>}
+                </a>
+            </li>
+            bool produtoUrl = Request.RawUrl == "/Produto/Index" || Request.RawUrl == "/Produto"; 
+            <li class="@(produtoUrl ? "active": "")">
+                <a href="@Url.Action("Index", "Produto")">
+                    <span class="icon"><i class="fa fa-coffee"></i></span>
+                    <span class="text">Produto</span>
+                    @if (produtoUrl)
+                    {<span class="selected"></span>}
+                </a>
+            </li>
+            bool empresaUrl = Request.RawUrl == "/Empresa/Index" || Request.RawUrl == "/Empresa"; 
+            <li class='(empresaUrl ? "active": "")'>
+                <a href="@Url.Action("Index", "Empresa")">
+                    <span class="icon"><i class="fa fa-building-o"></i></span>
+                    <span class="text">Empresa</span>
+                    @if (empresaUrl)
+                    {<span class="selected"></span>}
+                </a>
+            </li>
+            bool consumoComandaUrl = Request.RawUrl == "/ConsumoComanda/Index" || Request.RawUrl == "/ConsumoComanda"; 
+            <li class= "@(consumoComandaUrl ? "active": "")">
+                <a href="@Url.Action("Index", "ConsumoComanda")">
+                    <span class="icon"><i class="fa fa-share"></i></span>
+                    <span class="text">Lançar Consumo</span>
+                    @if (consumoComandaUrl)
+                    {<span class="selected"></span>}
+                </a>
+            </li>
+            bool baixaMesUrl = Request.RawUrl == "/BaixaMes/Index" || Request.RawUrl == "/BaixaMes"; 
+            <li class="@(baixaMesUrl ? "active": "")">
+                <a href="@Url.Action("Index", "BaixaMes")">
+                    <span class="icon"><i class="fa fa-download"></i></span>
+                    <span class="text">Dar Baixa</span>
+                    @if (baixaMesUrl)
+                    {<span class="selected"></span>}
+                </a>
+            </li>
+             bool extratoUrl = Request.RawUrl == "/BaixaMes/Extrato"; 
+            <li class="@(extratoUrl ? "active": "")">
+                <a href="@Url.Action("Extrato", "BaixaMes")">
+                    <span class="icon"><i class="fa fa-file-text"></i></span>
+                    <span class="text">Extrato</span>
+                    @if (extratoUrl)
+                    {<span class="selected"></span>}
+                </a>
+            </li>
+               
+                bool CadastrarUrl = Request.RawUrl == "/Autenticacao/Cadastrar";
+            <li class="@(CadastrarUrl ? "active": "")">
+                <a href="@Url.Action("Cadastrar", "Autenticacao")">
+                    <span class="icon"><i class="fa fa-file-text"></i></span>
+                    <span class="text">Cadastro de Usuario</span>
+                    @if(CadastrarUrl)
+                    {<span class="selected"></span>}
+                </a>
+            </li>
+
+
+            bool LogoutUrl = Request.RawUrl == "/Autenticacao/Logout"; 
+            <li class="@(LogoutUrl ? "active": "")">
+                <a href="@Url.Action("Logout", "Autenticacao")">
+                    <span class="icon"><i class="fa fa-file-text"></i></span>
+                    <span class="text">Logout</span>
+                    @if (LogoutUrl)
+                    {<span class="selected"></span>}
+                </a>
+            </li>
+
+
+
+          }else{ 
+
+            bool LoginUrl = Request.RawUrl == "/Autenticacao/Login"; 
+            <li class="@(LoginUrl ? "active": "")">
+                <a href="@Url.Action("Login", "Autenticacao")">
+                    <span class="icon"><i class="fa fa-file-text"></i></span>
+                    <span class="text">Login</span>
+                     @if(LoginUrl)
+                    {<span class="selected"></span>}
+                </a>
+            </li>
+
+         }
+        }
     </ul>
     <div class="sidebar-footer hidden-xs hidden-sm hidden-md">
         <a id="setting" class="pull-left" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" data-title="Setting"><i class="fa fa-cog"></i></a>

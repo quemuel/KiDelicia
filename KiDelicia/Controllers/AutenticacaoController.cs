@@ -94,7 +94,14 @@ namespace KiDelicia.Controllers
 
                 return Redirect(loginviewModel.UrlRetorno);
             else
-                return RedirectToAction("Index", "Painel");
+                return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult Logout()
+        {
+            Request.GetOwinContext().Authentication.SignOut("ApplicationCookie");
+            return RedirectToAction("Index", "Home");
+
         }
     }
 }

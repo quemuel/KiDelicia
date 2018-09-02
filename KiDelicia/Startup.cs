@@ -12,7 +12,7 @@ namespace KiDelicia
             //ConfigureAuth(app);
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
-                AuthenticationType = "AplicationCookie",
+                AuthenticationType = "ApplicationCookie",
                 LoginPath= new PathString("/Autenticacao/Login")
             });
         }
