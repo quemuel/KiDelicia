@@ -16,6 +16,7 @@ namespace KiDelicia.Controllers
         private EFContext db = new EFContext();
 
         // GET: BaixaMes
+        [Authorize]
         public ActionResult Index()
         {
             var baixaMeses = db.BaixaMeses.Include(b => b.Cliente).Include(b => b.Empresa);
@@ -23,6 +24,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: BaixaMes/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +40,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: BaixaMes/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
@@ -55,6 +58,7 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "BaixaMesId,ValorMes,DataMesReferencia,DataCadastro,ClienteId,EmpresaId,FlagCliente")] BaixaMes baixaMes)
         {
             if (ModelState.IsValid)
@@ -82,6 +86,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: BaixaMes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -108,6 +113,7 @@ namespace KiDelicia.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "BaixaMesId,ValorMes,DataMesReferencia,DataCadastro,ClienteId,EmpresaId,FlagCliente")] BaixaMes baixaMes)
         {
             if (ModelState.IsValid)
@@ -135,6 +141,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: BaixaMes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -152,6 +159,7 @@ namespace KiDelicia.Controllers
         // POST: BaixaMes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             BaixaMes baixaMes = db.BaixaMeses.Find(id);
@@ -161,6 +169,7 @@ namespace KiDelicia.Controllers
         }
 
         // GET: BaixaMes/Extrato
+        [Authorize]
         public ActionResult Extrato()
         {
             ViewBag.ClienteId = new SelectList((from cliente in db.Clientes.ToList()
@@ -176,6 +185,7 @@ namespace KiDelicia.Controllers
         // POST: BaixaMes/Extrato
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Extrato([Bind(Include = "DataMesReferenciaInicial,DataMesReferenciaFinal, ClienteId, EmpresaId, FlagCliente")] BaixaMes baixaMesPost)
         {
             

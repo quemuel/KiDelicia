@@ -28,7 +28,6 @@
             @*<ul class="nav navbar-nav navbar-right">
                 <!-- /.nav navbar-nav navbar-right -->
                 <!-- Start messages -->
-                
                 <!--/ End notifications -->
                 <!-- Start profile -->
                 <li class="dropdown navbar-profile">
@@ -54,10 +53,13 @@
                 </li>
                 <!--/ End profile -->
                 <!-- Start settings -->
-                <li class="navbar-setting pull-right">
-                    <a href="javascript:void(0);"><i class="fa fa-cog fa-spin"></i></a>
-                </li><!-- /.navbar-setting pull-right -->
-                <!--/ End settings -->
+                @if (User.Identity.Name == "Ediva Gt" || User.Identity.Name == "Quemuel Leal")
+                {
+                    <li class="navbar-setting pull-right">
+                        <a href="javascript:void(0);"><i class="fa fa-cog fa-spin"></i></a>
+                    </li><!-- /.navbar-setting pull-right -->
+                    <!--/ End settings -->
+                }
 
             </ul>*@
             <!--/ End right navigation -->
