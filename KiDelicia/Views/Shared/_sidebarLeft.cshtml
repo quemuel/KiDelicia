@@ -124,7 +124,7 @@
                 bool LoginUrl = Request.RawUrl == "/Autenticacao/Login";
                 <li class="@(LoginUrl ? "active": "")">
                     <a href="@Url.Action("Login", "Autenticacao")">
-                        <span class="icon"><i class="fa fa-file-text"></i></span>
+                        <span class="icon"><i class="fa fa-user"></i></span>
                         <span class="text">Login</span>
                         @if (LoginUrl)
                         {<span class="selected"></span>}
