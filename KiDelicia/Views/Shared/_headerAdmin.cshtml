@@ -9,9 +9,9 @@
                 <img class="logo" src="@Url.Content("/Content")/global/img/logo/yii/logo-white.png" alt="brand logo" />
             </a>
         </div>
-        @*<div class="navbar-minimize-mobile right">
+       <div class="navbar-minimize-mobile right">
             <i class="fa fa-cog"></i>
-        </div>*@
+        </div>
         <div class="clearfix"></div>
     </div>
     <div class="header-right">
@@ -22,51 +22,66 @@
                         <i class="fa fa-bars"></i>
                     </a>
                 </li>
-            </ul><!-- /.nav navbar-nav navbar-left -->
-            <!--/ End left navigation -->
-            <!-- Start right navigation -->
-            @*<ul class="nav navbar-nav navbar-right">
-                <!-- /.nav navbar-nav navbar-right -->
-                <!-- Start messages -->
-                <!--/ End notifications -->
-                <!-- Start profile -->
-                <li class="dropdown navbar-profile">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="meta">
-                            <span class="avatar"><img src="@Url.Content("/Content")/global/img/avatar/35/1.png" class="img-circle" alt="admin"></span>
-                            <span class="text hidden-xs hidden-sm text-muted">Tol Lee</span>
-                            <span class="caret"></span>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu ">
-                        <li class="dropdown-header">Account</li>
-                        <li><a href="<?= Yii::$app->getUrlManager()->createUrl('admin/page/profile') ?>"><i class="fa fa-user"></i>View profile</a></li>
-                        <li><a href="mail-inbox.html"><i class="fa fa-envelope-square"></i>Inbox <span class="label label-info pull-right">30</span></a></li>
-                        <li><a href="#"><i class="fa fa-share-square"></i>Invite a friend</a></li>
-                        <li class="dropdown-header">Product</li>
-                        <li><a href="#"><i class="fa fa-upload"></i>Upload</a></li>
-                        <li><a href="#"><i class="fa fa-dollar"></i>Earning</a></li>
-                        <li><a href="#"><i class="fa fa-download"></i>Withdrawals</a></li>
-                        <li class="divider"></li>
-                        <li><a href="<?= Yii::$app->getUrlManager()->createUrl('admin/page/signin') ?>"><i class="fa fa-sign-out"></i>Logout</a></li>
-                    </ul>
-                </li>
-                <!--/ End profile -->
-                <!-- Start settings -->
-                @if (User.Identity.Name == "Ediva Gt" || User.Identity.Name == "Quemuel Leal")
-                {
-                    <li class="navbar-setting pull-right">
-                        <a href="javascript:void(0);"><i class="fa fa-cog fa-spin"></i></a>
-                    </li><!-- /.navbar-setting pull-right -->
+            </ul>
+            <!-- .nav navbar-nav navbar-left> -->
+            <!--End left navigation>-->
+            <Start right navigation>
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- /.nav navbar-nav navbar-right -->
+                    <!-- Start messages -->
+                    <!--/ End notifications -->
+                    <!--Start profile-->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        <li class="dropdown navbar-profile">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="meta">
+                                    <span class="avatar"><img src="@Url.Content("/Content")/global/img/avatar/35/1.png" class="img-circle" alt="admin"></span>
+                                    <span class="text hidden-xs hidden-sm text-muted"> @User.Identity.Name</span>
+                                    <span class="caret"></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu ">
+                                <li class="dropdown-header">Conta</li>
+                                <!--li><a href="#"><i class="fa fa-user"></i>View profile</a></li>-->
+                                <li><a href="@Url.Action("AlterarSenha", "Perfil")"><i class="fa fa-user"></i>Alterar senha</a></li>
+                                @if (User.Identity.Name == "Ediva Gt" || User.Identity.Name == "Quemuel Leal")
+                                {
+                                    <li><a href="@Url.Action("Cadastrar", "Autenticacao")"><i class="fa fa-user"></i>Cadastrar</a></li>
+                                }
+                                <!--li><a href="mail-inbox.html"><i class="fa fa-envelope-square"></i>Inbox <span class="label label-info pull-right">30</span></a></!--li>
+    <li><a href="#"><i class="fa fa-share-square"></i>Invite a friend</a></li>-->
+                                <li class="dropdown-header"></li>
+                                <!--li><a href="#"><i class="fa fa-upload"></i>Upload</a></!--li>
+    <li><a href="#"><i class="fa fa-dollar"></i>Earning</a></li>
+    <li><a href="#"><i class="fa fa-download"></i>Withdrawals</a></li>-->
+                                <li class="divider"></li>
+                                <li><a href="@Url.Action("Logout", "Autenticacao")"><i class="fa fa-sign-out"></i>Sair</a></li>
+                            </ul>
+                        </li>
+
+                    }
+
+                    <!--End profile -->
+                    <!-- Start settings -->
+                    @if (User.Identity.Name == "Ediva Gt" || User.Identity.Name == "Quemuel Leal")
+                    {
+                        <li class="navbar-setting pull-right">
+                            <a href="javascript:void(0);"><i class="fa fa-cog fa-spin"></i></a>
+                        </li><!--/.navbar-setting pull-right -->
+
+                    }
                     <!--/ End settings -->
-                }
 
-            </ul>*@
-            <!--/ End right navigation -->
+                </ul>
+                <!--End right navigation>-->
 
-        </div><!-- /.navbar-toolbar -->
-        <!--/ End navbar toolbar -->
-    </div><!-- /.header-right -->
-    <!--/ End header left -->
+</div>
+        <!-- /.navbar-toolbar -->
+        <!---End navbar toolbar>-->
+    </div>
+    <!-- /.header-right -->
+    <!--End header left-->
 
 </header> <!-- /#header -->
