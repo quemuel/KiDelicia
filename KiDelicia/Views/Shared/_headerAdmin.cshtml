@@ -9,11 +9,14 @@
                 <img class="logo" src="@Url.Content("/Content")/global/img/logo/yii/logo-white.png" alt="brand logo" />
             </a>
         </div>
-       <div class="navbar-minimize-mobile right">
-            <i class="fa fa-cog"></i>
+        @if (User.Identity.Name == "Ediva Gt" || User.Identity.Name == "Quemuel Leal")
+        {
+            <div class="navbar-minimize-mobile right">
+                <i class="fa fa-cog"></i>
+            </div>
+        }
+            <div class="clearfix"></div>
         </div>
-        <div class="clearfix"></div>
-    </div>
     <div class="header-right">
         <div class="navbar navbar-toolbar">
             <ul class="nav navbar-nav navbar-left">
