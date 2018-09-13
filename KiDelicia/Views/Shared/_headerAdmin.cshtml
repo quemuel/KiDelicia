@@ -45,25 +45,37 @@
                                     <span class="caret"></span>
                                 </span>
                             </a>
-                            <ul class="dropdown-menu ">
-                                <li class="dropdown-header">Conta</li>
-                                <!--li><a href="#"><i class="fa fa-user"></i>View profile</a></li>-->
+                            <ul class="dropdown-menu animated flipInX">
+                                <li class="dropdown-header">Conta</li>                                
                                 <li><a href="@Url.Action("AlterarSenha", "Perfil")"><i class="fa fa-user"></i>Alterar senha</a></li>
                                 @if (User.Identity.Name == "Ediva Gt" || User.Identity.Name == "Quemuel Leal")
                                 {
                                     <li><a href="@Url.Action("Cadastrar", "Autenticacao")"><i class="fa fa-user"></i>Cadastrar</a></li>
                                 }
-                                <!--li><a href="mail-inbox.html"><i class="fa fa-envelope-square"></i>Inbox <span class="label label-info pull-right">30</span></a></!--li>
-    <li><a href="#"><i class="fa fa-share-square"></i>Invite a friend</a></li>-->
-                                <li class="dropdown-header"></li>
-                                <!--li><a href="#"><i class="fa fa-upload"></i>Upload</a></!--li>
-    <li><a href="#"><i class="fa fa-dollar"></i>Earning</a></li>
-    <li><a href="#"><i class="fa fa-download"></i>Withdrawals</a></li>-->
+                                <li class="dropdown-header"></li>                                
                                 <li class="divider"></li>
                                 <li><a href="@Url.Action("Logout", "Autenticacao")"><i class="fa fa-sign-out"></i>Sair</a></li>
                             </ul>
                         </li>
 
+                    }
+                    else
+                    {
+                        <li class="dropdown navbar-profile">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="meta">
+                                    <span class="avatar"><img src="@Url.Content("/Content")/global/img/avatar/35/26.png" class="img-circle" alt="admin"></span>
+                                    <span class="text hidden-xs hidden-sm text-muted">Visitante</span>
+                                    <span class="caret"></span>
+                                </span>
+                            </a>
+                            <!-- Start dropdown menu -->
+                            <ul class="dropdown-menu animated flipInX">
+                                <li class="dropdown-header">Conta</li>
+                                <li><a href="@Url.Action("Login", "Autenticacao")"><i class="fa fa-sign-in"></i>Entrar</a></li>
+                            </ul>
+                            <!--/ End dropdown menu -->
+                        </li>
                     }
 
                     <!--End profile -->
@@ -72,8 +84,7 @@
                     {
                         <li class="navbar-setting pull-right">
                             <a href="javascript:void(0);"><i class="fa fa-cog fa-spin"></i></a>
-                        </li><!--/.navbar-setting pull-right -->
-
+                        </li>
                     }
                     <!--/ End settings -->
 
