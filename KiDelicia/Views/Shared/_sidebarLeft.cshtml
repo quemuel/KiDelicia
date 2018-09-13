@@ -78,20 +78,6 @@
                 </li>
 
             }
-            else
-            {
-
-                 bool LoginUrl = Request.RawUrl == "/Autenticacao/Login";
-                 <li class="@(LoginUrl ? "active" : "")">
-                     <a href="@Url.Action("Login", "Autenticacao")">
-                         <span class="icon"><i class="fa fa-sign-in"></i></span>
-                         <span class="text">Login</span>
-                         @if (LoginUrl)
-                         {<span class="selected"></span>}
-                     </a>
-                 </li>
-
-            }
         }
     </ul>
     <div class="sidebar-footer hidden-xs hidden-sm hidden-md">
