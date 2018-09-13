@@ -19,6 +19,29 @@ namespace KiDelicia
                 "~/Content/global/img/ico/yii/apple-touch-icon.png"
             ));
 
+            bundles.Add(new StyleBundle("~/Content/styleCoreAccount").Include(
+                "~/Content/global/plugins/bower_components/bootstrap/dist/css/bootstrap.min.css",
+                "~/Content/global/plugins/bower_components/fontawesome/css/font-awesome.min.css",
+                "~/Content/global/plugins/bower_components/animate.css/animate.min.css",
+                "~/Content/admin/css/reset.css",
+                "~/Content/admin/css/layout.css",
+                "~/Content/admin/css/components.css",
+                "~/Content/admin/css/plugins.css",
+                "~/Content/admin/css/themes/default.theme.css",
+                "~/Content/admin/css/pages/sign.css",
+                "~/Content/admin/css/custom.css",
+                "~/Content/admin/css/site.css"
+            ));
+
+            bundles.Add(new ScriptBundle("~/bundles/scriptAccount").Include(
+                "~/Content/global/plugins/bower_components/jquery/dist/jquery.min.js",
+                "~/Content/global/plugins/bower_components/jquery-cookie/jquery.cookie.js",
+                "~/Content/global/plugins/bower_components/bootstrap/dist/js/bootstrap.min.js",
+                "~/Content/global/plugins/bower_components/jquery-easing-original/jquery.easing.1.3.min.js",
+                "~/Content/admin/js/pages/blankon.sign.js",
+                "~/Content/admin/js/demo.js"
+            ));
+
             bundles.Add(new StyleBundle("~/Content/styleCore").Include(
                 "~/Content/global/plugins/bower_components/bootstrap/dist/css/bootstrap.min.css",
                 "~/Content/global/plugins/bower_components/fontawesome/css/font-awesome.min.css",

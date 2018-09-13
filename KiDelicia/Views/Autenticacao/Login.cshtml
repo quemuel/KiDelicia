@@ -1,58 +1,62 @@
 ﻿@model KiDelicia.ViewModel.LoginViewModel
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Entrar";
 }
 
-<section id="page-content">
-
-    <div class="body-content animated fadeIn">
-        <div class="row">
-            <div class="col-md-12">
-
-                @using (Html.BeginForm())
-                {
-                    @Html.AntiForgeryToken()
-
-                    <div class="form-horizontal">
-
-                        <hr />
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        @Html.HiddenFor(model => model.UrlRetorno)
-                        <div class="form-group">
-
-                            <div class="row">
-                                @Html.LabelFor(model => model.Login, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                @Html.LabelFor(model => model.Senha, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-3">
-                                    @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                                <div class="row">
-                                    <div class="col-md-6 btn-group center">
-
-                                        <input type="submit" value="Logar" class="btn btn-success" />
-                                    </div>
-                                </div>
-                          
-                        </div>
-                    </div>
-                }
+<div id="sign-wrapper">        
+    @using (Html.BeginForm("Login", "Autenticacao", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "sign-in form-horizontal shadow rounded no-overflow", role = "form" }))
+    {      
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.UrlRetorno)
+        <div class="sign-header">
+            <div class="brand">
+                <img src="@Url.Content("/Content")/global/img/logo/yii/logo-white.png" alt="brand logo" />
+            </div>
+            <div class="form-group">
+                <div class="sign-text">
+                    <span>@ViewBag.Title</span>
+                </div>
             </div>
         </div>
-    </div>
-    @Html.Partial("_footerAdmin")
-</section>
-    @section scripts{
-        <script src="~/Scripts/jquery.validate.js"></script>
-        <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+        <div class="sign-body">
+            <div class="form-group">
+                <div class="input-group input-group-lg rounded no-overflow">
+                    @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Usuario" } })
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                </div>
+                @Html.ValidationMessageFor(model => model.Login, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <div class="input-group input-group-lg rounded no-overflow">
+                    @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control input-sm", @placeholder = "Senha" } })
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                </div>
+                @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="sign-footer">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="ckbox ckbox-theme">
+                            <input id="rememberme" type="checkbox">
+                            <label for="rememberme" class="rounded">Lembre-me</label>
+                        </div>
+                    </div>
+                    @*<div class="col-xs-6 text-right">
+                        <a href="page-lost-password.html" title="lost password">Lost password?</a>
+                    </div>*@
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-theme btn-lg btn-block no-margin rounded" id="login-btn">Entrar</button>
+            </div>
+        </div>
     }
+</div>
+@section scripts{
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}
