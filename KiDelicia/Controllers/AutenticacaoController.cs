@@ -59,7 +59,7 @@ namespace KiDelicia.Controllers
                 UrlRetorno = ReturnUrl
             };
 
-            return View(viewmodel);
+            return View("Login", "_LayAccount", viewmodel);
         }
 
         [HttpPost]
@@ -67,7 +67,7 @@ namespace KiDelicia.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(loginviewModel);
+                return View("Login", "_LayAccount", loginviewModel);
             }
 
             var usuario = db.Usuarios.FirstOrDefault(u => u.Login == loginviewModel.Login);
@@ -75,13 +75,13 @@ namespace KiDelicia.Controllers
             if (usuario == null)
             {
                 ModelState.AddModelError("Login", "Login incorreto");
-                return View(loginviewModel);
+                return View("Login", "_LayAccount", loginviewModel);
             }
 
             if(usuario.Senha!= Hash.GeraHash(loginviewModel.Senha))
             {
                 ModelState.AddModelError("Senha", "Senha incorreta");
-                return View(loginviewModel);
+                return View("Login", "_LayAccount", loginviewModel);
             }
 
             var identity = new ClaimsIdentity(new[]
